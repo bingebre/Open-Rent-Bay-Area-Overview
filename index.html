@@ -111,17 +111,16 @@ body{font-family:var(--font-sans);background:var(--cream);color:var(--text-prima
 </style>
 </head>
 <body>
+
+
 <nav class="nav" id="nav">
 <button class="nav-dot active" data-slide="0"><span class="tooltip">Title</span></button>
 <button class="nav-dot" data-slide="1"><span class="tooltip">Challenge</span></button>
 <button class="nav-dot" data-slide="2"><span class="tooltip">Solution</span></button>
 <button class="nav-dot" data-slide="3"><span class="tooltip">Demo</span></button>
-<button class="nav-dot" data-slide="4"><span class="tooltip">Impact</span></button>
-<button class="nav-dot" data-slide="5"><span class="tooltip">Case Study</span></button>
-<button class="nav-dot" data-slide="6"><span class="tooltip">Bay Area</span></button>
-<button class="nav-dot" data-slide="7"><span class="tooltip">Roadmap</span></button>
-<button class="nav-dot" data-slide="8"><span class="tooltip">Use Cases</span></button>
-<button class="nav-dot" data-slide="9"><span class="tooltip">Platform</span></button>
+<button class="nav-dot" data-slide="4"><span class="tooltip">Use Cases</span></button>
+<button class="nav-dot" data-slide="5"><span class="tooltip">Roadmap</span></button>
+<button class="nav-dot" data-slide="6"><span class="tooltip">Platform</span></button>
 </nav>
 
 <section class="slide slide-dark" id="slide-0">
@@ -139,6 +138,9 @@ body{font-family:var(--font-sans);background:var(--cream);color:var(--text-prima
 <div class="slide-footer"><span class="footer-brand">The Open Rent Initiative</span><span class="footer-num"></span></div>
 </section>
 
+
+
+
 <section class="slide" id="slide-1">
 <div class="slide-inner">
 <div class="section-label fi">01 &#8212; The Problem</div>
@@ -153,6 +155,9 @@ body{font-family:var(--font-sans);background:var(--cream);color:var(--text-prima
 </div>
 <div class="slide-footer"><span class="footer-brand">The Open Rent Initiative</span><span class="footer-num">01</span></div>
 </section>
+
+
+
 
 <section class="slide slide-charcoal" id="slide-2">
 <div class="slide-inner">
@@ -170,7 +175,7 @@ body{font-family:var(--font-sans);background:var(--cream);color:var(--text-prima
 
 <section class="slide" style="background:var(--cream-dark)" id="slide-3">
 <div class="slide-inner">
-<div class="section-label fi">Platform Demo</div>
+<div class="section-label fi">03 &#8212; Platform Demo</div>
 <h2 class="section-title fi fi-d1">Explore the <em>data</em></h2>
 <p class="body-text fi fi-d2">A walkthrough of the Open Rent platform, featuring our interactive map powered by robust, multi-source parcel data.</p>
 <div class="video-wrap fi fi-d3">
@@ -180,65 +185,31 @@ Your browser does not support the video tag.
 </video>
 </div>
 </div>
-<div class="slide-footer"><span class="footer-brand">The Open Rent Initiative</span><span class="footer-num"></span></div>
-</section>
-
-<section class="slide" id="slide-4">
-<div class="slide-inner">
-<div class="section-label fi">03 &#8212; Scalable Impact</div>
-<h2 class="section-title fi fi-d1">Types of Impact Open Rent<br>Could <em>Enable</em></h2>
-<p class="body-text fi fi-d2" style="margin-bottom:4px">Open Rent translates complex data into practical outcomes across three dimensions.</p>
-<div class="tag-row fi fi-d2"><span class="tag">Protection</span><span class="tag">Preservation</span><span class="tag">Production</span></div>
-<div class="clean-grid cols-3 fi fi-d3" style="max-width:1060px">
-<div class="clean-card"><div class="clean-card-label">Protection</div><div class="clean-card-title">Proactive Eviction Prevention</div><div class="clean-card-body">Enabling service providers with tools to monitor micro-neighborhoods for sudden rent instability to inform deployment of emergency assistance and tenant education before families face displacement. Combined with census and demographic data, users can estimate eviction risk and identify rent debt spikes.</div></div>
-<div class="clean-card"><div class="clean-card-label">Preservation</div><div class="clean-card-title">Strategic Investment &amp; Preservation</div><div class="clean-card-body">Enabling philanthropic funders and affordable housing developers overlay property data with real-time market rents to identify NOAH properties at highest risk of market-rate conversion, guiding strategic capital investments.</div></div>
-<div class="clean-card"><div class="clean-card-label">Production</div><div class="clean-card-title">Data-Driven Policy Advocacy</div><div class="clean-card-body">Enabling policymakers and advocates with tools to generate localized dashboards comparing rent trajectories to local wage growth, bringing concrete, data-backed arguments to legislative hearings to inform policy debates.</div></div>
-</div>
-</div>
 <div class="slide-footer"><span class="footer-brand">The Open Rent Initiative</span><span class="footer-num">03</span></div>
 </section>
 
-<section class="slide" style="background:var(--cream-dark)" id="slide-5">
+
+
+
+<section class="slide" id="slide-4">
 <div class="slide-inner">
-<div class="section-label fi">04 &#8212; Proven Approach</div>
-<h2 class="section-title fi fi-d1">Understanding St. Paul&#8217;s<br><em>Rent Stabilization</em> Ordinance</h2>
-<p class="body-text fi fi-d2">No single dataset tracked both building age and affordability. Open Rent merged disparate sources into a unified view of St. Paul&#8217;s rental stock.</p>
-<div class="two-col fi fi-d3" style="margin-top:36px;max-width:960px">
-<div>
-<div class="section-label" style="margin-bottom:16px">Technical Approach</div>
-<div class="case-study-inset" style="margin-top:0"><div class="card-title">Data Integration</div><div class="card-body">Geospatial and fuzzy matching linked Ramsey County Parcels, Fire CO records, and HousingLink data, correcting conflicting unit counts and construction dates.</div></div>
-<div class="case-study-inset" style="margin-top:12px"><div class="card-title">Predictive Modeling</div><div class="card-body">Random Forest model filled data gaps, predicting rental status with 98% accuracy based on land use and dwelling type.</div></div>
-</div>
-<div>
-<div class="section-label" style="margin-bottom:16px">Key Results</div>
-<div class="stat-row" style="flex-direction:column;gap:32px;margin-top:0">
-<div><div class="stat-value">~63K</div><div class="stat-label">Rental units identified out of ~135,600 total residential units</div></div>
-<div><div class="stat-value">~24K</div><div class="stat-label">Rentals (38%) likely qualifying for exemptions</div></div>
-<div><div class="stat-value">~2K</div><div class="stat-label">Units ultimately subject to rent stabilization</div></div>
-</div>
-</div>
+<div class="section-label fi">04 &#8212; Who It Serves</div>
+<h2 class="section-title fi fi-d1"><em>Use</em> cases</h2>
+<div class="clean-grid cols-3 fi fi-d2" style="max-width:1060px">
+<div class="clean-card"><div class="clean-card-label">Use Case 01</div><div class="clean-card-title">Proactive Eviction Prevention</div><div class="clean-card-meta">Housing Navigators &amp; Service Providers</div><div class="clean-card-body">Monitor neighborhood rent trends, identify micro-neighborhoods with steep rent hikes, and proactively deploy outreach, education, and emergency financial assistance before families are displaced.</div></div>
+<div class="clean-card"><div class="clean-card-label">Use Case 02</div><div class="clean-card-title">Strategic Investment &amp; Preservation</div><div class="clean-card-meta">Program Officers &amp; Housing Developers</div><div class="clean-card-body">Overlay publicly-funded housing maps with real-time rental rates and neighborhood amenity data to instantly identify NOAH properties at highest risk of market-rate conversion.</div></div>
+<div class="clean-card"><div class="clean-card-label">Use Case 03</div><div class="clean-card-title">Data-Driven Policy Advocacy</div><div class="clean-card-meta">Advocates &amp; Civic Leaders</div><div class="clean-card-body">Generate localized dashboards showing rent trajectories vs. wage growth in specific legislative districts, bringing data-backed arguments to city council and state hearings.</div></div>
 </div>
 </div>
 <div class="slide-footer"><span class="footer-brand">The Open Rent Initiative</span><span class="footer-num">04</span></div>
 </section>
 
-<section class="slide" id="slide-6">
-<div class="slide-inner">
-<div class="section-label fi">05 &#8212; Bay Area Strategy</div>
-<h2 class="section-title fi fi-d1">How we&#8217;re building<br>in the <em>Bay Area</em></h2>
-<p class="body-text fi fi-d2">Strategically leveraging national infrastructure (Dwellsy, Zillow, ACS), state data (affordably financed properties), and municipal records (fire occupancy, parcels) with expertise at three levels.</p>
-<div class="expertise-row fi fi-d3" style="max-width:1000px">
-<div class="expertise-item"><div class="expertise-item-title">Cross-Regional Insights</div><div class="expertise-item-desc">Sharing learnings on innovative data-sourcing and predictive modeling from Minnesota &#8212; supported by the San Francisco Foundation and Chan Zuckerberg Initiative.</div></div>
-<div class="expertise-item" style="padding-left:28px"><div class="expertise-item-title">Local Partnership</div><div class="expertise-item-desc">Close partnership with Partnership for the Bay&#8217;s Future and local design partners including City of Mountain View and Bay Area Metro.</div></div>
-<div class="expertise-item" style="padding-left:28px"><div class="expertise-item-title">Innovation Ecosystem</div><div class="expertise-item-desc">Complementing and collaborating with Urban Displacement Project, CHP Preservation Clearinghouse, and Anti-Eviction Mapping Project.</div></div>
-</div>
-</div>
-<div class="slide-footer"><span class="footer-brand">The Open Rent Initiative</span><span class="footer-num">05</span></div>
-</section>
 
-<section class="slide slide-dark" id="slide-7">
+
+
+<section class="slide slide-dark" id="slide-5">
 <div class="slide-inner">
-<div class="section-label fi">06 &#8212; Roadmap</div>
+<div class="section-label fi">05 &#8212; Roadmap</div>
 <h2 class="section-title fi fi-d1">Three-phase <em>build</em></h2>
 <div class="timeline fi fi-d2" style="max-width:720px">
 <div class="timeline-item" style="border-top-color:rgba(255,255,255,.1)">
@@ -267,25 +238,12 @@ Your browser does not support the video tag.
 </div>
 </div>
 </div>
-<div class="slide-footer"><span class="footer-brand">The Open Rent Initiative</span><span class="footer-num">06</span></div>
+<div class="slide-footer"><span class="footer-brand">The Open Rent Initiative</span><span class="footer-num">05</span></div>
 </section>
 
-<section class="slide" id="slide-8">
+<section class="slide" style="background:var(--cream-dark)" id="slide-6">
 <div class="slide-inner">
-<div class="section-label fi">07 &#8212; Who It Serves</div>
-<h2 class="section-title fi fi-d1"><em>Use</em> cases</h2>
-<div class="clean-grid cols-3 fi fi-d2" style="max-width:1060px">
-<div class="clean-card"><div class="clean-card-label">Use Case 01</div><div class="clean-card-title">Proactive Eviction Prevention</div><div class="clean-card-meta">Housing Navigators &amp; Service Providers</div><div class="clean-card-body">Monitor neighborhood rent trends, identify micro-neighborhoods with steep rent hikes, and proactively deploy outreach, education, and emergency financial assistance before families are displaced.</div></div>
-<div class="clean-card"><div class="clean-card-label">Use Case 02</div><div class="clean-card-title">Strategic Investment &amp; Preservation</div><div class="clean-card-meta">Program Officers &amp; Housing Developers</div><div class="clean-card-body">Overlay publicly-funded housing maps with real-time rental rates and neighborhood amenity data to instantly identify NOAH properties at highest risk of market-rate conversion.</div></div>
-<div class="clean-card"><div class="clean-card-label">Use Case 03</div><div class="clean-card-title">Data-Driven Policy Advocacy</div><div class="clean-card-meta">Advocates &amp; Civic Leaders</div><div class="clean-card-body">Generate localized dashboards showing rent trajectories vs. wage growth in specific legislative districts, bringing data-backed arguments to city council and state hearings.</div></div>
-</div>
-</div>
-<div class="slide-footer"><span class="footer-brand">The Open Rent Initiative</span><span class="footer-num">07</span></div>
-</section>
-
-<section class="slide" style="background:var(--cream-dark)" id="slide-9">
-<div class="slide-inner">
-<div class="section-label fi">08 &#8212; Platform Features</div>
+<div class="section-label fi">06 &#8212; Platform Features</div>
 <h2 class="section-title fi fi-d1">Planned <em>capabilities</em></h2>
 <div class="feature-table fi fi-d2">
 <div class="feature-col">
@@ -312,8 +270,11 @@ Your browser does not support the video tag.
 </div>
 </div>
 </div>
-<div class="slide-footer"><span class="footer-brand">The Open Rent Initiative</span><span class="footer-num">08</span></div>
+<div class="slide-footer"><span class="footer-brand">The Open Rent Initiative</span><span class="footer-num">06</span></div>
 </section>
+
+
+
 
 <script>
 var slides=document.querySelectorAll('.slide'),dots=document.querySelectorAll('.nav-dot');
