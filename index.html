@@ -106,6 +106,8 @@ body{font-family:var(--font-sans);background:var(--cream);color:var(--text-prima
 .case-study-inset{background:var(--cream);border-left:3px solid var(--charcoal);padding:28px 32px;margin-top:24px;max-width:560px}
 .case-study-inset .card-title{font-size:16px;margin-bottom:6px}
 .case-study-inset .card-body{font-size:13.5px}
+.video-wrap{margin-top:36px;max-width:900px;border-radius:3px;overflow:hidden;border:1px solid var(--border);background:#000}
+.video-wrap video{width:100%;display:block}
 </style>
 </head>
 <body>
@@ -113,12 +115,13 @@ body{font-family:var(--font-sans);background:var(--cream);color:var(--text-prima
 <button class="nav-dot active" data-slide="0"><span class="tooltip">Title</span></button>
 <button class="nav-dot" data-slide="1"><span class="tooltip">Challenge</span></button>
 <button class="nav-dot" data-slide="2"><span class="tooltip">Solution</span></button>
-<button class="nav-dot" data-slide="3"><span class="tooltip">Impact</span></button>
-<button class="nav-dot" data-slide="4"><span class="tooltip">Case Study</span></button>
-<button class="nav-dot" data-slide="5"><span class="tooltip">Bay Area</span></button>
-<button class="nav-dot" data-slide="6"><span class="tooltip">Roadmap</span></button>
-<button class="nav-dot" data-slide="7"><span class="tooltip">Use Cases</span></button>
-<button class="nav-dot" data-slide="8"><span class="tooltip">Platform</span></button>
+<button class="nav-dot" data-slide="3"><span class="tooltip">Demo</span></button>
+<button class="nav-dot" data-slide="4"><span class="tooltip">Impact</span></button>
+<button class="nav-dot" data-slide="5"><span class="tooltip">Case Study</span></button>
+<button class="nav-dot" data-slide="6"><span class="tooltip">Bay Area</span></button>
+<button class="nav-dot" data-slide="7"><span class="tooltip">Roadmap</span></button>
+<button class="nav-dot" data-slide="8"><span class="tooltip">Use Cases</span></button>
+<button class="nav-dot" data-slide="9"><span class="tooltip">Platform</span></button>
 </nav>
 
 <section class="slide slide-dark" id="slide-0">
@@ -155,7 +158,7 @@ body{font-family:var(--font-sans);background:var(--cream);color:var(--text-prima
 <div class="slide-inner">
 <div class="section-label fi">02 &#8212; The Solution</div>
 <h2 class="section-title fi fi-d1">How we&#8217;re addressing<br>the <em>challenge</em></h2>
-<p class="body-text fi fi-d2">Open Rent transforms fragmented rent data into accessible, actionable and open public infrastructure through three core capabilities.</p>
+<p class="body-text fi fi-d2">Open Rent transforms fragmented rent data into accessible, actionable public infrastructure through three core capabilities.</p>
 <div class="card-grid cols-3 fi fi-d3" style="max-width:1060px">
 <div class="card"><div class="card-num">01</div><div class="card-title">Data Aggregation</div><div class="card-body">Combines national, state, and local data from private, commercial, and government sources into a single inventory &#8212; subsidized units, NOAH, market-rate, and single-family rentals &#8212; layered with demographics, transit, and income data.</div></div>
 <div class="card"><div class="card-num">02</div><div class="card-title">Interactive Tools</div><div class="card-body">Open-source geospatial mapping with heatmaps, multi-layered views, and advanced filtering so non-technical users can visually track inventory and displacement risks.</div></div>
@@ -165,10 +168,25 @@ body{font-family:var(--font-sans);background:var(--cream);color:var(--text-prima
 <div class="slide-footer"><span class="footer-brand">The Open Rent Initiative</span><span class="footer-num">02</span></div>
 </section>
 
-<section class="slide" id="slide-3">
+<section class="slide" style="background:var(--cream-dark)" id="slide-3">
+<div class="slide-inner">
+<div class="section-label fi">Platform Demo</div>
+<h2 class="section-title fi fi-d1">Explore the <em>data</em></h2>
+<p class="body-text fi fi-d2">A walkthrough of the Open Rent platform, featuring our interactive map powered by robust, multi-source parcel data.</p>
+<div class="video-wrap fi fi-d3">
+<video controls preload="metadata" playsinline>
+<source src="demo-video.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+<div class="slide-footer"><span class="footer-brand">The Open Rent Initiative</span><span class="footer-num"></span></div>
+</section>
+
+<section class="slide" id="slide-4">
 <div class="slide-inner">
 <div class="section-label fi">03 &#8212; Scalable Impact</div>
-<h2 class="section-title fi fi-d1">Types of Impact Open Rent Could Enable</em></h2>
+<h2 class="section-title fi fi-d1">Types of Impact Open Rent<br>Could <em>Enable</em></h2>
 <p class="body-text fi fi-d2" style="margin-bottom:4px">Open Rent translates complex data into practical outcomes across three dimensions.</p>
 <div class="tag-row fi fi-d2"><span class="tag">Protection</span><span class="tag">Preservation</span><span class="tag">Production</span></div>
 <div class="clean-grid cols-3 fi fi-d3" style="max-width:1060px">
@@ -180,7 +198,7 @@ body{font-family:var(--font-sans);background:var(--cream);color:var(--text-prima
 <div class="slide-footer"><span class="footer-brand">The Open Rent Initiative</span><span class="footer-num">03</span></div>
 </section>
 
-<section class="slide" style="background:var(--cream-dark)" id="slide-4">
+<section class="slide" style="background:var(--cream-dark)" id="slide-5">
 <div class="slide-inner">
 <div class="section-label fi">04 &#8212; Proven Approach</div>
 <h2 class="section-title fi fi-d1">Understanding St. Paul&#8217;s<br><em>Rent Stabilization</em> Ordinance</h2>
@@ -204,7 +222,7 @@ body{font-family:var(--font-sans);background:var(--cream);color:var(--text-prima
 <div class="slide-footer"><span class="footer-brand">The Open Rent Initiative</span><span class="footer-num">04</span></div>
 </section>
 
-<section class="slide" id="slide-5">
+<section class="slide" id="slide-6">
 <div class="slide-inner">
 <div class="section-label fi">05 &#8212; Bay Area Strategy</div>
 <h2 class="section-title fi fi-d1">How we&#8217;re building<br>in the <em>Bay Area</em></h2>
@@ -218,7 +236,7 @@ body{font-family:var(--font-sans);background:var(--cream);color:var(--text-prima
 <div class="slide-footer"><span class="footer-brand">The Open Rent Initiative</span><span class="footer-num">05</span></div>
 </section>
 
-<section class="slide slide-dark" id="slide-6">
+<section class="slide slide-dark" id="slide-7">
 <div class="slide-inner">
 <div class="section-label fi">06 &#8212; Roadmap</div>
 <h2 class="section-title fi fi-d1">Three-phase <em>build</em></h2>
@@ -252,7 +270,7 @@ body{font-family:var(--font-sans);background:var(--cream);color:var(--text-prima
 <div class="slide-footer"><span class="footer-brand">The Open Rent Initiative</span><span class="footer-num">06</span></div>
 </section>
 
-<section class="slide" id="slide-7">
+<section class="slide" id="slide-8">
 <div class="slide-inner">
 <div class="section-label fi">07 &#8212; Who It Serves</div>
 <h2 class="section-title fi fi-d1"><em>Use</em> cases</h2>
@@ -265,7 +283,7 @@ body{font-family:var(--font-sans);background:var(--cream);color:var(--text-prima
 <div class="slide-footer"><span class="footer-brand">The Open Rent Initiative</span><span class="footer-num">07</span></div>
 </section>
 
-<section class="slide" style="background:var(--cream-dark)" id="slide-8">
+<section class="slide" style="background:var(--cream-dark)" id="slide-9">
 <div class="slide-inner">
 <div class="section-label fi">08 &#8212; Platform Features</div>
 <h2 class="section-title fi fi-d1">Planned <em>capabilities</em></h2>
