@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Open Rent Initiative — SF Bay Area Project Brief</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#F7F5F0;--cream-dark:#EDEBE5;--warm-white:#FDFCFA;--charcoal:#1A1A1A;--charcoal-light:#2D2D2D;--text-primary:#1A1A1A;--text-secondary:#4A4A4A;--text-muted:#8A8A8A;--text-light:#B0B0B0;--border:#E0DDD6;--accent-green:#2D6A4F;--font-serif:'Instrument Serif',Georgia,serif;--font-sans:'DM Sans',-apple-system,sans-serif;--font-mono:'JetBrains Mono','SF Mono',monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-snap-type:y mandatory;overflow-y:scroll;overflow-x:hidden}
+body{font-family:var(--font-sans);background:var(--cream);color:var(--text-primary);-webkit-font-smoothing:antialiased;font-size:16px;line-height:1.6}
+.slide{min-height:100vh;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;padding:80px 100px;position:relative;overflow:hidden}
+@media(max-width:1024px){.slide{padding:60px 48px}}
+@media(max-width:768px){.slide{padding:48px 24px}}
+.slide-inner{max-width:1100px;width:100%;position:relative;z-index:1}
+.nav{position:fixed;right:32px;top:50%;transform:translateY(-50%);z-index:100;display:flex;flex-direction:column;gap:12px}
+@media(max-width:768px){.nav{right:16px;gap:10px}}
+.nav-dot{width:8px;height:8px;border-radius:50%;background:var(--text-light);border:none;cursor:pointer;transition:all .3s ease;position:relative}
+.nav-dot:hover,.nav-dot.active{background:var(--charcoal);transform:scale(1.5)}
+.nav-dot .tooltip{position:absolute;right:20px;top:50%;transform:translateY(-50%);background:var(--charcoal);color:var(--warm-white);font-family:var(--font-mono);font-size:10px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:3px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s}
+.nav-dot:hover .tooltip{opacity:1}
+.section-label{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);margin-bottom:24px}
+.hero-title{font-family:var(--font-serif);font-size:clamp(48px,6vw,84px);line-height:1.02;font-weight:400;color:var(--text-primary);margin-bottom:28px;letter-spacing:-.02em}
+.hero-title em{font-style:italic}
+.section-title{font-family:var(--font-serif);font-size:clamp(36px,4vw,56px);line-height:1.1;font-weight:400;color:var(--text-primary);margin-bottom:20px;letter-spacing:-.01em}
+.section-title em{font-style:italic}
+.lead-text{font-size:clamp(17px,1.6vw,21px);color:var(--text-secondary);line-height:1.65;max-width:620px;font-weight:300}
+.body-text{font-size:15.5px;color:var(--text-secondary);line-height:1.72;max-width:600px}
+.sep{width:48px;height:1.5px;background:var(--charcoal);margin:28px 0}
+.card-grid{display:grid;gap:1px;margin-top:36px;background:var(--border);border:1px solid var(--border);border-radius:2px;overflow:hidden}
+.card-grid.cols-2{grid-template-columns:1fr 1fr}
+.card-grid.cols-3{grid-template-columns:1fr 1fr 1fr}
+@media(max-width:900px){.card-grid.cols-2,.card-grid.cols-3{grid-template-columns:1fr}}
+.card{background:var(--warm-white);padding:32px;transition:background .3s ease}
+.card:hover{background:var(--cream)}
+.card-num{font-family:var(--font-mono);font-size:11px;color:var(--text-light);letter-spacing:.08em;margin-bottom:14px}
+.card-title{font-family:var(--font-serif);font-size:22px;font-weight:400;color:var(--text-primary);margin-bottom:10px;line-height:1.2}
+.card-body{font-size:14px;color:var(--text-secondary);line-height:1.65}
+.clean-grid{display:grid;gap:24px;margin-top:36px}
+.clean-grid.cols-3{grid-template-columns:1fr 1fr 1fr}
+@media(max-width:900px){.clean-grid.cols-3{grid-template-columns:1fr}}
+.clean-card{border:1px solid var(--border);border-radius:2px;padding:32px;background:var(--warm-white);transition:all .3s ease}
+.clean-card:hover{border-color:var(--text-light);box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.clean-card-label{font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:14px}
+.clean-card-title{font-family:var(--font-serif);font-size:24px;font-weight:400;color:var(--text-primary);line-height:1.2;margin-bottom:8px}
+.clean-card-meta{font-size:13px;color:var(--accent-green);font-weight:500;margin-bottom:14px}
+.clean-card-body{font-size:14px;color:var(--text-secondary);line-height:1.65}
+.stat-row{display:flex;gap:56px;margin-top:36px;flex-wrap:wrap}
+.stat-value{font-family:var(--font-serif);font-size:clamp(40px,5vw,64px);color:var(--text-primary);line-height:1;letter-spacing:-.02em}
+.stat-label{font-size:13px;color:var(--text-muted);margin-top:8px;max-width:180px;line-height:1.45}
+.timeline{margin-top:36px}
+.timeline-item{display:grid;grid-template-columns:140px 1fr;gap:32px;padding:28px 0;border-top:1px solid var(--border);align-items:start}
+@media(max-width:768px){.timeline-item{grid-template-columns:1fr;gap:8px}}
+.timeline-phase{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);padding-top:4px}
+.timeline-date{font-family:var(--font-mono);font-size:12px;color:var(--accent-green);letter-spacing:.04em;margin-bottom:6px}
+.timeline-title{font-family:var(--font-serif);font-size:24px;font-weight:400;color:var(--text-primary);margin-bottom:8px;line-height:1.2}
+.timeline-desc{font-size:14.5px;color:var(--text-secondary);line-height:1.65;max-width:540px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+@media(max-width:900px){.two-col{grid-template-columns:1fr;gap:40px}}
+.feature-table{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:2px;overflow:hidden;margin-top:32px}
+@media(max-width:900px){.feature-table{grid-template-columns:1fr}}
+.feature-col{background:var(--warm-white);padding:28px 24px}
+.feature-col-title{font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid var(--border)}
+.feature-item{margin-bottom:16px}
+.feature-item-name{font-weight:600;font-size:13.5px;color:var(--text-primary);margin-bottom:2px}
+.feature-item-desc{font-size:12.5px;color:var(--text-muted);line-height:1.5}
+.slide-dark{background:var(--charcoal);color:var(--warm-white)}
+.slide-dark .section-label{color:rgba(255,255,255,.4)}
+.slide-dark .hero-title,.slide-dark .section-title{color:var(--warm-white)}
+.slide-dark .lead-text,.slide-dark .body-text{color:rgba(255,255,255,.7)}
+.slide-dark .sep{background:rgba(255,255,255,.3)}
+.slide-dark .nav-dot.active{background:var(--warm-white)}
+.slide-charcoal{background:var(--charcoal-light);color:var(--warm-white)}
+.slide-charcoal .section-label{color:rgba(255,255,255,.35)}
+.slide-charcoal .section-title{color:var(--warm-white)}
+.slide-charcoal .body-text,.slide-charcoal .lead-text{color:rgba(255,255,255,.65)}
+.slide-charcoal .card{background:rgba(255,255,255,.06);border:none}
+.slide-charcoal .card:hover{background:rgba(255,255,255,.1)}
+.slide-charcoal .card-title{color:var(--warm-white)}
+.slide-charcoal .card-body{color:rgba(255,255,255,.6)}
+.slide-charcoal .card-num{color:rgba(255,255,255,.3)}
+.slide-charcoal .card-grid{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.08)}
+.expertise-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;margin-top:36px;border-top:1px solid var(--border)}
+@media(max-width:900px){.expertise-row{grid-template-columns:1fr}}
+.expertise-item{padding:28px 28px 28px 0;border-bottom:1px solid var(--border)}
+.expertise-item:not(:nth-child(3n)){border-right:1px solid var(--border);padding-right:28px}
+.expertise-item:not(:nth-child(3n))+.expertise-item{padding-left:28px}
+@media(max-width:900px){.expertise-item{border-right:none!important;padding:24px 0!important}}
+.expertise-item-title{font-family:var(--font-serif);font-size:20px;font-weight:400;color:var(--text-primary);margin-bottom:8px;line-height:1.2}
+.expertise-item-desc{font-size:14px;color:var(--text-secondary);line-height:1.6}
+.tag-row{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+.tag{font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;padding:6px 14px;border:1px solid var(--border);border-radius:2px;color:var(--text-secondary);text-transform:uppercase}
+.slide-footer{position:absolute;bottom:28px;left:100px;right:100px;display:flex;justify-content:space-between;align-items:center}
+@media(max-width:1024px){.slide-footer{left:48px;right:48px}}
+@media(max-width:768px){.slide-footer{left:24px;right:24px}}
+.footer-brand{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-light)}
+.footer-num{font-family:var(--font-mono);font-size:10px;letter-spacing:.06em;color:var(--text-light)}
+.slide-dark .footer-brand,.slide-dark .footer-num,.slide-charcoal .footer-brand,.slide-charcoal .footer-num{color:rgba(255,255,255,.25)}
+.fi{opacity:0;transform:translateY(20px);transition:all .6s cubic-bezier(.25,.46,.45,.94)}
+.fi.visible{opacity:1;transform:translateY(0)}
+.fi-d1{transition-delay:.08s}
+.fi-d2{transition-delay:.18s}
+.fi-d3{transition-delay:.3s}
+.fi-d4{transition-delay:.42s}
+.case-study-inset{background:var(--cream);border-left:3px solid var(--charcoal);padding:28px 32px;margin-top:24px;max-width:560px}
+.case-study-inset .card-title{font-size:16px;margin-bottom:6px}
+.case-study-inset .card-body{font-size:13.5px}
+</style>
+</head>
+<body>
+<nav class="nav" id="nav">
+<button class="nav-dot active" data-slide="0"><span class="tooltip">Title</span></button>
+<button class="nav-dot" data-slide="1"><span class="tooltip">Challenge</span></button>
+<button class="nav-dot" data-slide="2"><span class="tooltip">Solution</span></button>
+<button class="nav-dot" data-slide="3"><span class="tooltip">Impact</span></button>
+<button class="nav-dot" data-slide="4"><span class="tooltip">Case Study</span></button>
+<button class="nav-dot" data-slide="5"><span class="tooltip">Bay Area</span></button>
+<button class="nav-dot" data-slide="6"><span class="tooltip">Roadmap</span></button>
+<button class="nav-dot" data-slide="7"><span class="tooltip">Use Cases</span></button>
+<button class="nav-dot" data-slide="8"><span class="tooltip">Platform</span></button>
+</nav>
+
+<section class="slide slide-dark" id="slide-0">
+<div class="slide-inner">
+<div class="section-label fi">The Open Rent Initiative</div>
+<h1 class="hero-title fi fi-d1">Building Open Rent<br>for the San Francisco<br><em>Bay Area</em></h1>
+<div class="sep fi fi-d2"></div>
+<p class="lead-text fi fi-d3">Open, trusted rent data that powers economic opportunity. A new public data platform equipping policymakers, researchers, funders, and advocates with actionable tools for rent stability.</p>
+<div class="tag-row fi fi-d4">
+<span class="tag" style="border-color:rgba(255,255,255,.15);color:rgba(255,255,255,.5)">Project Brief</span>
+<span class="tag" style="border-color:rgba(255,255,255,.15);color:rgba(255,255,255,.5)">SF Bay Area</span>
+<span class="tag" style="border-color:rgba(255,255,255,.15);color:rgba(255,255,255,.5)">2025 &#8211; 2027</span>
+</div>
+</div>
+<div class="slide-footer"><span class="footer-brand">The Open Rent Initiative</span><span class="footer-num"></span></div>
+</section>
+
+<section class="slide" id="slide-1">
+<div class="slide-inner">
+<div class="section-label fi">01 &#8212; The Problem</div>
+<h2 class="section-title fi fi-d1">The challenge<br>with <em>rent data</em></h2>
+<p class="body-text fi fi-d2">Structural gaps in rent data prevent accurate assessment of Bay Area housing challenges. Municipal records are unstandardized, federal surveys miss real-time changes, and commercial datasets sit behind prohibitive paywalls.</p>
+<div class="card-grid cols-2 fi fi-d3" style="max-width:880px">
+<div class="card"><div class="card-num">01</div><div class="card-title">Undercounting Affordable Stock</div><div class="card-body">Single-family rentals and Naturally Occurring Affordable Housing (NOAH) are often invisible, hindering the state&#8217;s ability to identify preservation risks.</div></div>
+<div class="card"><div class="card-num">02</div><div class="card-title">Reactive Posture</div><div class="card-body">Without real-time tracking of rent hikes, vacancy rates, or neighborhood trends, stakeholders react only after displacement occurs.</div></div>
+<div class="card"><div class="card-num">03</div><div class="card-title">Information Asymmetry</div><div class="card-body">Well-resourced property owners access sophisticated analytics, while renters, advocates, and policymakers operate with poor data.</div></div>
+<div class="card"><div class="card-num">04</div><div class="card-title">Operational Friction</div><div class="card-body">Manually aggregating disparate sources is high-cost, and results lack the granularity to filter for transit corridors or school districts.</div></div>
+</div>
+</div>
+<div class="slide-footer"><span class="footer-brand">The Open Rent Initiative</span><span class="footer-num">01</span></div>
+</section>
+
+<section class="slide slide-charcoal" id="slide-2">
+<div class="slide-inner">
+<div class="section-label fi">02 &#8212; The Solution</div>
+<h2 class="section-title fi fi-d1">How we&#8217;re addressing<br>the <em>challenge</em></h2>
+<p class="body-text fi fi-d2">Open Rent transforms fragmented rent data into accessible, actionable and open public infrastructure through three core capabilities.</p>
+<div class="card-grid cols-3 fi fi-d3" style="max-width:1060px">
+<div class="card"><div class="card-num">01</div><div class="card-title">Data Aggregation</div><div class="card-body">Combines national, state, and local data from private, commercial, and government sources into a single inventory &#8212; subsidized units, NOAH, market-rate, and single-family rentals &#8212; layered with demographics, transit, and income data.</div></div>
+<div class="card"><div class="card-num">02</div><div class="card-title">Interactive Tools</div><div class="card-body">Open-source geospatial mapping with heatmaps, multi-layered views, and advanced filtering so non-technical users can visually track inventory and displacement risks.</div></div>
+<div class="card"><div class="card-num">03</div><div class="card-title">Market Insights</div><div class="card-body">Tools for monitoring rental inventory, tracking neighborhood-level rent stability, comparing across geographies, and measuring affordability and economic health.</div></div>
+</div>
+</div>
+<div class="slide-footer"><span class="footer-brand">The Open Rent Initiative</span><span class="footer-num">02</span></div>
+</section>
+
+<section class="slide" id="slide-3">
+<div class="slide-inner">
+<div class="section-label fi">03 &#8212; Scalable Impact</div>
+<h2 class="section-title fi fi-d1">Types of Impact Open Rent Could Enable</em></h2>
+<p class="body-text fi fi-d2" style="margin-bottom:4px">Open Rent translates complex data into practical outcomes across three dimensions.</p>
+<div class="tag-row fi fi-d2"><span class="tag">Protection</span><span class="tag">Preservation</span><span class="tag">Production</span></div>
+<div class="clean-grid cols-3 fi fi-d3" style="max-width:1060px">
+<div class="clean-card"><div class="clean-card-label">Protection</div><div class="clean-card-title">Proactive Eviction Prevention</div><div class="clean-card-body">Enabling service providers with tools to monitor micro-neighborhoods for sudden rent instability to inform deployment of emergency assistance and tenant education before families face displacement. Combined with census and demographic data, users can estimate eviction risk and identify rent debt spikes.</div></div>
+<div class="clean-card"><div class="clean-card-label">Preservation</div><div class="clean-card-title">Strategic Investment &amp; Preservation</div><div class="clean-card-body">Enabling philanthropic funders and affordable housing developers overlay property data with real-time market rents to identify NOAH properties at highest risk of market-rate conversion, guiding strategic capital investments.</div></div>
+<div class="clean-card"><div class="clean-card-label">Production</div><div class="clean-card-title">Data-Driven Policy Advocacy</div><div class="clean-card-body">Enabling policymakers and advocates with tools to generate localized dashboards comparing rent trajectories to local wage growth, bringing concrete, data-backed arguments to legislative hearings to inform policy debates.</div></div>
+</div>
+</div>
+<div class="slide-footer"><span class="footer-brand">The Open Rent Initiative</span><span class="footer-num">03</span></div>
+</section>
+
+<section class="slide" style="background:var(--cream-dark)" id="slide-4">
+<div class="slide-inner">
+<div class="section-label fi">04 &#8212; Proven Approach</div>
+<h2 class="section-title fi fi-d1">Understanding St. Paul&#8217;s<br><em>Rent Stabilization</em> Ordinance</h2>
+<p class="body-text fi fi-d2">No single dataset tracked both building age and affordability. Open Rent merged disparate sources into a unified view of St. Paul&#8217;s rental stock.</p>
+<div class="two-col fi fi-d3" style="margin-top:36px;max-width:960px">
+<div>
+<div class="section-label" style="margin-bottom:16px">Technical Approach</div>
+<div class="case-study-inset" style="margin-top:0"><div class="card-title">Data Integration</div><div class="card-body">Geospatial and fuzzy matching linked Ramsey County Parcels, Fire CO records, and HousingLink data, correcting conflicting unit counts and construction dates.</div></div>
+<div class="case-study-inset" style="margin-top:12px"><div class="card-title">Predictive Modeling</div><div class="card-body">Random Forest model filled data gaps, predicting rental status with 98% accuracy based on land use and dwelling type.</div></div>
+</div>
+<div>
+<div class="section-label" style="margin-bottom:16px">Key Results</div>
+<div class="stat-row" style="flex-direction:column;gap:32px;margin-top:0">
+<div><div class="stat-value">~63K</div><div class="stat-label">Rental units identified out of ~135,600 total residential units</div></div>
+<div><div class="stat-value">~24K</div><div class="stat-label">Rentals (38%) likely qualifying for exemptions</div></div>
+<div><div class="stat-value">~2K</div><div class="stat-label">Units ultimately subject to rent stabilization</div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="slide-footer"><span class="footer-brand">The Open Rent Initiative</span><span class="footer-num">04</span></div>
+</section>
+
+<section class="slide" id="slide-5">
+<div class="slide-inner">
+<div class="section-label fi">05 &#8212; Bay Area Strategy</div>
+<h2 class="section-title fi fi-d1">How we&#8217;re building<br>in the <em>Bay Area</em></h2>
+<p class="body-text fi fi-d2">Strategically leveraging national infrastructure (Dwellsy, Zillow, ACS), state data (affordably financed properties), and municipal records (fire occupancy, parcels) with expertise at three levels.</p>
+<div class="expertise-row fi fi-d3" style="max-width:1000px">
+<div class="expertise-item"><div class="expertise-item-title">Cross-Regional Insights</div><div class="expertise-item-desc">Sharing learnings on innovative data-sourcing and predictive modeling from Minnesota &#8212; supported by the San Francisco Foundation and Chan Zuckerberg Initiative.</div></div>
+<div class="expertise-item" style="padding-left:28px"><div class="expertise-item-title">Local Partnership</div><div class="expertise-item-desc">Close partnership with Partnership for the Bay&#8217;s Future and local design partners including City of Mountain View and Bay Area Metro.</div></div>
+<div class="expertise-item" style="padding-left:28px"><div class="expertise-item-title">Innovation Ecosystem</div><div class="expertise-item-desc">Complementing and collaborating with Urban Displacement Project, CHP Preservation Clearinghouse, and Anti-Eviction Mapping Project.</div></div>
+</div>
+</div>
+<div class="slide-footer"><span class="footer-brand">The Open Rent Initiative</span><span class="footer-num">05</span></div>
+</section>
+
+<section class="slide slide-dark" id="slide-6">
+<div class="slide-inner">
+<div class="section-label fi">06 &#8212; Roadmap</div>
+<h2 class="section-title fi fi-d1">Three-phase <em>build</em></h2>
+<div class="timeline fi fi-d2" style="max-width:720px">
+<div class="timeline-item" style="border-top-color:rgba(255,255,255,.1)">
+<div class="timeline-phase" style="color:rgba(255,255,255,.3)">Phase 1</div>
+<div>
+<div class="timeline-date" style="color:rgba(255,255,255,.4)">Oct 2025 &#8212; Jun 2026</div>
+<div class="timeline-title" style="color:var(--warm-white)">Foundation &amp; Pilot Launch</div>
+<div class="timeline-desc" style="color:rgba(255,255,255,.6)">Design and build data infrastructure with metro-wide foundational datasets (parcel, listings). Integrate deep-dive data from Santa Clara County. Launch the Bay Area pilot with core user features.</div>
+</div>
+</div>
+<div class="timeline-item" style="border-top-color:rgba(255,255,255,.1)">
+<div class="timeline-phase" style="color:rgba(255,255,255,.3)">Phase 2</div>
+<div>
+<div class="timeline-date" style="color:rgba(255,255,255,.4)">Summer 2026 &#8212; Winter 2026/27</div>
+<div class="timeline-title" style="color:var(--warm-white)">Expansion &amp; Deepening</div>
+<div class="timeline-desc" style="color:rgba(255,255,255,.6)">Broaden and deepen data pipelines to cover the entire Bay Area. Expand user features to tackle more use cases and support broader user groups.</div>
+</div>
+</div>
+<div class="timeline-item" style="border-top-color:rgba(255,255,255,.1)">
+<div class="timeline-phase" style="color:rgba(255,255,255,.3)">Phase 3</div>
+<div>
+<div class="timeline-date" style="color:rgba(255,255,255,.4)">2027 and Beyond</div>
+<div class="timeline-title" style="color:var(--warm-white)">Scale &amp; Sustain</div>
+<div class="timeline-desc" style="color:rgba(255,255,255,.6)">Continue expanding datasets and building additional user features for long-term impact and sustainability.</div>
+</div>
+</div>
+</div>
+</div>
+<div class="slide-footer"><span class="footer-brand">The Open Rent Initiative</span><span class="footer-num">06</span></div>
+</section>
+
+<section class="slide" id="slide-7">
+<div class="slide-inner">
+<div class="section-label fi">07 &#8212; Who It Serves</div>
+<h2 class="section-title fi fi-d1"><em>Use</em> cases</h2>
+<div class="clean-grid cols-3 fi fi-d2" style="max-width:1060px">
+<div class="clean-card"><div class="clean-card-label">Use Case 01</div><div class="clean-card-title">Proactive Eviction Prevention</div><div class="clean-card-meta">Housing Navigators &amp; Service Providers</div><div class="clean-card-body">Monitor neighborhood rent trends, identify micro-neighborhoods with steep rent hikes, and proactively deploy outreach, education, and emergency financial assistance before families are displaced.</div></div>
+<div class="clean-card"><div class="clean-card-label">Use Case 02</div><div class="clean-card-title">Strategic Investment &amp; Preservation</div><div class="clean-card-meta">Program Officers &amp; Housing Developers</div><div class="clean-card-body">Overlay publicly-funded housing maps with real-time rental rates and neighborhood amenity data to instantly identify NOAH properties at highest risk of market-rate conversion.</div></div>
+<div class="clean-card"><div class="clean-card-label">Use Case 03</div><div class="clean-card-title">Data-Driven Policy Advocacy</div><div class="clean-card-meta">Advocates &amp; Civic Leaders</div><div class="clean-card-body">Generate localized dashboards showing rent trajectories vs. wage growth in specific legislative districts, bringing data-backed arguments to city council and state hearings.</div></div>
+</div>
+</div>
+<div class="slide-footer"><span class="footer-brand">The Open Rent Initiative</span><span class="footer-num">07</span></div>
+</section>
+
+<section class="slide" style="background:var(--cream-dark)" id="slide-8">
+<div class="slide-inner">
+<div class="section-label fi">08 &#8212; Platform Features</div>
+<h2 class="section-title fi fi-d1">Planned <em>capabilities</em></h2>
+<div class="feature-table fi fi-d2">
+<div class="feature-col">
+<div class="feature-col-title">Data &amp; Infrastructure</div>
+<div class="feature-item"><div class="feature-item-name">Unit Inventory</div><div class="feature-item-desc">Aggregates subsidized, NOAH, and market-rate data</div></div>
+<div class="feature-item"><div class="feature-item-name">Building / Parcel Metrics</div><div class="feature-item-desc">Historical and current rent, vacancy, and unit specs</div></div>
+<div class="feature-item"><div class="feature-item-name">Contextual Overlays</div><div class="feature-item-desc">Demographics, transit, and school data layers</div></div>
+<div class="feature-item"><div class="feature-item-name">Predictive Modeling</div><div class="feature-item-desc">Price and vacancy estimation infrastructure</div></div>
+</div>
+<div class="feature-col">
+<div class="feature-col-title">Interactive Tools</div>
+<div class="feature-item"><div class="feature-item-name">Geospatial UI</div><div class="feature-item-desc">Interactive maps with custom polygon selection</div></div>
+<div class="feature-item"><div class="feature-item-name">Comparative Views</div><div class="feature-item-desc">Multi-source, cross-geographic visualization</div></div>
+<div class="feature-item"><div class="feature-item-name">Dynamic Heatmaps</div><div class="feature-item-desc">Inventory, rent levels, and displacement risk</div></div>
+<div class="feature-item"><div class="feature-item-name">Open Access</div><div class="feature-item-desc">API and data downloads via open-source licensing</div></div>
+</div>
+<div class="feature-col">
+<div class="feature-col-title">Market Insights</div>
+<div class="feature-item"><div class="feature-item-name">Isochrone Filtering</div><div class="feature-item-desc">Inventory analysis by transit travel times</div></div>
+<div class="feature-item"><div class="feature-item-name">Stability Tracking</div><div class="feature-item-desc">Neighborhood-level price fluctuation monitoring</div></div>
+<div class="feature-item"><div class="feature-item-name">Policy Benchmarking</div><div class="feature-item-desc">Market vs. subsidized vs. AMI thresholds</div></div>
+<div class="feature-item"><div class="feature-item-name">Impact Simulation</div><div class="feature-item-desc">Projected effects of policy changes (e.g., rent caps)</div></div>
+<div class="feature-item"><div class="feature-item-name">Risk Scoring</div><div class="feature-item-desc">Gentrification pressure and expiring subsidies</div></div>
+</div>
+</div>
+</div>
+<div class="slide-footer"><span class="footer-brand">The Open Rent Initiative</span><span class="footer-num">08</span></div>
+</section>
+
+<script>
+var slides=document.querySelectorAll('.slide'),dots=document.querySelectorAll('.nav-dot');
+new IntersectionObserver(function(e){e.forEach(function(entry){if(entry.isIntersecting){var i=Array.from(slides).indexOf(entry.target);dots.forEach(function(d){d.classList.remove('active')});if(dots[i])dots[i].classList.add('active')}})},{threshold:.5}).observe&&slides.forEach(function(s){new IntersectionObserver(function(e){e.forEach(function(entry){if(entry.isIntersecting){var i=Array.from(slides).indexOf(entry.target);dots.forEach(function(d){d.classList.remove('active')});if(dots[i])dots[i].classList.add('active')}})},{threshold:.5}).observe(s)});
+dots.forEach(function(d){d.addEventListener('click',function(){var el=document.getElementById('slide-'+d.getAttribute('data-slide'));if(el)el.scrollIntoView({behavior:'smooth'})})});
+var fio=new IntersectionObserver(function(e){e.forEach(function(entry){if(entry.isIntersecting)entry.target.querySelectorAll('.fi').forEach(function(el){el.classList.add('visible')})})},{threshold:.15});
+slides.forEach(function(s){fio.observe(s)});
+document.getElementById('slide-0').querySelectorAll('.fi').forEach(function(el){el.classList.add('visible')});
+</script>
+</body>
+</html>
