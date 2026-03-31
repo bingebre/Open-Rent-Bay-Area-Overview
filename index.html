@@ -3,286 +3,1322 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Open Rent Initiative — SF Bay Area Project Brief</title>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<title>The Open Rent Initiative</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{--cream:#F7F5F0;--cream-dark:#EDEBE5;--warm-white:#FDFCFA;--charcoal:#1A1A1A;--charcoal-light:#2D2D2D;--text-primary:#1A1A1A;--text-secondary:#4A4A4A;--text-muted:#8A8A8A;--text-light:#B0B0B0;--border:#E0DDD6;--accent-green:#2D6A4F;--font-serif:'Instrument Serif',Georgia,serif;--font-sans:'DM Sans',-apple-system,sans-serif;--font-mono:'JetBrains Mono','SF Mono',monospace}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-snap-type:y mandatory;overflow-y:scroll;overflow-x:hidden}
-body{font-family:var(--font-sans);background:var(--cream);color:var(--text-primary);-webkit-font-smoothing:antialiased;font-size:16px;line-height:1.6}
-.slide{min-height:100vh;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;padding:80px 100px;position:relative;overflow:hidden}
-@media(max-width:1024px){.slide{padding:60px 48px}}
-@media(max-width:768px){.slide{padding:48px 24px}}
-.slide-inner{max-width:1100px;width:100%;position:relative;z-index:1}
-.nav{position:fixed;right:32px;top:50%;transform:translateY(-50%);z-index:100;display:flex;flex-direction:column;gap:12px}
-@media(max-width:768px){.nav{right:16px;gap:10px}}
-.nav-dot{width:8px;height:8px;border-radius:50%;background:var(--text-light);border:none;cursor:pointer;transition:all .3s ease;position:relative}
-.nav-dot:hover,.nav-dot.active{background:var(--charcoal);transform:scale(1.5)}
-.nav-dot .tooltip{position:absolute;right:20px;top:50%;transform:translateY(-50%);background:var(--charcoal);color:var(--warm-white);font-family:var(--font-mono);font-size:10px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:3px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s}
-.nav-dot:hover .tooltip{opacity:1}
-.section-label{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);margin-bottom:24px}
-.hero-title{font-family:var(--font-serif);font-size:clamp(48px,6vw,84px);line-height:1.02;font-weight:400;color:var(--text-primary);margin-bottom:28px;letter-spacing:-.02em}
-.hero-title em{font-style:italic}
-.section-title{font-family:var(--font-serif);font-size:clamp(36px,4vw,56px);line-height:1.1;font-weight:400;color:var(--text-primary);margin-bottom:20px;letter-spacing:-.01em}
-.section-title em{font-style:italic}
-.lead-text{font-size:clamp(17px,1.6vw,21px);color:var(--text-secondary);line-height:1.65;max-width:620px;font-weight:300}
-.body-text{font-size:15.5px;color:var(--text-secondary);line-height:1.72;max-width:600px}
-.sep{width:48px;height:1.5px;background:var(--charcoal);margin:28px 0}
-.card-grid{display:grid;gap:1px;margin-top:36px;background:var(--border);border:1px solid var(--border);border-radius:2px;overflow:hidden}
-.card-grid.cols-2{grid-template-columns:1fr 1fr}
-.card-grid.cols-3{grid-template-columns:1fr 1fr 1fr}
-@media(max-width:900px){.card-grid.cols-2,.card-grid.cols-3{grid-template-columns:1fr}}
-.card{background:var(--warm-white);padding:32px;transition:background .3s ease}
-.card:hover{background:var(--cream)}
-.card-num{font-family:var(--font-mono);font-size:11px;color:var(--text-light);letter-spacing:.08em;margin-bottom:14px}
-.card-title{font-family:var(--font-serif);font-size:22px;font-weight:400;color:var(--text-primary);margin-bottom:10px;line-height:1.2}
-.card-body{font-size:14px;color:var(--text-secondary);line-height:1.65}
-.clean-grid{display:grid;gap:24px;margin-top:36px}
-.clean-grid.cols-3{grid-template-columns:1fr 1fr 1fr}
-@media(max-width:900px){.clean-grid.cols-3{grid-template-columns:1fr}}
-.clean-card{border:1px solid var(--border);border-radius:2px;padding:32px;background:var(--warm-white);transition:all .3s ease}
-.clean-card:hover{border-color:var(--text-light);box-shadow:0 2px 12px rgba(0,0,0,.04)}
-.clean-card-label{font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:14px}
-.clean-card-title{font-family:var(--font-serif);font-size:24px;font-weight:400;color:var(--text-primary);line-height:1.2;margin-bottom:8px}
-.clean-card-meta{font-size:13px;color:var(--accent-green);font-weight:500;margin-bottom:14px}
-.clean-card-body{font-size:14px;color:var(--text-secondary);line-height:1.65}
-.stat-row{display:flex;gap:56px;margin-top:36px;flex-wrap:wrap}
-.stat-value{font-family:var(--font-serif);font-size:clamp(40px,5vw,64px);color:var(--text-primary);line-height:1;letter-spacing:-.02em}
-.stat-label{font-size:13px;color:var(--text-muted);margin-top:8px;max-width:180px;line-height:1.45}
-.timeline{margin-top:36px}
-.timeline-item{display:grid;grid-template-columns:140px 1fr;gap:32px;padding:28px 0;border-top:1px solid var(--border);align-items:start}
-@media(max-width:768px){.timeline-item{grid-template-columns:1fr;gap:8px}}
-.timeline-phase{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);padding-top:4px}
-.timeline-date{font-family:var(--font-mono);font-size:12px;color:var(--accent-green);letter-spacing:.04em;margin-bottom:6px}
-.timeline-title{font-family:var(--font-serif);font-size:24px;font-weight:400;color:var(--text-primary);margin-bottom:8px;line-height:1.2}
-.timeline-desc{font-size:14.5px;color:var(--text-secondary);line-height:1.65;max-width:540px}
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
-@media(max-width:900px){.two-col{grid-template-columns:1fr;gap:40px}}
-.feature-table{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:2px;overflow:hidden;margin-top:32px}
-@media(max-width:900px){.feature-table{grid-template-columns:1fr}}
-.feature-col{background:var(--warm-white);padding:28px 24px}
-.feature-col-title{font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid var(--border)}
-.feature-item{margin-bottom:16px}
-.feature-item-name{font-weight:600;font-size:13.5px;color:var(--text-primary);margin-bottom:2px}
-.feature-item-desc{font-size:12.5px;color:var(--text-muted);line-height:1.5}
-.slide-dark{background:var(--charcoal);color:var(--warm-white)}
-.slide-dark .section-label{color:rgba(255,255,255,.4)}
-.slide-dark .hero-title,.slide-dark .section-title{color:var(--warm-white)}
-.slide-dark .lead-text,.slide-dark .body-text{color:rgba(255,255,255,.7)}
-.slide-dark .sep{background:rgba(255,255,255,.3)}
-.slide-dark .nav-dot.active{background:var(--warm-white)}
-.slide-charcoal{background:var(--charcoal-light);color:var(--warm-white)}
-.slide-charcoal .section-label{color:rgba(255,255,255,.35)}
-.slide-charcoal .section-title{color:var(--warm-white)}
-.slide-charcoal .body-text,.slide-charcoal .lead-text{color:rgba(255,255,255,.65)}
-.slide-charcoal .card{background:rgba(255,255,255,.06);border:none}
-.slide-charcoal .card:hover{background:rgba(255,255,255,.1)}
-.slide-charcoal .card-title{color:var(--warm-white)}
-.slide-charcoal .card-body{color:rgba(255,255,255,.6)}
-.slide-charcoal .card-num{color:rgba(255,255,255,.3)}
-.slide-charcoal .card-grid{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.08)}
-.expertise-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;margin-top:36px;border-top:1px solid var(--border)}
-@media(max-width:900px){.expertise-row{grid-template-columns:1fr}}
-.expertise-item{padding:28px 28px 28px 0;border-bottom:1px solid var(--border)}
-.expertise-item:not(:nth-child(3n)){border-right:1px solid var(--border);padding-right:28px}
-.expertise-item:not(:nth-child(3n))+.expertise-item{padding-left:28px}
-@media(max-width:900px){.expertise-item{border-right:none!important;padding:24px 0!important}}
-.expertise-item-title{font-family:var(--font-serif);font-size:20px;font-weight:400;color:var(--text-primary);margin-bottom:8px;line-height:1.2}
-.expertise-item-desc{font-size:14px;color:var(--text-secondary);line-height:1.6}
-.tag-row{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
-.tag{font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;padding:6px 14px;border:1px solid var(--border);border-radius:2px;color:var(--text-secondary);text-transform:uppercase}
-.slide-footer{position:absolute;bottom:28px;left:100px;right:100px;display:flex;justify-content:space-between;align-items:center}
-@media(max-width:1024px){.slide-footer{left:48px;right:48px}}
-@media(max-width:768px){.slide-footer{left:24px;right:24px}}
-.footer-brand{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-light)}
-.footer-num{font-family:var(--font-mono);font-size:10px;letter-spacing:.06em;color:var(--text-light)}
-.slide-dark .footer-brand,.slide-dark .footer-num,.slide-charcoal .footer-brand,.slide-charcoal .footer-num{color:rgba(255,255,255,.25)}
-.fi{opacity:0;transform:translateY(20px);transition:all .6s cubic-bezier(.25,.46,.45,.94)}
-.fi.visible{opacity:1;transform:translateY(0)}
-.fi-d1{transition-delay:.08s}
-.fi-d2{transition-delay:.18s}
-.fi-d3{transition-delay:.3s}
-.fi-d4{transition-delay:.42s}
-.case-study-inset{background:var(--cream);border-left:3px solid var(--charcoal);padding:28px 32px;margin-top:24px;max-width:560px}
-.case-study-inset .card-title{font-size:16px;margin-bottom:6px}
-.case-study-inset .card-body{font-size:13.5px}
-.video-wrap{margin-top:36px;max-width:900px;border-radius:3px;overflow:hidden;border:1px solid var(--border);background:#000}
-.video-wrap video{width:100%;display:block}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --cream: #F5F0E8;
+  --cream-light: #FAF7F2;
+  --warm-white: #FEFCF9;
+  --sand: #E8DFD0;
+  --clay: #C4A882;
+  --terracotta: #B85042;
+  --deep-brown: #3D2B1F;
+  --charcoal: #2C2C2C;
+  --olive: #6B7B3A;
+  --olive-light: #A3B86C;
+  --gold: #C6973F;
+  --gold-light: #E8D5A3;
+  --slate: #5A6B7A;
+  --red-accent: #C1392B;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Source Sans 3', 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--charcoal);
+  background: var(--cream);
+  overflow-x: hidden;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── SCROLL ANIMATIONS ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+.reveal-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+.reveal-scale.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* stagger children */
+.stagger > * { transition-delay: calc(var(--i, 0) * 0.12s); }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 1rem 2.5rem;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(245, 240, 232, 0.0);
+  backdrop-filter: blur(0px);
+  transition: background 0.4s, backdrop-filter 0.4s, box-shadow 0.4s;
+}
+nav.scrolled {
+  background: rgba(245, 240, 232, 0.92);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+}
+nav .logo {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--deep-brown);
+  letter-spacing: -0.02em;
+}
+nav .nav-links { display: flex; gap: 2rem; }
+nav .nav-links a {
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--charcoal);
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+nav .nav-links a:hover { opacity: 1; }
+
+/* ── HERO ── */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  background: var(--deep-brown);
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(182, 135, 80, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 30%, rgba(107, 123, 58, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(184, 80, 66, 0.08) 0%, transparent 50%);
+  transform: translateZ(0);
+}
+/* Parallax grid pattern */
+.hero-grid {
+  position: absolute; inset: -50px;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  transform: perspective(500px) rotateX(2deg);
+  animation: gridDrift 20s linear infinite;
+}
+@keyframes gridDrift {
+  0% { background-position: 0 0; }
+  100% { background-position: 60px 60px; }
+}
+.hero-content {
+  position: relative; z-index: 2;
+  max-width: 900px;
+  padding: 2rem;
+}
+.hero-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--olive-light);
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: fadeUp 1s 0.3s ease forwards;
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 900;
+  color: var(--cream);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: fadeUp 1s 0.5s ease forwards;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--gold);
+}
+.hero-sub {
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-weight: 300;
+  color: rgba(245, 240, 232, 0.7);
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  opacity: 0;
+  animation: fadeUp 1s 0.7s ease forwards;
+}
+.hero-scroll-cue {
+  opacity: 0;
+  animation: fadeUp 1s 1.2s ease forwards;
+}
+.hero-scroll-cue span {
+  display: block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: rgba(245,240,232,0.4);
+  margin-bottom: 0.8rem;
+}
+.scroll-line {
+  width: 1px; height: 50px;
+  margin: 0 auto;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(0.6); }
+  50% { opacity: 1; transform: scaleY(1); }
+}
+
+/* ── SECTION SHARED ── */
+section { position: relative; }
+.section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+}
+.section-narrow {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+}
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--terracotta);
+  margin-bottom: 1rem;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--deep-brown);
+  margin-bottom: 1.5rem;
+}
+.section-body {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #4A4A4A;
+}
+.section-body + .section-body { margin-top: 1.2rem; }
+
+/* ── PROBLEM SECTION ── */
+.problem-section {
+  background: var(--cream-light);
+  border-bottom: 1px solid var(--sand);
+}
+.problem-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+  margin-top: 3rem;
+}
+.issue-card {
+  background: var(--warm-white);
+  border: 1px solid var(--sand);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.issue-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(61, 43, 31, 0.08);
+}
+.issue-icon {
+  width: 48px; height: 48px;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1.2rem;
+  font-size: 1.4rem;
+}
+.issue-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  color: var(--deep-brown);
+}
+.issue-card p {
+  font-size: 0.95rem;
+  color: #5A5A5A;
+  line-height: 1.6;
+}
+
+/* ── PARALLAX DIVIDER ── */
+.parallax-divider {
+  height: 45vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.parallax-bg {
+  position: absolute;
+  inset: -80px;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+.parallax-divider .overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(61, 43, 31, 0.88), rgba(90, 107, 122, 0.75));
+}
+.parallax-stat {
+  position: relative; z-index: 2;
+  text-align: center;
+  color: var(--cream);
+}
+.parallax-stat .big-num {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 10vw, 7rem);
+  font-weight: 900;
+  line-height: 1;
+  color: var(--gold);
+}
+.parallax-stat .stat-label {
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-top: 0.5rem;
+  opacity: 0.8;
+  max-width: 500px;
+}
+
+/* ── DATA DISPARITY SECTION ── */
+.disparity-section { background: var(--warm-white); }
+.disparity-visual {
+  margin-top: 3rem;
+  background: var(--cream);
+  border: 1px solid var(--sand);
+  border-radius: 16px;
+  overflow: hidden;
+}
+.disparity-header {
+  padding: 1.5rem 2rem;
+  background: var(--deep-brown);
+  color: var(--cream);
+}
+.disparity-header h4 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.disparity-header p {
+  font-size: 0.85rem;
+  opacity: 0.6;
+  margin-top: 0.3rem;
+}
+.legend-row {
+  display: flex; gap: 1.5rem; flex-wrap: wrap;
+  padding: 1rem 2rem;
+  background: rgba(61, 43, 31, 0.04);
+  border-bottom: 1px solid var(--sand);
+}
+.legend-item {
+  display: flex; align-items: center; gap: 0.4rem;
+  font-size: 0.78rem; font-weight: 600;
+}
+.legend-dot {
+  width: 12px; height: 12px; border-radius: 3px;
+}
+.disparity-bars { padding: 1.5rem 2rem 2rem; }
+.bar-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+.bar-label {
+  width: 160px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--deep-brown);
+  flex-shrink: 0;
+}
+.bar-track {
+  flex: 1;
+  display: flex;
+  gap: 2px;
+  height: 28px;
+  align-items: center;
+}
+.bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+}
+.bar-fill.acs { background: var(--olive); }
+.bar-fill.zori { background: var(--terracotta); }
+.bar-value {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--charcoal);
+  margin-left: 8px;
+  white-space: nowrap;
+}
+.disparity-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  margin-left: 6px;
+}
+
+/* ── SOLUTION SECTION ── */
+.solution-section {
+  background: var(--deep-brown);
+  color: var(--cream);
+  position: relative;
+  overflow: hidden;
+}
+.solution-section::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 10% 90%, rgba(107, 123, 58, 0.12), transparent 50%),
+    radial-gradient(ellipse at 90% 10%, rgba(198, 151, 63, 0.1), transparent 50%);
+}
+.solution-section .section-inner { position: relative; z-index: 1; }
+.solution-section .section-label { color: var(--gold); }
+.solution-section .section-title { color: var(--cream); }
+.solution-section .section-body { color: rgba(245, 240, 232, 0.75); }
+
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+.pillar {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  transition: background 0.3s, border-color 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.pillar:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.15);
+}
+.pillar-num {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: var(--gold);
+  opacity: 0.25;
+  position: absolute;
+  top: 1rem; right: 1.5rem;
+  line-height: 1;
+}
+.pillar h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--cream);
+}
+.pillar p {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: rgba(245, 240, 232, 0.65);
+}
+
+/* ── FEATURES DEEP DIVE (sticky scroll) ── */
+.features-section { background: var(--cream-light); }
+.sticky-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+.sticky-left {
+  position: sticky;
+  top: 120px;
+}
+.feature-steps {
+  padding: 2rem 0 6rem;
+}
+.feature-step {
+  padding: 3rem 0;
+  border-top: 1px solid var(--sand);
+}
+.feature-step:first-child { border-top: none; }
+.feature-step-num {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--terracotta);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.8rem;
+}
+.feature-step h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--deep-brown);
+  margin-bottom: 1rem;
+}
+.feature-step p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #5A5A5A;
+}
+.feature-tags {
+  display: flex; flex-wrap: wrap; gap: 0.5rem;
+  margin-top: 1rem;
+}
+.feature-tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.35rem 0.8rem;
+  border-radius: 20px;
+  border: 1px solid var(--sand);
+  color: var(--slate);
+  background: var(--warm-white);
+}
+
+/* ── CASE STUDY ── */
+.case-study-section { background: var(--warm-white); }
+.case-study-box {
+  margin-top: 2.5rem;
+  background: var(--cream);
+  border: 1px solid var(--sand);
+  border-radius: 16px;
+  overflow: hidden;
+}
+.case-study-header {
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--olive), #4A5E28);
+  color: white;
+}
+.case-study-header h4 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+.case-study-header p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-top: 0.3rem;
+}
+.case-study-body { padding: 2rem; }
+.case-study-body p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #4A4A4A;
+  margin-bottom: 1.5rem;
+}
+.funnel-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin: 2rem 0;
+}
+.funnel-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.funnel-label {
+  width: 180px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--deep-brown);
+  text-align: right;
+  flex-shrink: 0;
+}
+.funnel-bar-wrap { flex: 1; }
+.funnel-bar {
+  height: 40px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+  transition: width 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.funnel-bar span {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: white;
+}
+
+/* ── IMPACT SECTION ── */
+.impact-section { background: var(--cream); }
+.impact-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+.impact-card {
+  background: var(--warm-white);
+  border: 1px solid var(--sand);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.impact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(61, 43, 31, 0.08);
+}
+.impact-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 4px;
+}
+.impact-card:nth-child(1)::before { background: var(--terracotta); }
+.impact-card:nth-child(2)::before { background: var(--olive); }
+.impact-card:nth-child(3)::before { background: var(--gold); }
+.impact-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--deep-brown);
+  margin-bottom: 1rem;
+}
+.impact-card p {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: #5A5A5A;
+}
+
+/* ── ROADMAP ── */
+.roadmap-section {
+  background: var(--cream-light);
+}
+.timeline {
+  margin-top: 3rem;
+  position: relative;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 28px;
+  top: 0; bottom: 0;
+  width: 2px;
+  background: var(--sand);
+}
+.timeline-item {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+.timeline-dot {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: white;
+  z-index: 1;
+}
+.timeline-content {
+  background: var(--warm-white);
+  border: 1px solid var(--sand);
+  border-radius: 12px;
+  padding: 2rem;
+  flex: 1;
+}
+.timeline-content h4 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--deep-brown);
+  margin-bottom: 0.5rem;
+}
+.timeline-content .time-range {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--terracotta);
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.05em;
+}
+.timeline-content p {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: #5A5A5A;
+}
+
+/* ── FUNDING CALLOUT ── */
+.funding-callout {
+  margin-top: 3rem;
+  background: linear-gradient(135deg, var(--deep-brown), #4A3628);
+  border-radius: 16px;
+  padding: 3rem;
+  color: var(--cream);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+.funding-amount {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 900;
+  color: var(--gold);
+  line-height: 1;
+}
+.funding-amount small {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: rgba(245,240,232,0.6);
+  margin-top: 0.5rem;
+  font-family: var(--font-body);
+}
+.funding-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.funding-feature h5 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+.funding-feature p {
+  font-size: 0.8rem;
+  opacity: 0.6;
+  line-height: 1.5;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--deep-brown);
+  color: var(--cream);
+  padding: 4rem 2rem 2rem;
+  text-align: center;
+}
+footer h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+footer h2 em { color: var(--gold); font-style: italic; }
+footer p {
+  font-size: 1rem;
+  opacity: 0.5;
+  margin-top: 0.5rem;
+}
+footer .footer-line {
+  width: 60px; height: 2px;
+  background: var(--gold);
+  margin: 2rem auto;
+  opacity: 0.4;
+}
+footer .footer-bottom {
+  font-size: 0.75rem;
+  opacity: 0.3;
+  margin-top: 2rem;
+}
+
+/* ── COUNTER ANIMATION ── */
+.count-up {
+  font-family: var(--font-display);
+  font-weight: 900;
+}
+
+/* ── DATA SOURCE TABLE ── */
+.data-table-wrap {
+  margin-top: 2.5rem;
+  overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid var(--sand);
+}
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+.data-table th {
+  background: var(--deep-brown);
+  color: var(--cream);
+  padding: 1rem 1.2rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.data-table td {
+  padding: 1rem 1.2rem;
+  border-bottom: 1px solid var(--sand);
+  vertical-align: top;
+  line-height: 1.5;
+  background: var(--warm-white);
+}
+.data-table tr:last-child td { border-bottom: none; }
+.data-table .source-name {
+  font-weight: 700;
+  color: var(--deep-brown);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+.data-table .source-examples {
+  font-size: 0.78rem;
+  color: var(--slate);
+}
+.data-table .cell-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  margin-top: 0.3rem;
+}
+.tag-good { background: rgba(107, 123, 58, 0.12); color: var(--olive); }
+.tag-mid { background: rgba(198, 151, 63, 0.15); color: #8B6914; }
+.tag-bad { background: rgba(184, 80, 66, 0.1); color: var(--terracotta); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .problem-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .pillars { grid-template-columns: 1fr; }
+  .sticky-container { grid-template-columns: 1fr; }
+  .sticky-left { position: relative; top: 0; }
+  .impact-cards { grid-template-columns: 1fr; }
+  .funding-callout { grid-template-columns: 1fr; }
+  .funding-features { grid-template-columns: 1fr; }
+  nav .nav-links { display: none; }
+  .bar-label { width: 100px; font-size: 0.72rem; }
+}
+@media (max-width: 600px) {
+  .section-inner, .section-narrow { padding: 4rem 1.25rem; }
+  .hero h1 { font-size: 2.5rem; }
+  .funnel-label { width: 100px; font-size: 0.75rem; }
+}
 </style>
 </head>
 <body>
 
-
-<nav class="nav" id="nav">
-<button class="nav-dot active" data-slide="0"><span class="tooltip">Title</span></button>
-<button class="nav-dot" data-slide="1"><span class="tooltip">Challenge</span></button>
-<button class="nav-dot" data-slide="2"><span class="tooltip">Solution</span></button>
-<button class="nav-dot" data-slide="3"><span class="tooltip">Demo</span></button>
-<button class="nav-dot" data-slide="4"><span class="tooltip">Use Cases</span></button>
-<button class="nav-dot" data-slide="5"><span class="tooltip">Roadmap</span></button>
-<button class="nav-dot" data-slide="6"><span class="tooltip">Platform</span></button>
+<!-- ── NAV ── -->
+<nav id="nav">
+  <div class="logo">Open Rent</div>
+  <div class="nav-links">
+    <a href="#problem">The Problem</a>
+    <a href="#solution">The Solution</a>
+    <a href="#features">Features</a>
+    <a href="#impact">Impact</a>
+    <a href="#roadmap">Roadmap</a>
+  </div>
 </nav>
 
-<section class="slide slide-dark" id="slide-0">
-<div class="slide-inner">
-<div class="section-label fi">The Open Rent Initiative</div>
-<h1 class="hero-title fi fi-d1">Building Open Rent<br>for the San Francisco<br><em>Bay Area</em></h1>
-<div class="sep fi fi-d2"></div>
-<p class="lead-text fi fi-d3">Open, trusted rent data that powers economic opportunity. A new public data platform equipping policymakers, researchers, funders, and advocates with actionable tools for rent stability.</p>
-<div class="tag-row fi fi-d4">
-<span class="tag" style="border-color:rgba(255,255,255,.15);color:rgba(255,255,255,.5)">Project Brief</span>
-<span class="tag" style="border-color:rgba(255,255,255,.15);color:rgba(255,255,255,.5)">SF Bay Area</span>
-<span class="tag" style="border-color:rgba(255,255,255,.15);color:rgba(255,255,255,.5)">2025 &#8211; 2027</span>
-</div>
-</div>
-<div class="slide-footer"><span class="footer-brand">The Open Rent Initiative</span><span class="footer-num"></span></div>
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Citizen Codex &middot; March 2026</div>
+    <h1>The Open Rent <em>Initiative</em></h1>
+    <p class="hero-sub">Open, trusted rent data that powers economic opportunity.</p>
+    <div class="hero-scroll-cue">
+      <span>Scroll to explore</span>
+      <div class="scroll-line"></div>
+    </div>
+  </div>
 </section>
 
+<!-- ── THE PROBLEM ── -->
+<section class="problem-section" id="problem">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">The Problem</div>
+      <h2 class="section-title">Structural gaps in rent data prevent an accurate picture of housing markets.</h2>
+    </div>
+    <div class="reveal" style="transition-delay: 0.15s;">
+      <p class="section-body">In the Bay Area, current municipal records are unstandardized and limited in scope and availability, while federal surveys like the American Community Survey rely on infrequent updates and small samples that completely miss real-time, localized market changes.</p>
+      <p class="section-body">This leads to three core issues:</p>
+    </div>
 
-
-
-<section class="slide" id="slide-1">
-<div class="slide-inner">
-<div class="section-label fi">01 &#8212; The Problem</div>
-<h2 class="section-title fi fi-d1">The challenge<br>with <em>rent data</em></h2>
-<p class="body-text fi fi-d2">Structural gaps in rent data prevent accurate assessment of Bay Area housing challenges. Municipal records are unstandardized, federal surveys miss real-time changes, and commercial datasets sit behind prohibitive paywalls.</p>
-<div class="card-grid cols-2 fi fi-d3" style="max-width:880px">
-<div class="card"><div class="card-num">01</div><div class="card-title">Undercounting Affordable Stock</div><div class="card-body">Single-family rentals and Naturally Occurring Affordable Housing (NOAH) are often invisible, hindering the state&#8217;s ability to identify preservation risks.</div></div>
-<div class="card"><div class="card-num">02</div><div class="card-title">Reactive Posture</div><div class="card-body">Without real-time tracking of rent hikes, vacancy rates, or neighborhood trends, stakeholders react only after displacement occurs.</div></div>
-<div class="card"><div class="card-num">03</div><div class="card-title">Information Asymmetry</div><div class="card-body">Well-resourced property owners access sophisticated analytics, while renters, advocates, and policymakers operate with poor data.</div></div>
-<div class="card"><div class="card-num">04</div><div class="card-title">Operational Friction</div><div class="card-body">Manually aggregating disparate sources is high-cost, and results lack the granularity to filter for transit corridors or school districts.</div></div>
-</div>
-</div>
-<div class="slide-footer"><span class="footer-brand">The Open Rent Initiative</span><span class="footer-num">01</span></div>
+    <div class="problem-grid stagger" style="margin-top: 2.5rem;">
+      <div class="issue-card reveal" style="--i:0">
+        <div class="issue-icon" style="background: rgba(184, 80, 66, 0.1);">
+          <svg width="24" height="24" fill="none" stroke="#B85042" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <h3>No Holistic Visibility</h3>
+        <p>Lack of comprehensive visibility into the entire rental market — subsidized, market-rate, NOAH, single family, and rent stabilized units are tracked in separate, disconnected systems.</p>
+      </div>
+      <div class="issue-card reveal" style="--i:1">
+        <div class="issue-icon" style="background: rgba(107, 123, 58, 0.1);">
+          <svg width="24" height="24" fill="none" stroke="#6B7B3A" stroke-width="2" stroke-linecap="round"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        </div>
+        <h3>No Granular, Timely Insights</h3>
+        <p>Absence of deep, granular, and timely insights into local rental markets and how they compare across neighborhoods and jurisdictions.</p>
+      </div>
+      <div class="issue-card reveal" style="--i:2; grid-column: 1 / -1; max-width: 540px;">
+        <div class="issue-icon" style="background: rgba(198, 151, 63, 0.12);">
+          <svg width="24" height="24" fill="none" stroke="#C6973F" stroke-width="2" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        </div>
+        <h3>Cost-Prohibitive, Paywalled Data</h3>
+        <p>The best commercial rental data costs upwards of $10,000 per month — far out of reach for researchers, advocates, and policymakers who need it most.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-
-
-
-<section class="slide slide-charcoal" id="slide-2">
-<div class="slide-inner">
-<div class="section-label fi">02 &#8212; The Solution</div>
-<h2 class="section-title fi fi-d1">How we&#8217;re addressing<br>the <em>challenge</em></h2>
-<p class="body-text fi fi-d2">Open Rent transforms fragmented rent data into accessible, actionable public infrastructure through three core capabilities.</p>
-<div class="card-grid cols-3 fi fi-d3" style="max-width:1060px">
-<div class="card"><div class="card-num">01</div><div class="card-title">Data Aggregation</div><div class="card-body">Combines national, state, and local data from private, commercial, and government sources into a single inventory &#8212; subsidized units, NOAH, market-rate, and single-family rentals &#8212; layered with demographics, transit, and income data.</div></div>
-<div class="card"><div class="card-num">02</div><div class="card-title">Interactive Tools</div><div class="card-body">Open-source geospatial mapping with heatmaps, multi-layered views, and advanced filtering so non-technical users can visually track inventory and displacement risks.</div></div>
-<div class="card"><div class="card-num">03</div><div class="card-title">Market Insights</div><div class="card-body">Tools for monitoring rental inventory, tracking neighborhood-level rent stability, comparing across geographies, and measuring affordability and economic health.</div></div>
+<!-- ── PARALLAX STAT DIVIDER ── -->
+<div class="parallax-divider" id="disparity">
+  <div class="parallax-bg" style="background: linear-gradient(170deg, #3D2B1F 0%, #5A6B7A 100%);"></div>
+  <div class="overlay"></div>
+  <div class="parallax-stat reveal-scale">
+    <div class="big-num count-up" data-target="219" data-suffix="%">0%</div>
+    <div class="stat-label">Rent data disparity measured in San Francisco's Bayview neighborhood — Zillow vs. Census estimates can differ by over 2x</div>
+  </div>
 </div>
-</div>
-<div class="slide-footer"><span class="footer-brand">The Open Rent Initiative</span><span class="footer-num">02</span></div>
+
+<!-- ── DATA DISPARITY EXAMPLE ── -->
+<section class="disparity-section">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Example Issue</div>
+      <h2 class="section-title">When data sources diverge, real people are affected.</h2>
+      <p class="section-body">The most widely used data sources for public analysis and policymaking — the American Community Survey and Zillow Observed Rent Index — become quickly unreliable at the granular, timely level needed for local decisions.</p>
+    </div>
+
+    <div class="disparity-visual reveal-scale" style="transition-delay: 0.2s;">
+      <div class="disparity-header">
+        <h4>Rent Price Disparity — Bay Area Zip Codes</h4>
+        <p>ACS Median Rent vs. Zillow ZORI estimates</p>
+      </div>
+      <div class="legend-row">
+        <div class="legend-item"><div class="legend-dot" style="background: var(--olive);"></div> ACS Median Rent</div>
+        <div class="legend-item"><div class="legend-dot" style="background: var(--terracotta);"></div> Zillow ZORI</div>
+        <div class="legend-item"><div class="legend-dot" style="background: var(--gold);"></div> Disparity</div>
+      </div>
+      <div class="disparity-bars" id="disparityChart">
+        <!-- JS populated -->
+      </div>
+    </div>
+
+    <!-- Data Sources Table -->
+    <div class="reveal" style="margin-top: 4rem;">
+      <h3 class="section-title" style="font-size: 1.6rem;">Three Types of Rental Data</h3>
+      <p class="section-body" style="margin-bottom: 1.5rem;">Each data source has different strengths and limitations, shaped by frequency, timeliness, geographic granularity, sample completeness, and availability.</p>
+    </div>
+    <div class="data-table-wrap reveal">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th style="width:22%">Source Type</th>
+            <th>Timeliness</th>
+            <th>Granularity</th>
+            <th>Completeness</th>
+            <th>Availability</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <span class="source-name">Public Data</span>
+              <span class="source-examples">Census ACS, BLS</span>
+            </td>
+            <td>1–2 year lag <span class="cell-tag tag-bad">Slow</span></td>
+            <td>Aggregate only — tract, zip, county, MSA</td>
+            <td>Representative survey of 3.5M addresses; existing &amp; new leases</td>
+            <td>Publicly available <span class="cell-tag tag-good">Open</span></td>
+          </tr>
+          <tr>
+            <td>
+              <span class="source-name">Listing Websites</span>
+              <span class="source-examples">Zillow, Apartment List</span>
+            </td>
+            <td>Monthly updates <span class="cell-tag tag-good">Fast</span></td>
+            <td>Zip code and city level aggregates</td>
+            <td>New leases only; biased toward higher-cost, professionally managed units</td>
+            <td>Aggregated data public <span class="cell-tag tag-mid">Partial</span></td>
+          </tr>
+          <tr>
+            <td>
+              <span class="source-name">Commercial Brokers</span>
+              <span class="source-examples">CoStar, RealPage</span>
+            </td>
+            <td>Monthly updates <span class="cell-tag tag-good">Fast</span></td>
+            <td>Aggregate and unit-level data</td>
+            <td>Medium-to-large properties (50+ units); biased toward higher cost</td>
+            <td>&gt;$10K/month <span class="cell-tag tag-bad">Paywalled</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </section>
 
-<section class="slide" style="background:var(--cream-dark)" id="slide-3">
-<div class="slide-inner">
-<div class="section-label fi">03 &#8212; Platform Demo</div>
-<h2 class="section-title fi fi-d1">Explore the <em>data</em></h2>
-<p class="body-text fi fi-d2">A walkthrough of the Open Rent platform, featuring our interactive map powered by robust, multi-source parcel data.</p>
-<div class="video-wrap fi fi-d3">
-<video controls preload="metadata" playsinline>
-<source src="demo-video.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
-</div>
-</div>
-<div class="slide-footer"><span class="footer-brand">The Open Rent Initiative</span><span class="footer-num">03</span></div>
+<!-- ── THE SOLUTION ── -->
+<section class="solution-section" id="solution">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">The Solution</div>
+      <h2 class="section-title" style="max-width: 700px;">Building comprehensive public data infrastructure for rent transparency.</h2>
+      <p class="section-body">The Open Rent Initiative transforms fragmented rent data into an accessible, actionable digital product — combining sources that have never been linked before.</p>
+    </div>
+
+    <div class="pillars stagger">
+      <div class="pillar reveal" style="--i:0">
+        <div class="pillar-num">1</div>
+        <h3>Data Aggregation</h3>
+        <p>Combining national, state, and local data from private, commercial, and government sources — covering subsidized units, NOAH, market-rate properties, and single-family rentals — into a single inventory.</p>
+      </div>
+      <div class="pillar reveal" style="--i:1">
+        <div class="pillar-num">2</div>
+        <h3>Interactive Tools</h3>
+        <p>An open-source geospatial mapping interface with heatmaps, multi-layered views, and advanced filtering to visually track inventory and displacement risks.</p>
+      </div>
+      <div class="pillar reveal" style="--i:2">
+        <div class="pillar-num">3</div>
+        <h3>Market Insights</h3>
+        <p>Tools for monitoring rental unit inventory, rent price stability at the neighborhood level, comparing rent levels across geographies, and measuring affordability.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
+<!-- ── FEATURES DEEP DIVE ── -->
+<section class="features-section" id="features">
+  <div class="section-inner">
+    <div class="sticky-container">
+      <div class="sticky-left">
+        <div class="reveal">
+          <div class="section-label">Platform Features</div>
+          <h2 class="section-title">From fragmented data to unified intelligence.</h2>
+          <p class="section-body" style="font-size: 1rem;">The platform links disparate sources — parcel/assessor data, rent registries, Zillow ZORI, and ACS estimates — enabling users to layer rent data with neighborhood demographics, transit access, and income levels.</p>
+        </div>
+      </div>
 
-
-
-<section class="slide" id="slide-4">
-<div class="slide-inner">
-<div class="section-label fi">04 &#8212; Who It Serves</div>
-<h2 class="section-title fi fi-d1"><em>Use</em> cases</h2>
-<div class="clean-grid cols-3 fi fi-d2" style="max-width:1060px">
-<div class="clean-card"><div class="clean-card-label">Use Case 01</div><div class="clean-card-title">Proactive Eviction Prevention</div><div class="clean-card-meta">Housing Navigators &amp; Service Providers</div><div class="clean-card-body">Monitor neighborhood rent trends, identify micro-neighborhoods with steep rent hikes, and proactively deploy outreach, education, and emergency financial assistance before families are displaced.</div></div>
-<div class="clean-card"><div class="clean-card-label">Use Case 02</div><div class="clean-card-title">Strategic Investment &amp; Preservation</div><div class="clean-card-meta">Program Officers &amp; Housing Developers</div><div class="clean-card-body">Overlay publicly-funded housing maps with real-time rental rates and neighborhood amenity data to instantly identify NOAH properties at highest risk of market-rate conversion.</div></div>
-<div class="clean-card"><div class="clean-card-label">Use Case 03</div><div class="clean-card-title">Data-Driven Policy Advocacy</div><div class="clean-card-meta">Advocates &amp; Civic Leaders</div><div class="clean-card-body">Generate localized dashboards showing rent trajectories vs. wage growth in specific legislative districts, bringing data-backed arguments to city council and state hearings.</div></div>
-</div>
-</div>
-<div class="slide-footer"><span class="footer-brand">The Open Rent Initiative</span><span class="footer-num">04</span></div>
+      <div class="feature-steps">
+        <div class="feature-step reveal">
+          <div class="feature-step-num">Feature 01</div>
+          <h3>Unified Data Inventory</h3>
+          <p>The platform combines national, state, and local data from private, commercial, and government sources into a single inventory. By linking these disparate sources, it enables users to layer rent data with non-rental information such as neighborhood demographics, transit, and income.</p>
+          <div class="feature-tags">
+            <span class="feature-tag">Parcel Data</span>
+            <span class="feature-tag">Rent Registry</span>
+            <span class="feature-tag">Zillow ZORI</span>
+            <span class="feature-tag">ACS Estimates</span>
+          </div>
+        </div>
+        <div class="feature-step reveal">
+          <div class="feature-step-num">Feature 02</div>
+          <h3>Geospatial Mapping Interface</h3>
+          <p>Non-technical users can access an open-source geospatial mapping interface with heatmaps, multi-layered views, and advanced filtering. Includes rental unit cards, hover tooltips, search bar, status indicators, and customizable filters to visually track inventory and displacement risks.</p>
+          <div class="feature-tags">
+            <span class="feature-tag">Heatmaps</span>
+            <span class="feature-tag">Multi-Layer</span>
+            <span class="feature-tag">Filters</span>
+            <span class="feature-tag">Open Source</span>
+          </div>
+        </div>
+        <div class="feature-step reveal">
+          <div class="feature-step-num">Feature 03</div>
+          <h3>Market Analytics &amp; Monitoring</h3>
+          <p>Tools for monitoring the inventory of rental units in a community, rent price stability at the neighborhood level, comparing rent levels across different geographies, and measuring affordability and other important housing-related measures of economic health.</p>
+          <div class="feature-tags">
+            <span class="feature-tag">Affordability</span>
+            <span class="feature-tag">Displacement Risk</span>
+            <span class="feature-tag">Trend Analysis</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
+<!-- ── CASE STUDY ── -->
+<section class="case-study-section">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Case Study</div>
+      <h2 class="section-title">St. Paul Rent Stabilization Policy</h2>
+      <p class="section-body">Identifying units subject to St. Paul's rent stabilization policy is challenging because no single dataset tracks both building age and affordability. To solve this, Open Rent merged disparate sources into a unified view of the city's rental stock.</p>
+    </div>
 
-
-
-<section class="slide slide-dark" id="slide-5">
-<div class="slide-inner">
-<div class="section-label fi">05 &#8212; Roadmap</div>
-<h2 class="section-title fi fi-d1">Three-phase <em>build</em></h2>
-<div class="timeline fi fi-d2" style="max-width:720px">
-<div class="timeline-item" style="border-top-color:rgba(255,255,255,.1)">
-<div class="timeline-phase" style="color:rgba(255,255,255,.3)">Phase 1</div>
-<div>
-<div class="timeline-date" style="color:rgba(255,255,255,.4)">Oct 2025 &#8212; Jun 2026</div>
-<div class="timeline-title" style="color:var(--warm-white)">Foundation &amp; Pilot Launch</div>
-<div class="timeline-desc" style="color:rgba(255,255,255,.6)">Design and build data infrastructure with metro-wide foundational datasets (parcel, listings). Integrate deep-dive data from Santa Clara County. Launch the Bay Area pilot with core user features.</div>
-</div>
-</div>
-<div class="timeline-item" style="border-top-color:rgba(255,255,255,.1)">
-<div class="timeline-phase" style="color:rgba(255,255,255,.3)">Phase 2</div>
-<div>
-<div class="timeline-date" style="color:rgba(255,255,255,.4)">Summer 2026 &#8212; Winter 2026/27</div>
-<div class="timeline-title" style="color:var(--warm-white)">Expansion &amp; Deepening</div>
-<div class="timeline-desc" style="color:rgba(255,255,255,.6)">Broaden and deepen data pipelines to cover the entire Bay Area. Expand user features to tackle more use cases and support broader user groups.</div>
-</div>
-</div>
-<div class="timeline-item" style="border-top-color:rgba(255,255,255,.1)">
-<div class="timeline-phase" style="color:rgba(255,255,255,.3)">Phase 3</div>
-<div>
-<div class="timeline-date" style="color:rgba(255,255,255,.4)">2027 and Beyond</div>
-<div class="timeline-title" style="color:var(--warm-white)">Scale &amp; Sustain</div>
-<div class="timeline-desc" style="color:rgba(255,255,255,.6)">Continue expanding datasets and building additional user features for long-term impact and sustainability.</div>
-</div>
-</div>
-</div>
-</div>
-<div class="slide-footer"><span class="footer-brand">The Open Rent Initiative</span><span class="footer-num">05</span></div>
+    <div class="case-study-box reveal-scale" style="transition-delay: 0.15s;">
+      <div class="case-study-header">
+        <h4>Unified Rental Stock Analysis — St. Paul, MN</h4>
+        <p>Geospatial and fuzzy matching to link Ramsey County Parcels, Fire CO records, and HousingLink data</p>
+      </div>
+      <div class="case-study-body">
+        <p>The technical approach used geospatial and fuzzy matching to link Ramsey County Parcels, Fire CO records, and HousingLink data — correcting conflicting unit counts and construction dates to identify the units actually subject to policy.</p>
+        <div class="funnel-chart" id="funnelChart">
+          <div class="funnel-row reveal" style="--i:0">
+            <div class="funnel-label">Total Rental Properties</div>
+            <div class="funnel-bar-wrap">
+              <div class="funnel-bar" style="width: 0%; background: var(--olive);" data-width="100%"><span>~63K</span></div>
+            </div>
+          </div>
+          <div class="funnel-row reveal" style="--i:1">
+            <div class="funnel-label">Affordable (subsidized)</div>
+            <div class="funnel-bar-wrap">
+              <div class="funnel-bar" style="width: 0%; background: var(--olive-light);" data-width="59%"><span>~37K</span></div>
+            </div>
+          </div>
+          <div class="funnel-row reveal" style="--i:2">
+            <div class="funnel-label">Market rate exempt</div>
+            <div class="funnel-bar-wrap">
+              <div class="funnel-bar" style="width: 0%; background: var(--clay);" data-width="38%"><span>~24K</span></div>
+            </div>
+          </div>
+          <div class="funnel-row reveal" style="--i:3">
+            <div class="funnel-label" style="font-weight: 800;">Units subject to policy</div>
+            <div class="funnel-bar-wrap">
+              <div class="funnel-bar" style="width: 0%; background: var(--terracotta);" data-width="3.2%"><span>~2K</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="slide" style="background:var(--cream-dark)" id="slide-6">
-<div class="slide-inner">
-<div class="section-label fi">06 &#8212; Platform Features</div>
-<h2 class="section-title fi fi-d1">Planned <em>capabilities</em></h2>
-<div class="feature-table fi fi-d2">
-<div class="feature-col">
-<div class="feature-col-title">Data &amp; Infrastructure</div>
-<div class="feature-item"><div class="feature-item-name">Unit Inventory</div><div class="feature-item-desc">Aggregates subsidized, NOAH, and market-rate data</div></div>
-<div class="feature-item"><div class="feature-item-name">Building / Parcel Metrics</div><div class="feature-item-desc">Historical and current rent, vacancy, and unit specs</div></div>
-<div class="feature-item"><div class="feature-item-name">Contextual Overlays</div><div class="feature-item-desc">Demographics, transit, and school data layers</div></div>
-<div class="feature-item"><div class="feature-item-name">Predictive Modeling</div><div class="feature-item-desc">Price and vacancy estimation infrastructure</div></div>
-</div>
-<div class="feature-col">
-<div class="feature-col-title">Interactive Tools</div>
-<div class="feature-item"><div class="feature-item-name">Geospatial UI</div><div class="feature-item-desc">Interactive maps with custom polygon selection</div></div>
-<div class="feature-item"><div class="feature-item-name">Comparative Views</div><div class="feature-item-desc">Multi-source, cross-geographic visualization</div></div>
-<div class="feature-item"><div class="feature-item-name">Dynamic Heatmaps</div><div class="feature-item-desc">Inventory, rent levels, and displacement risk</div></div>
-<div class="feature-item"><div class="feature-item-name">Open Access</div><div class="feature-item-desc">API and data downloads via open-source licensing</div></div>
-</div>
-<div class="feature-col">
-<div class="feature-col-title">Market Insights</div>
-<div class="feature-item"><div class="feature-item-name">Isochrone Filtering</div><div class="feature-item-desc">Inventory analysis by transit travel times</div></div>
-<div class="feature-item"><div class="feature-item-name">Stability Tracking</div><div class="feature-item-desc">Neighborhood-level price fluctuation monitoring</div></div>
-<div class="feature-item"><div class="feature-item-name">Policy Benchmarking</div><div class="feature-item-desc">Market vs. subsidized vs. AMI thresholds</div></div>
-<div class="feature-item"><div class="feature-item-name">Impact Simulation</div><div class="feature-item-desc">Projected effects of policy changes (e.g., rent caps)</div></div>
-<div class="feature-item"><div class="feature-item-name">Risk Scoring</div><div class="feature-item-desc">Gentrification pressure and expiring subsidies</div></div>
-</div>
-</div>
-</div>
-<div class="slide-footer"><span class="footer-brand">The Open Rent Initiative</span><span class="footer-num">06</span></div>
+<!-- ── IMPACT ── -->
+<section class="impact-section" id="impact">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Real-World Impact</div>
+      <h2 class="section-title">Translating data into action for those who need it most.</h2>
+      <p class="section-body">Open Rent aims to achieve scalable impact towards the protection of tenants, the preservation of existing affordable housing stock, and the creation of new affordable homes.</p>
+    </div>
+
+    <div class="impact-cards stagger">
+      <div class="impact-card reveal" style="--i:0">
+        <h3>Proactive Eviction Prevention</h3>
+        <p>Service providers and housing navigators can monitor micro-neighborhoods for sudden rent hikes, allowing them to proactively deploy emergency financial assistance and tenant education before families face displacement. By combining these datasets with census and demographic data, users can estimate eviction, displacement, or homelessness risk.</p>
+      </div>
+      <div class="impact-card reveal" style="--i:1">
+        <h3>Strategic Investment &amp; Preservation</h3>
+        <p>Philanthropic funders and affordable housing developers can overlay property data with real-time market rents to identify naturally occurring affordable housing properties at the highest risk of market-rate conversion, guiding strategic capital investments to preserve affordable housing.</p>
+      </div>
+      <div class="impact-card reveal" style="--i:2">
+        <h3>Data-Driven Policy Advocacy</h3>
+        <p>Policy advocates and the public can use the platform to generate localized dashboards and analysis comparing rent trajectories to local wage growth, bringing concrete, data-backed arguments to legislative hearings to drive systemic policy change.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
+<!-- ── ROADMAP ── -->
+<section class="roadmap-section" id="roadmap">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Roadmap</div>
+      <h2 class="section-title">18-month plan to expand across the Bay Area.</h2>
+    </div>
 
+    <div class="timeline">
+      <div class="timeline-item reveal" style="--i:0">
+        <div class="timeline-dot" style="background: var(--terracotta);">P1</div>
+        <div class="timeline-content">
+          <div class="time-range">Oct 2025 – June 2026</div>
+          <h4>Foundation &amp; Bay Area Pilot</h4>
+          <p>Design and build data infrastructure, integrate metro-area-wide foundational data sets (parcel, listings, etc.), integrate deep-dive data from Santa Clara, and build core user features. Launch the Bay Area pilot with core features in June 2026.</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal" style="--i:1">
+        <div class="timeline-dot" style="background: var(--olive);">P2</div>
+        <div class="timeline-content">
+          <div class="time-range">Summer 2026 – Winter 2026/27</div>
+          <h4>Broaden &amp; Deepen</h4>
+          <p>Broaden and deepen data pipelines to cover the entire Bay Area, expand user features to tackle more use cases and support broader groups of stakeholders.</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal" style="--i:2">
+        <div class="timeline-dot" style="background: var(--gold);">P3</div>
+        <div class="timeline-content">
+          <div class="time-range">2027 and Beyond</div>
+          <h4>Scale &amp; Expand</h4>
+          <p>Continue to expand data sets and additional user features. Explore replication in other metro areas beyond the Bay Area.</p>
+        </div>
+      </div>
+    </div>
 
+    <div class="funding-callout reveal-scale">
+      <div class="funding-amount">
+        $2.1M
+        <small>Bay Area fundraising goal</small>
+      </div>
+      <div class="funding-features">
+        <div class="funding-feature">
+          <h5>Geographic Expansion</h5>
+          <p>All 9 counties in the Bay Area, including deep dives into major cities</p>
+        </div>
+        <div class="funding-feature">
+          <h5>Models &amp; Estimation</h5>
+          <p>Vacancy modeling, rent prediction, and affordability indexing</p>
+        </div>
+        <div class="funding-feature">
+          <h5>Expanded Tools</h5>
+          <p>Eviction risk scoring, affordability heatmaps, and policy simulation</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <h2>Thank <em>you</em></h2>
+  <p>Open, trusted rent data that powers economic opportunity.</p>
+  <div class="footer-line"></div>
+  <div class="footer-bottom">The Open Rent Initiative &middot; A Citizen Codex Project &middot; 2026</div>
+</footer>
 
 <script>
-var slides=document.querySelectorAll('.slide'),dots=document.querySelectorAll('.nav-dot');
-new IntersectionObserver(function(e){e.forEach(function(entry){if(entry.isIntersecting){var i=Array.from(slides).indexOf(entry.target);dots.forEach(function(d){d.classList.remove('active')});if(dots[i])dots[i].classList.add('active')}})},{threshold:.5}).observe&&slides.forEach(function(s){new IntersectionObserver(function(e){e.forEach(function(entry){if(entry.isIntersecting){var i=Array.from(slides).indexOf(entry.target);dots.forEach(function(d){d.classList.remove('active')});if(dots[i])dots[i].classList.add('active')}})},{threshold:.5}).observe(s)});
-dots.forEach(function(d){d.addEventListener('click',function(){var el=document.getElementById('slide-'+d.getAttribute('data-slide'));if(el)el.scrollIntoView({behavior:'smooth'})})});
-var fio=new IntersectionObserver(function(e){e.forEach(function(entry){if(entry.isIntersecting)entry.target.querySelectorAll('.fi').forEach(function(el){el.classList.add('visible')})})},{threshold:.15});
-slides.forEach(function(s){fio.observe(s)});
-document.getElementById('slide-0').querySelectorAll('.fi').forEach(function(el){el.classList.add('visible')});
+// ── Intersection Observer for scroll reveals ──
+const observerOptions = { threshold: 0.15, rootMargin: '0px 0px -40px 0px' };
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      // Animate funnel bars
+      const bars = entry.target.querySelectorAll('.funnel-bar[data-width]');
+      bars.forEach(bar => {
+        setTimeout(() => { bar.style.width = bar.dataset.width; }, 300);
+      });
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .funnel-row').forEach(el => {
+  observer.observe(el);
+});
+
+// ── Nav scroll effect ──
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 80);
+}, { passive: true });
+
+// ── Counter animation ──
+const countObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      const target = parseInt(el.dataset.target);
+      const suffix = el.dataset.suffix || '';
+      let current = 0;
+      const step = target / 60;
+      const interval = setInterval(() => {
+        current += step;
+        if (current >= target) {
+          current = target;
+          clearInterval(interval);
+        }
+        el.textContent = Math.floor(current) + suffix;
+      }, 25);
+      countObserver.unobserve(el);
+    }
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.count-up').forEach(el => countObserver.observe(el));
+
+// ── Disparity Chart ──
+const disparityData = [
+  { zip: '94124 — Bayview', acs: 1150, zori: 3667 },
+  { zip: '94102 — Tenderloin', acs: 1380, zori: 3200 },
+  { zip: '94103 — SoMa', acs: 1520, zori: 3450 },
+  { zip: '94110 — Mission', acs: 1680, zori: 3180 },
+  { zip: '94112 — Ingleside', acs: 1750, zori: 2950 },
+  { zip: '94134 — Visitacion Valley', acs: 1620, zori: 2800 },
+];
+
+const maxRent = 4000;
+const chartEl = document.getElementById('disparityChart');
+disparityData.forEach(d => {
+  const dispPct = Math.round(((d.zori - d.acs) / d.acs) * 100);
+  const acsW = (d.acs / maxRent) * 55;
+  const zoriW = (d.zori / maxRent) * 55;
+  const row = document.createElement('div');
+  row.className = 'bar-row reveal';
+  row.innerHTML = `
+    <div class="bar-label">${d.zip}</div>
+    <div class="bar-track">
+      <div class="bar-fill acs" style="width:${acsW}%"></div>
+      <div class="bar-fill zori" style="width:${zoriW}%"></div>
+      <span class="bar-value">$${d.acs.toLocaleString()} / $${d.zori.toLocaleString()}</span>
+      <span class="disparity-badge" style="background: rgba(198,151,63,0.15); color: #8B6914;">+${dispPct}%</span>
+    </div>
+  `;
+  chartEl.appendChild(row);
+  observer.observe(row);
+});
+
+// ── Parallax on scroll ──
+const parallaxDivider = document.querySelector('.parallax-divider');
+window.addEventListener('scroll', () => {
+  if (!parallaxDivider) return;
+  const rect = parallaxDivider.getBoundingClientRect();
+  const speed = 0.3;
+  const yPos = rect.top * speed;
+  const bg = parallaxDivider.querySelector('.parallax-bg');
+  if (bg) bg.style.transform = `translateY(${yPos}px)`;
+}, { passive: true });
 </script>
 </body>
 </html>
