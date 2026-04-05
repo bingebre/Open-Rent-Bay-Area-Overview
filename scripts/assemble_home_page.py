@@ -9,6 +9,8 @@ m = re.search(r"<body>\s*(.*)\s*</body>", html, re.DOTALL | re.IGNORECASE)
 if not m:
     raise SystemExit("Could not find <body> in legacy/index.cleaned.html")
 frag = m.group(1)
+# Inline scripts from legacy HTML are replaced by onMount above; strip duplicate <script> blocks
+frag = re.sub(r"<script[^>]*>.*?</script>", "", frag, flags=re.DOTALL | re.IGNORECASE)
 
 # Fix solution section: drop premature </section> before the Data Aggregation block
 lines = frag.splitlines(keepends=True)
@@ -28,6 +30,7 @@ while i < len(lines):
 frag = "".join(out_lines)
 
 replacements = [
+    ('src="/embedded/img-003.jpg"', 'src="/california-rent-registry-map.png"'),
     ('src="Bay%20Area%20Map.html"', 'src="/map" title="Bay Area rent data map"'),
     ('<section class="case-study-section">', '<section class="case-study-section" id="features">'),
     ('src="Rent%20Tool%20Video.mov"', 'src="/Rent%20Tool%20Video.mov"'),

@@ -19,8 +19,10 @@
 		{ center: [-122.15, 37.65] as [number, number], zoom: 9.2 }
 	];
 
-	let mapEl: HTMLDivElement | undefined;
-	const tokenError = !PUBLIC_MAPBOX_TOKEN;
+	let mapEl = $state<HTMLDivElement | undefined>(undefined);
+
+	/** From `.env` via `$env/static/public` (SvelteKit; `import.meta.env.PUBLIC_*` is not reliable here). */
+	const mapboxToken = (PUBLIC_MAPBOX_TOKEN ?? '').trim();
 
 	function fmtDollars(n: unknown) {
 		return n != null && !Number.isNaN(Number(n))
@@ -32,9 +34,18 @@
 	}
 
 	onMount(() => {
-		if (!mapEl || !PUBLIC_MAPBOX_TOKEN) return;
+		if (!mapEl) return;
 
-		mapboxgl.accessToken = PUBLIC_MAPBOX_TOKEN;
+		/** When /map is shown in an iframe, wheel must scroll the parent page — not zoom the map. */
+		const embedded = typeof window !== 'undefined' && window.parent !== window;
+
+		if (!mapboxToken) {
+			mapEl.innerHTML =
+				'<div style="display:flex;align-items:center;justify-content:center;height:100%;min-height:240px;padding:2rem;text-align:center;font-family:system-ui,sans-serif;background:#1a1a1a;color:#f5f5f5;">Set <code style="background:#333;padding:0.2em 0.4em;border-radius:4px;">PUBLIC_MAPBOX_TOKEN</code> in <code style="background:#333;padding:0.2em 0.4em;border-radius:4px;">.env</code> at the project root, then restart the dev server.</div>';
+			return;
+		}
+
+		mapboxgl.accessToken = mapboxToken;
 
 		if (!mapboxgl.supported()) {
 			mapEl.innerHTML =
@@ -268,7 +279,10 @@
 		function enableInteractive() {
 			if (mapInteractive) return;
 			mapInteractive = true;
-			map.scrollZoom.enable();
+			// In an iframe, scroll-zoom steals wheel events and blocks scrolling the parent page.
+			if (!embedded) {
+				map.scrollZoom.enable();
+			}
 			if (isTouchDevice) {
 				map.touchZoomRotate.enable();
 				map.dragPan.enable();
@@ -295,7 +309,30 @@
 			legendItems?.classList.toggle('expanded');
 		});
 
+		/** Pass wheel to parent when iframe hit scroll top/bottom (avoids scroll "trap"). */
+		let detachIframeWheel: (() => void) | undefined;
+		if (embedded) {
+			const origin = window.location.origin;
+			const onWheelCapture = (e: WheelEvent) => {
+				const root = document.documentElement;
+				const scrollTop = window.scrollY || root.scrollTop;
+				const maxScroll = Math.max(0, root.scrollHeight - window.innerHeight);
+				const atBottom = maxScroll - scrollTop < 8;
+				const atTop = scrollTop <= 0;
+				if (atBottom && e.deltaY > 0) {
+					e.preventDefault();
+					window.parent.postMessage({ type: 'openrent-iframe-scroll', deltaY: e.deltaY }, origin);
+				} else if (atTop && e.deltaY < 0) {
+					e.preventDefault();
+					window.parent.postMessage({ type: 'openrent-iframe-scroll', deltaY: e.deltaY }, origin);
+				}
+			};
+			document.addEventListener('wheel', onWheelCapture, { capture: true, passive: false });
+			detachIframeWheel = () => document.removeEventListener('wheel', onWheelCapture, true);
+		}
+
 		return () => {
+			detachIframeWheel?.();
 			map.remove();
 		};
 	});
@@ -305,9 +342,13 @@
 	<title>Bay Area Rent Data Map — Scrollytelling Section</title>
 </svelte:head>
 
-{#if tokenError}
-	<p class="token-msg">Set <code>PUBLIC_MAPBOX_TOKEN</code> in <code>.env</code> (see <code>.env.example</code>).</p>
-{:else}
+{#if !mapboxToken}
+	<p class="token-msg">
+		Mapbox token missing: add <code>PUBLIC_MAPBOX_TOKEN=pk.&hellip;</code> to <code>.env</code> (see
+		<code>.env.example</code>), then restart <code>npm run dev</code> or rebuild.
+	</p>
+{/if}
+
 <section class="map-scrolly" id="rent-map">
 	<div class="map-sticky">
 		<div id="map" bind:this={mapEl}></div>
@@ -439,7 +480,6 @@
 		</div>
 	</div>
 </section>
-{/if}
 
 <style>
 	.token-msg {

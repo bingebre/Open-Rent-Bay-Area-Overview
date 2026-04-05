@@ -7,9 +7,9 @@ SvelteKit app migrated from standalone HTML. The marketing site lives at `/`; th
 ```bash
 npm install
 cp .env.example .env
-# Set PUBLIC_MAPBOX_TOKEN to your Mapbox public token (same as the old inline token).
-npm run dev
 ```
+
+In `.env`, set **exactly** `PUBLIC_MAPBOX_TOKEN=pk....` (the `PUBLIC_` prefix is required so Vite exposes it to the map). Do not use `MAPBOX_TOKEN` or spaces around `=`. After editing `.env`, restart `npm run dev` (or run `npm run build` again for preview).
 
 ## Scripts
 
