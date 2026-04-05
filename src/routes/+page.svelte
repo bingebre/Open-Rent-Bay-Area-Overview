@@ -72,7 +72,8 @@
 
 			function drawLines() {
 				if (!svg || !container) return;
-				svg.innerHTML = '';
+				const svgEl = svg;
+				svgEl.innerHTML = '';
 				const rect = container.getBoundingClientRect();
 				const labels = container.querySelectorAll('.overlay-label');
 				connections.forEach(([idx, tx, ty]) => {
@@ -107,7 +108,7 @@
 					line.setAttribute('stroke', '#555');
 					line.setAttribute('stroke-width', '1');
 					line.setAttribute('stroke-dasharray', '3,2');
-					svg.appendChild(line);
+					svgEl.appendChild(line);
 				});
 			}
 			window.addEventListener('load', () => setTimeout(drawLines, 500));

@@ -19,7 +19,7 @@ In `.env`, set **exactly** `PUBLIC_MAPBOX_TOKEN=pk....` (the `PUBLIC_` prefix is
 
 ## Deployment
 
-This project uses [`adapter-auto`](https://kit.svelte.dev/docs/adapter-auto), which picks a SvelteKit adapter during the build on supported hosts (for example Vercel or Netlify). You do not need to change `svelte.config.js` for those platforms if you deploy with their default SvelteKit integration.
+Production builds use [`@sveltejs/adapter-vercel`](https://kit.svelte.dev/docs/adapter-vercel) so Vercel deployments are explicit and reliable. For **Netlify** or other hosts, switch the adapter in `svelte.config.js` to [`adapter-netlify`](https://kit.svelte.dev/docs/adapter-netlify) or another [official adapter](https://kit.svelte.dev/docs/adapters) as needed.
 
 **Environment variable**
 
