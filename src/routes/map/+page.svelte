@@ -321,6 +321,18 @@
 			};
 			window.addEventListener('message', onParentActivation);
 
+			/** Parent may post activation before this listener exists (prod hydration timing). Ping so it resyncs. */
+			const pingParentReady = () => {
+				try {
+					window.parent.postMessage({ type: 'openrent-map-ready' }, origin);
+				} catch {
+					/* ignore */
+				}
+			};
+			queueMicrotask(pingParentReady);
+			requestAnimationFrame(() => requestAnimationFrame(pingParentReady));
+			setTimeout(pingParentReady, 120);
+
 			const onWheelCapture = (e: WheelEvent) => {
 				if (!innerScrollAllowed) {
 					e.preventDefault();

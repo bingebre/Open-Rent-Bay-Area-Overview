@@ -123,9 +123,13 @@
 		const syncMapEmbedScrollActivation = () => {
 			if (!mapEmbed?.contentWindow) return;
 			const rect = mapEmbed.getBoundingClientRect();
-			const topUiOffset = 84;
+			const navEl = document.getElementById('nav');
+			const topUiOffset = navEl ? Math.ceil(navEl.getBoundingClientRect().bottom) + 6 : 88;
 			const viewTop = topUiOffset;
-			const viewBottom = window.innerHeight;
+			const viewBottom =
+				window.visualViewport != null
+					? window.visualViewport.offsetTop + window.visualViewport.height
+					: window.innerHeight;
 
 			const visibleTop = Math.max(rect.top, viewTop);
 			const visibleBottom = Math.min(rect.bottom, viewBottom);
@@ -137,11 +141,18 @@
 			const visibleWidth = Math.max(0, visibleRight - visibleLeft);
 			const requiredWidth = Math.min(rect.width, window.innerWidth);
 
-			const active = visibleHeight >= requiredHeight - 4 && visibleWidth >= requiredWidth - 4;
-			mapEmbed.contentWindow.postMessage(
-				{ type: 'openrent-map-activation', active },
-				window.location.origin
-			);
+			// Slightly looser tolerance for font/layout and mobile UI chrome (production vs local).
+			const slack = 16;
+			const active =
+				visibleHeight >= requiredHeight - slack && visibleWidth >= requiredWidth - slack;
+			try {
+				mapEmbed.contentWindow.postMessage(
+					{ type: 'openrent-map-activation', active },
+					window.location.origin
+				);
+			} catch {
+				/* ignore */
+			}
 		};
 
 		const onScrollFx = () => {
@@ -172,11 +183,17 @@
 		};
 		window.addEventListener('scroll', onScrollFx, { passive: true });
 		window.addEventListener('resize', syncMapEmbedScrollActivation, { passive: true });
+		window.visualViewport?.addEventListener('resize', syncMapEmbedScrollActivation, { passive: true });
+		window.visualViewport?.addEventListener('scroll', syncMapEmbedScrollActivation, { passive: true });
 		mapEmbed?.addEventListener('load', syncMapEmbedScrollActivation);
 		syncMapEmbedScrollActivation();
 
 		const onIframeScrollMsg = (e: MessageEvent) => {
 			if (e.origin !== window.location.origin) return;
+			if (e.data?.type === 'openrent-map-ready') {
+				syncMapEmbedScrollActivation();
+				return;
+			}
 			if (e.data?.type === 'openrent-iframe-scroll' && typeof e.data.deltaY === 'number') {
 				window.scrollBy({ top: e.data.deltaY, left: 0, behavior: 'auto' });
 			}
@@ -188,6 +205,8 @@
 			window.removeEventListener('scroll', onScrollFx);
 			window.removeEventListener('message', onIframeScrollMsg);
 			window.removeEventListener('resize', syncMapEmbedScrollActivation);
+			window.visualViewport?.removeEventListener('resize', syncMapEmbedScrollActivation);
+			window.visualViewport?.removeEventListener('scroll', syncMapEmbedScrollActivation);
 			mapEmbed?.removeEventListener('load', syncMapEmbedScrollActivation);
 		};
 	});
