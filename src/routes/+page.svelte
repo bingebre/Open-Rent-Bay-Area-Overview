@@ -285,12 +285,20 @@
       <p class="section-body" style="margin-top: 1.5rem;">Multiple sources of data are knit together to get a full picture of rental housing. Connecting this disparate data at the parcel and property level allows us to answer questions like: where in this area can a nurse making $65,000 per year afford rent?</p>
     </div>
     <div class="reveal" style="display: flex; flex-direction: column; align-items: center; gap: 2rem;">
-      <div style="display: flex; flex-direction: row; align-items: flex-start; gap: 2rem; max-width: 1400px; width: 100%; flex-wrap: wrap; justify-content: center;">
-        <div style="flex: 1; min-width: 300px; max-width: 700px;">
-          <img src="/embedded/img-004.png" alt="Data Aggregation diagram" style="width: 100%; border-radius: 12px;">
+      <div class="data-aggregation-row">
+        <div class="data-aggregation-frame">
+          <img
+            class="data-aggregation-img"
+            src="/embedded/img-004.png"
+            alt="Data Aggregation diagram"
+          />
         </div>
-        <div style="flex: 1; min-width: 300px; max-width: 600px;">
-          <img src="/embedded/img-005.png" alt="Open Rent tool interface" style="width: 90%; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.10);">
+        <div class="data-aggregation-frame data-aggregation-frame--shadow">
+          <img
+            class="data-aggregation-img"
+            src="/embedded/img-005.png"
+            alt="Open Rent tool interface"
+          />
         </div>
       </div>
     </div>
@@ -320,13 +328,13 @@
     <div class="reveal">
       <h2 class="section-title" style="color: var(--near-black); text-align: center; margin-bottom: 2.5rem;">3. Local Partnerships and Engagement</h2>
     </div>
-    <div class="reveal impact-partner-layout" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start;">
+    <div class="reveal impact-partner-layout" style="display: grid; grid-template-columns: minmax(0, 560px) minmax(0, 360px); gap: 1.25rem; justify-content: center; align-items: center;">
       <div style="text-align: left;">
-        <p class="section-body" style="text-align: center; font-size: 0.869rem; line-height: 1.7;">The power of Open Rent lies in what it enables for the organizations using it. We are creating the platform using a participatory design approach, working alongside local governments and organizations to ensure the platform addresses real operational needs rather than assumed ones.</p>
-        <p class="section-body" style="margin-top: 1rem; text-align: center; font-size: 0.869rem; line-height: 1.7;">In the Bay Area, we are engaged with the Mountain View Housing Department as a founding design partner. Their rent registry is robust, but covers only a portion of the local market, making cross-analysis difficult. Open Rent is working to combine that registry with market-rate and affordable housing data across the city, giving city leaders a fuller picture of rental conditions and enabling more targeted policy decisions.</p>
+        <p class="section-body" style="text-align: center; font-size: 0.97rem; line-height: 1.75;">The power of Open Rent lies in what it enables for the organizations using it. We are creating the platform using a participatory design approach, working alongside local governments and organizations to ensure the platform addresses real operational needs rather than assumed ones.</p>
+        <p class="section-body" style="margin-top: 1rem; text-align: center; font-size: 0.97rem; line-height: 1.75;">In the Bay Area, we are engaged with the Mountain View Housing Department as a founding design partner. Their rent registry is robust, but covers only a portion of the local market, making cross-analysis difficult. Open Rent is working to combine that registry with market-rate and affordable housing data across the city, giving city leaders a fuller picture of rental conditions and enabling more targeted policy decisions.</p>
       </div>
       <div>
-        <img src="/Mountain-view.png" alt="City of Mountain View map" style="width: 70%; border-radius: 8px;" />
+        <img src="/Mountain-view.png" alt="City of Mountain View map" style="width: 56%; border-radius: 8px; display: block; margin: 0 auto;" />
       </div>
     </div>
   </div>
@@ -368,7 +376,7 @@
     <div class="reveal" style="margin-top: 3rem; text-align: center;">
       <p style="font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 1.2rem;">Based on learnings and inspiration shared by</p>
       <p class="partner-credits">
-        Bay Area Metro · Palo Alto Forward · Mercy Housing · Terner Center · Federal Reserve Bank of San Francisco · Housing Authority of Santa Clara County · City of Palo Alto · Partnership for the Bay’s Future · Urban Habitat
+        Bay Area Metro · Palo Alto Forward · Mercy Housing · Terner Center · Federal Reserve Bank of San Francisco · Housing Authority of Santa Clara County · City of Palo Alto · Partnership for the Bay’s Future · Urban Habitat · Anti-Eviction Mapping Project
       </p>
     </div>
   </div>

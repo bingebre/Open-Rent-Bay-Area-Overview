@@ -309,11 +309,64 @@
 			legendItems?.classList.toggle('expanded');
 		});
 
-		/** Pass wheel to parent when iframe hit scroll top/bottom (avoids scroll "trap"). */
+		/**
+		 * When embedded on the home page, wheel over the iframe should scroll the parent until the
+		 * entire iframe is in view; only then should wheel move/scrolly inside the iframe.
+		 * Same-origin: we can read frameElement against the parent viewport.
+		 */
 		let detachIframeWheel: (() => void) | undefined;
 		if (embedded) {
 			const origin = window.location.origin;
+			const tol = 2;
+
+			function isIframeReadyForInnerScroll(): boolean {
+				const frame = window.frameElement as HTMLIFrameElement | null;
+				if (!frame) return true;
+				const r = frame.getBoundingClientRect();
+				const pw = window.parent.innerWidth;
+				const ph = window.parent.innerHeight;
+				// Fits entirely inside parent viewport (strict).
+				if (r.width <= pw + tol && r.height <= ph + tol) {
+					return (
+						r.top >= -tol &&
+						r.left >= -tol &&
+						r.bottom <= ph + tol &&
+						r.right <= pw + tol
+					);
+				}
+				// Taller/wider than viewport: require iframe to fill the viewport (top aligned, full width).
+				return (
+					r.left >= -tol &&
+					r.right <= pw + tol &&
+					r.top >= -tol &&
+					r.top <= tol &&
+					r.bottom >= ph - tol
+				);
+			}
+
+			function syncParentListeners() {
+				updateIframeScrollMode();
+			}
+
+			let innerScrollAllowed = false;
+			function updateIframeScrollMode() {
+				innerScrollAllowed = isIframeReadyForInnerScroll();
+			}
+
+			updateIframeScrollMode();
+			const parentWin = window.parent;
+			parentWin.addEventListener('scroll', syncParentListeners, { passive: true });
+			parentWin.addEventListener('resize', syncParentListeners, { passive: true });
+			window.addEventListener('scroll', syncParentListeners, { passive: true });
+			window.addEventListener('resize', syncParentListeners, { passive: true });
+
 			const onWheelCapture = (e: WheelEvent) => {
+				updateIframeScrollMode();
+				if (!innerScrollAllowed) {
+					e.preventDefault();
+					window.parent.postMessage({ type: 'openrent-iframe-scroll', deltaY: e.deltaY }, origin);
+					return;
+				}
 				const root = document.documentElement;
 				const scrollTop = window.scrollY || root.scrollTop;
 				const maxScroll = Math.max(0, root.scrollHeight - window.innerHeight);
@@ -328,7 +381,13 @@
 				}
 			};
 			document.addEventListener('wheel', onWheelCapture, { capture: true, passive: false });
-			detachIframeWheel = () => document.removeEventListener('wheel', onWheelCapture, true);
+			detachIframeWheel = () => {
+				document.removeEventListener('wheel', onWheelCapture, true);
+				parentWin.removeEventListener('scroll', syncParentListeners);
+				parentWin.removeEventListener('resize', syncParentListeners);
+				window.removeEventListener('scroll', syncParentListeners);
+				window.removeEventListener('resize', syncParentListeners);
+			};
 		}
 
 		return () => {

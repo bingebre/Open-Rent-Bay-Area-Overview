@@ -469,6 +469,43 @@ section { position: relative; }
 .solution-section .section-body { color: rgba(255,255,255,0.5); }
 /* Cream sub-panel: same body text as .case-study-section / default .section-body */
 .solution-section .section-inner--light .section-body { color: var(--dark-gray); }
+
+/* Data Aggregation: two equal image frames */
+.data-aggregation-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  width: 100%;
+  margin-top: 0.9rem;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: stretch;
+}
+.data-aggregation-frame {
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--white);
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.data-aggregation-frame--shadow {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+}
+.data-aggregation-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+@media (max-width: 900px) {
+  .data-aggregation-row {
+    grid-template-columns: 1fr;
+  }
+}
+
 .pillars {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -638,7 +675,7 @@ section { position: relative; }
 }
 .cross-cutting-item {
   font-family: var(--font-mono);
-  font-size: 0.62rem;
+  font-size: 0.775rem;
   font-weight: 500;
   letter-spacing: 0.04em;
   padding: 0.3rem 0.6rem;
@@ -837,7 +874,7 @@ footer .footer-bottom { font-size: 0.7rem; font-weight: 400; color: rgba(255,255
 
 /* Partner acknowledgments (text replaces logo strip) */
 .partner-credits {
-  font-size: 0.62rem;
+  font-size: 0.775rem;
   line-height: 1.65;
   color: var(--dark-gray);
   font-weight: 400;
