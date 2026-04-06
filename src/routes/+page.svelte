@@ -118,6 +118,31 @@
 		const parallaxDiv = document.querySelector('.parallax-divider');
 		const contextMap = document.getElementById('contextMap');
 		const contextParas = document.querySelectorAll('.context-para');
+		const mapEmbed = document.getElementById('mapEmbed') as HTMLIFrameElement | null;
+
+		const syncMapEmbedScrollActivation = () => {
+			if (!mapEmbed?.contentWindow) return;
+			const rect = mapEmbed.getBoundingClientRect();
+			const topUiOffset = 84;
+			const viewTop = topUiOffset;
+			const viewBottom = window.innerHeight;
+
+			const visibleTop = Math.max(rect.top, viewTop);
+			const visibleBottom = Math.min(rect.bottom, viewBottom);
+			const visibleHeight = Math.max(0, visibleBottom - visibleTop);
+			const requiredHeight = Math.min(rect.height, viewBottom - viewTop);
+
+			const visibleLeft = Math.max(rect.left, 0);
+			const visibleRight = Math.min(rect.right, window.innerWidth);
+			const visibleWidth = Math.max(0, visibleRight - visibleLeft);
+			const requiredWidth = Math.min(rect.width, window.innerWidth);
+
+			const active = visibleHeight >= requiredHeight - 4 && visibleWidth >= requiredWidth - 4;
+			mapEmbed.contentWindow.postMessage(
+				{ type: 'openrent-map-activation', active },
+				window.location.origin
+			);
+		};
 
 		const onScrollFx = () => {
 			if (parallaxDiv) {
@@ -143,8 +168,12 @@
 				const offset = (rect.top - center) * speed;
 				(para as HTMLElement).style.transform = `translateY(${offset}px)`;
 			});
+			syncMapEmbedScrollActivation();
 		};
 		window.addEventListener('scroll', onScrollFx, { passive: true });
+		window.addEventListener('resize', syncMapEmbedScrollActivation, { passive: true });
+		mapEmbed?.addEventListener('load', syncMapEmbedScrollActivation);
+		syncMapEmbedScrollActivation();
 
 		const onIframeScrollMsg = (e: MessageEvent) => {
 			if (e.origin !== window.location.origin) return;
@@ -158,6 +187,8 @@
 			window.removeEventListener('scroll', onScrollNav);
 			window.removeEventListener('scroll', onScrollFx);
 			window.removeEventListener('message', onIframeScrollMsg);
+			window.removeEventListener('resize', syncMapEmbedScrollActivation);
+			mapEmbed?.removeEventListener('load', syncMapEmbedScrollActivation);
 		};
 	});
 </script>
@@ -231,7 +262,7 @@
 
 <section class="disparity-section" style="padding: 0;">
   <div style="width: 100%; height: 80vh; min-height: 600px;">
-    <iframe src="/map" title="Bay Area rent data map" style="width: 100%; height: 100%; border: none;" loading="lazy"></iframe>
+    <iframe id="mapEmbed" src="/map" title="Bay Area rent data map" style="width: 100%; height: 100%; border: none;" loading="lazy"></iframe>
   </div>
 </section>
 
@@ -313,7 +344,7 @@
 
     </div>
     <div class="reveal" style="margin-top: 2.5rem; display: flex; justify-content: center;">
-      <div style="max-width: 900px; width: 100%; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.1);">
+      <div style="max-width: 675px; width: 100%; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.1);">
         <video autoplay loop muted playsinline style="width: 100%; display: block;">
           <source src="/Rent%20Tool%20Video.mov" type="video/quicktime" />
           <source src="/Rent%20Tool%20Video.mov" type="video/mp4" />
@@ -328,7 +359,7 @@
     <div class="reveal">
       <h2 class="section-title" style="color: var(--near-black); text-align: center; margin-bottom: 2.5rem;">3. Local Partnerships and Engagement</h2>
     </div>
-    <div class="reveal impact-partner-layout" style="display: grid; grid-template-columns: minmax(0, 560px) minmax(0, 360px); gap: 1.25rem; justify-content: center; align-items: center;">
+    <div class="reveal impact-partner-layout" style="display: grid; grid-template-columns: minmax(0, 560px) minmax(0, 360px); gap: 0.5rem; justify-content: center; align-items: center;">
       <div style="text-align: left;">
         <p class="section-body" style="text-align: center; font-size: 0.97rem; line-height: 1.75;">The power of Open Rent lies in what it enables for the organizations using it. We are creating the platform using a participatory design approach, working alongside local governments and organizations to ensure the platform addresses real operational needs rather than assumed ones.</p>
         <p class="section-body" style="margin-top: 1rem; text-align: center; font-size: 0.97rem; line-height: 1.75;">In the Bay Area, we are engaged with the Mountain View Housing Department as a founding design partner. Their rent registry is robust, but covers only a portion of the local market, making cross-analysis difficult. Open Rent is working to combine that registry with market-rate and affordable housing data across the city, giving city leaders a fuller picture of rental conditions and enabling more targeted policy decisions.</p>
