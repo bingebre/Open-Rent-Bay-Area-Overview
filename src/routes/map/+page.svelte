@@ -39,10 +39,61 @@
 		/** When /map is shown in an iframe, wheel must scroll the parent page — not zoom the map. */
 		const embedded = typeof window !== 'undefined' && window.parent !== window;
 
+		/** Must run before any early return (missing token / unsupported) or production never receives activation. */
+		let detachIframeWheel: (() => void) | undefined;
+		if (embedded) {
+			const origin = window.location.origin;
+			let innerScrollAllowed = false;
+			const onParentActivation = (e: MessageEvent) => {
+				if (e.origin !== origin) return;
+				if (e.data?.type === 'openrent-map-activation') {
+					innerScrollAllowed = Boolean(e.data.active);
+				}
+			};
+			window.addEventListener('message', onParentActivation);
+
+			const pingParentReady = () => {
+				try {
+					window.parent.postMessage({ type: 'openrent-map-ready' }, origin);
+				} catch {
+					/* ignore */
+				}
+			};
+			queueMicrotask(pingParentReady);
+			requestAnimationFrame(() => requestAnimationFrame(pingParentReady));
+			setTimeout(pingParentReady, 120);
+			setTimeout(pingParentReady, 500);
+
+			const onWheelCapture = (e: WheelEvent) => {
+				if (!innerScrollAllowed) {
+					e.preventDefault();
+					window.parent.postMessage({ type: 'openrent-iframe-scroll', deltaY: e.deltaY }, origin);
+					return;
+				}
+				const root = document.documentElement;
+				const scrollTop = window.scrollY || root.scrollTop;
+				const maxScroll = Math.max(0, root.scrollHeight - window.innerHeight);
+				const atBottom = maxScroll - scrollTop < 8;
+				const atTop = scrollTop <= 0;
+				if (atBottom && e.deltaY > 0) {
+					e.preventDefault();
+					window.parent.postMessage({ type: 'openrent-iframe-scroll', deltaY: e.deltaY }, origin);
+				} else if (atTop && e.deltaY < 0) {
+					e.preventDefault();
+					window.parent.postMessage({ type: 'openrent-iframe-scroll', deltaY: e.deltaY }, origin);
+				}
+			};
+			document.addEventListener('wheel', onWheelCapture, { capture: true, passive: false });
+			detachIframeWheel = () => {
+				document.removeEventListener('wheel', onWheelCapture, true);
+				window.removeEventListener('message', onParentActivation);
+			};
+		}
+
 		if (!mapboxToken) {
 			mapEl.innerHTML =
 				'<div style="display:flex;align-items:center;justify-content:center;height:100%;min-height:240px;padding:2rem;text-align:center;font-family:system-ui,sans-serif;background:#1a1a1a;color:#f5f5f5;">Set <code style="background:#333;padding:0.2em 0.4em;border-radius:4px;">PUBLIC_MAPBOX_TOKEN</code> in <code style="background:#333;padding:0.2em 0.4em;border-radius:4px;">.env</code> at the project root, then restart the dev server.</div>';
-			return;
+			return () => detachIframeWheel?.();
 		}
 
 		mapboxgl.accessToken = mapboxToken;
@@ -50,7 +101,7 @@
 		if (!mapboxgl.supported()) {
 			mapEl.innerHTML =
 				'<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#fff;font-family:sans-serif;padding:2rem;text-align:center;">Your browser does not support Mapbox GL.</div>';
-			return;
+			return () => detachIframeWheel?.();
 		}
 
 		const map = new mapboxgl.Map({
@@ -308,56 +359,6 @@
 			this.classList.toggle('open');
 			legendItems?.classList.toggle('expanded');
 		});
-
-		let detachIframeWheel: (() => void) | undefined;
-		if (embedded) {
-			const origin = window.location.origin;
-			let innerScrollAllowed = false;
-			const onParentActivation = (e: MessageEvent) => {
-				if (e.origin !== origin) return;
-				if (e.data?.type === 'openrent-map-activation') {
-					innerScrollAllowed = Boolean(e.data.active);
-				}
-			};
-			window.addEventListener('message', onParentActivation);
-
-			/** Parent may post activation before this listener exists (prod hydration timing). Ping so it resyncs. */
-			const pingParentReady = () => {
-				try {
-					window.parent.postMessage({ type: 'openrent-map-ready' }, origin);
-				} catch {
-					/* ignore */
-				}
-			};
-			queueMicrotask(pingParentReady);
-			requestAnimationFrame(() => requestAnimationFrame(pingParentReady));
-			setTimeout(pingParentReady, 120);
-
-			const onWheelCapture = (e: WheelEvent) => {
-				if (!innerScrollAllowed) {
-					e.preventDefault();
-					window.parent.postMessage({ type: 'openrent-iframe-scroll', deltaY: e.deltaY }, origin);
-					return;
-				}
-				const root = document.documentElement;
-				const scrollTop = window.scrollY || root.scrollTop;
-				const maxScroll = Math.max(0, root.scrollHeight - window.innerHeight);
-				const atBottom = maxScroll - scrollTop < 8;
-				const atTop = scrollTop <= 0;
-				if (atBottom && e.deltaY > 0) {
-					e.preventDefault();
-					window.parent.postMessage({ type: 'openrent-iframe-scroll', deltaY: e.deltaY }, origin);
-				} else if (atTop && e.deltaY < 0) {
-					e.preventDefault();
-					window.parent.postMessage({ type: 'openrent-iframe-scroll', deltaY: e.deltaY }, origin);
-				}
-			};
-			document.addEventListener('wheel', onWheelCapture, { capture: true, passive: false });
-			detachIframeWheel = () => {
-				document.removeEventListener('wheel', onWheelCapture, true);
-				window.removeEventListener('message', onParentActivation);
-			};
-		}
 
 		return () => {
 			detachIframeWheel?.();

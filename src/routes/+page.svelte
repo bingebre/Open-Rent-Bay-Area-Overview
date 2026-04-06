@@ -124,27 +124,41 @@
 			if (!mapEmbed?.contentWindow) return;
 			const rect = mapEmbed.getBoundingClientRect();
 			const navEl = document.getElementById('nav');
-			const topUiOffset = navEl ? Math.ceil(navEl.getBoundingClientRect().bottom) + 6 : 88;
-			const viewTop = topUiOffset;
-			const viewBottom =
-				window.visualViewport != null
-					? window.visualViewport.offsetTop + window.visualViewport.height
-					: window.innerHeight;
+			const viewTop = navEl ? Math.ceil(navEl.getBoundingClientRect().bottom) + 4 : 88;
+
+			const vv = window.visualViewport;
+			const viewLeft = vv?.offsetLeft ?? 0;
+			const viewRight = viewLeft + (vv?.width ?? window.innerWidth);
+			const viewBottom = vv != null ? vv.offsetTop + vv.height : window.innerHeight;
+
+			const usableH = Math.max(0, viewBottom - viewTop);
 
 			const visibleTop = Math.max(rect.top, viewTop);
 			const visibleBottom = Math.min(rect.bottom, viewBottom);
 			const visibleHeight = Math.max(0, visibleBottom - visibleTop);
-			const requiredHeight = Math.min(rect.height, viewBottom - viewTop);
-
-			const visibleLeft = Math.max(rect.left, 0);
-			const visibleRight = Math.min(rect.right, window.innerWidth);
+			const visibleLeft = Math.max(rect.left, viewLeft);
+			const visibleRight = Math.min(rect.right, viewRight);
 			const visibleWidth = Math.max(0, visibleRight - visibleLeft);
-			const requiredWidth = Math.min(rect.width, window.innerWidth);
 
-			// Slightly looser tolerance for font/layout and mobile UI chrome (production vs local).
-			const slack = 16;
-			const active =
-				visibleHeight >= requiredHeight - slack && visibleWidth >= requiredWidth - slack;
+			const hRatio = rect.height > 0 ? visibleHeight / rect.height : 0;
+			const wRatio = rect.width > 0 ? visibleWidth / rect.width : 0;
+
+			/*
+			 * Old check required visibleHeight ≈ min(iframe, viewport), which fails when the iframe top
+			 * tucks under the fixed nav (common) — activation never flipped on production.
+			 */
+			const minWRatio = 0.85;
+			const tallerThanUsable = rect.height > usableH + 24;
+			let active: boolean;
+			if (tallerThanUsable) {
+				active =
+					wRatio >= minWRatio &&
+					rect.top <= viewTop + 20 &&
+					rect.bottom >= viewBottom - 20;
+			} else {
+				active = hRatio >= 0.62 && wRatio >= minWRatio;
+			}
+
 			try {
 				mapEmbed.contentWindow.postMessage(
 					{ type: 'openrent-map-activation', active },
@@ -188,6 +202,17 @@
 		mapEmbed?.addEventListener('load', syncMapEmbedScrollActivation);
 		syncMapEmbedScrollActivation();
 
+		const ioThresholds = Array.from({ length: 21 }, (_, i) => i / 20);
+		let mapEmbedIo: IntersectionObserver | undefined;
+		if (mapEmbed) {
+			mapEmbedIo = new IntersectionObserver(() => syncMapEmbedScrollActivation(), {
+				root: null,
+				rootMargin: '-96px 0px 0px 0px',
+				threshold: ioThresholds
+			});
+			mapEmbedIo.observe(mapEmbed);
+		}
+
 		const onIframeScrollMsg = (e: MessageEvent) => {
 			if (e.origin !== window.location.origin) return;
 			if (e.data?.type === 'openrent-map-ready') {
@@ -208,6 +233,7 @@
 			window.visualViewport?.removeEventListener('resize', syncMapEmbedScrollActivation);
 			window.visualViewport?.removeEventListener('scroll', syncMapEmbedScrollActivation);
 			mapEmbed?.removeEventListener('load', syncMapEmbedScrollActivation);
+			mapEmbedIo?.disconnect();
 		};
 	});
 </script>
