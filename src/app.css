@@ -475,9 +475,9 @@ section { position: relative; }
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 2rem;
-  /* 30% smaller than prior layout: 70% × max 1400px */
-  width: 70%;
-  max-width: 980px;
+  /* 30% smaller than prior layout, then +25% visual scale */
+  width: 87.5%;
+  max-width: 1225px;
   margin-top: 0.9rem;
   margin-left: auto;
   margin-right: auto;
