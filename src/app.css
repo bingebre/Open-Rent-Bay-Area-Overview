@@ -1009,6 +1009,12 @@ section { position: relative; }
   margin-left: 0;
   margin-right: 0;
 }
+/* Match #features: title + intro share 760px column; override global .section-body (620px centered) */
+.impact-section .impact-local-column .section-body {
+  max-width: 760px;
+  margin-left: 0;
+  margin-right: 0;
+}
 .impact-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
 .impact-card {
   background: var(--white);

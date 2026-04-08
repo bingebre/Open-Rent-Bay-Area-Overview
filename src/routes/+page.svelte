@@ -480,11 +480,9 @@
 <section class="impact-section" id="impact">
   <div class="section-inner">
     <div class="impact-local-column">
-    <div class="reveal">
-      <h2 class="section-title" style="color: var(--near-black); margin-bottom: 1.1rem; text-align: left; font-style: italic; font-weight: 500;">3. Local Partnerships and Engagement</h2>
-    </div>
     <div class="reveal" style="text-align: left;">
-      <p class="section-body" style="margin-top: 0; text-align: left; font-size: clamp(1.15rem, 2.2vw, 1.9rem); line-height: 1.38; color: #6f7074; margin-bottom: 1.5rem;">
+      <h2 class="section-title" style="color: var(--near-black); margin-bottom: 1.1rem; text-align: left; font-style: italic; font-weight: 500; max-width: 760px;">3. Local Partnerships and Engagement</h2>
+      <p class="section-body" style="margin-top: 0; text-align: left; max-width: 760px; font-size: clamp(1.15rem, 2.2vw, 1.9rem); line-height: 1.38; color: #6f7074; margin-bottom: 1.5rem;">
         Partnering with local organizations like the City of Mountain View is central to ensuring Open Rent meets the needs of local leaders.
       </p>
       <img src="/Mountain-view.png" alt="City of Mountain View map" style="width: 100%; border-radius: 8px; display: block; margin: 0 0 1.8rem;" />
@@ -512,7 +510,7 @@
     <div class="reveal lp-header">
       <h2 class="section-title" style="color: var(--near-black); margin-bottom: 1.1rem; text-align: left; font-style: italic; font-weight: 500; max-width: 760px;">3. Local Partnerships and Engagement</h2>
       <p class="section-body" style="margin-top: 0; text-align: left; max-width: 760px; font-size: clamp(1.15rem, 2.2vw, 1.9rem); line-height: 1.38; color: #6f7074;">
-        Discussions with many local organizations in the Bay Area have and will continue to inform numerous use cases for Open Rent, including the following.
+        Discussions with local organizations in the Bay Area have and will continue to inform numerous use cases for Open Rent, including the following.
       </p>
     </div>
 
