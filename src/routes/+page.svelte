@@ -246,8 +246,6 @@
   <div class="nav-links">
     <a href="#problem">Problem</a>
     <a href="#solution">Solution</a>
-    <a href="#features">Features</a>
-    <a href="#impact">Impact</a>
     <a href="#roadmap">Roadmap</a>
   </div>
 </nav>
@@ -257,6 +255,16 @@
   <div class="hero-content">
     <h1>The Open Rent Initiative</h1>
     <p class="hero-sub">Open, trusted rent data that powers economic opportunity.</p>
+    <div class="hero-sponsors">
+      <p class="hero-sponsors-label">Made possible by:</p>
+      <div class="hero-sponsors-logos">
+        <img src="/logos/SFF.png" alt="San Francisco Foundation" />
+        <img src="/logos/CZI.png" alt="Chan Zuckerberg Initiative" />
+        <img src="/logos/PSL.png" alt="Policy Simulation Library" />
+        <img src="/logos/citizen codex.png" alt="Citizen Codex" />
+        <img src="/logos/SVCF.png" alt="Silicon Valley Community Foundation" />
+      </div>
+    </div>
     <div class="hero-scroll-cue">
       <span>Scroll to explore</span>
       <div class="scroll-line"></div>
