@@ -970,6 +970,18 @@ section { position: relative; }
 .funnel-bar span { font-family: var(--font-mono); font-size: 0.78rem; font-weight: 500; color: white; }
 
 .impact-section { background: #F9F5F0; border-bottom: 1px solid var(--border); }
+/* Single column so heading, copy, image, and cards share one left edge (matches max-width column) */
+.impact-section .impact-local-column {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+.impact-section .impact-local-column .section-title {
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+}
 .impact-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
 .impact-card {
   background: var(--white);
@@ -1069,7 +1081,7 @@ footer .footer-bottom { font-size: 0.7rem; font-weight: 400; color: rgba(255,255
 
 /* Partner acknowledgments (text replaces logo strip) */
 .partner-credits {
-  font-size: 0.775rem;
+  font-size: calc(0.775rem * 1.25);
   line-height: 1.65;
   color: var(--dark-gray);
   font-weight: 400;
@@ -1202,6 +1214,11 @@ footer .footer-bottom { font-size: 0.7rem; font-weight: 400; color: rgba(255,255
   max-width: 860px;
   text-align: center;
 }
+@media (min-width: 960px) {
+  .roadmap-inner {
+    max-width: min(1100px, 94vw);
+  }
+}
 .roadmap-label {
   color: var(--accent);
   letter-spacing: 0.26em;
@@ -1220,12 +1237,13 @@ footer .footer-bottom { font-size: 0.7rem; font-weight: 400; color: rgba(255,255
   padding: 0;
   font-style: italic;
 }
-.timeline {
+/* Roadmap timeline: vertical by default; horizontal row from 960px up */
+.roadmap-section .timeline {
   position: relative;
   margin-top: 2.2rem;
   padding-left: 2.1rem;
 }
-.timeline::before {
+.roadmap-section .timeline::before {
   content: "";
   position: absolute;
   left: 1rem;
@@ -1234,14 +1252,14 @@ footer .footer-bottom { font-size: 0.7rem; font-weight: 400; color: rgba(255,255
   width: 1px;
   background: rgba(214, 182, 64, 0.35);
 }
-.timeline-item {
+.roadmap-section .timeline-item {
   position: relative;
   margin-bottom: 1.5rem;
 }
-.timeline-item:last-child {
+.roadmap-section .timeline-item:last-child {
   margin-bottom: 0;
 }
-.timeline-dot {
+.roadmap-section .timeline-dot {
   position: absolute;
   left: -2.1rem;
   top: 0.55rem;
@@ -1259,19 +1277,19 @@ footer .footer-bottom { font-size: 0.7rem; font-weight: 400; color: rgba(255,255
   align-items: center;
   justify-content: center;
 }
-.timeline-content {
+.roadmap-section .timeline-content {
   text-align: left;
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 6px;
   padding: 1.35rem 1.35rem 1.25rem;
 }
-.time-range {
+.roadmap-section .time-range {
   font-size: 0.78rem;
   color: rgba(255,255,255,0.52);
   margin-bottom: 0.5rem;
 }
-.timeline-content h4 {
+.roadmap-section .timeline-content h4 {
   margin: 0 0 0.65rem;
   font-family: var(--font-serif);
   font-weight: 600;
@@ -1279,11 +1297,56 @@ footer .footer-bottom { font-size: 0.7rem; font-weight: 400; color: rgba(255,255
   line-height: 1.15;
   color: #f3f3f3;
 }
-.timeline-content p {
+.roadmap-section .timeline-content p {
   margin: 0;
   font-size: clamp(1rem, 1.7vw, 1.4rem);
   line-height: 1.5;
   color: rgba(255,255,255,0.68);
+}
+
+@media (min-width: 960px) {
+  .roadmap-section .timeline {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(0.75rem, 2vw, 1.25rem);
+    padding-left: 0;
+    align-items: stretch;
+  }
+  .roadmap-section .timeline::before {
+    left: 16.66%;
+    right: 16.66%;
+    top: 0.925rem;
+    bottom: auto;
+    width: auto;
+    height: 1px;
+  }
+  .roadmap-section .timeline-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0;
+    text-align: center;
+  }
+  .roadmap-section .timeline-dot {
+    position: relative;
+    left: auto;
+    top: auto;
+    flex-shrink: 0;
+    margin-bottom: 0.85rem;
+    z-index: 1;
+  }
+  .roadmap-section .timeline-content {
+    text-align: center;
+    flex: 1;
+    width: 100%;
+  }
+  .roadmap-section .timeline-content h4 {
+    font-size: clamp(1.25rem, 1.8vw, 1.65rem);
+  }
+  .roadmap-section .timeline-content p {
+    font-size: clamp(0.92rem, 1.2vw, 1.05rem);
+    line-height: 1.55;
+  }
 }
 
 .lp-section {
@@ -1368,6 +1431,20 @@ footer .footer-bottom { font-size: 0.7rem; font-weight: 400; color: rgba(255,255
   letter-spacing: 0.12em;
   color: #1a1917;
 }
+.lp-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.45rem;
+}
+.lp-meta span {
+  color: #8c710f;
+  font-size: 0.72rem;
+  line-height: 1;
+}
+.lp-meta h4 {
+  margin: 0;
+}
 .lp-big {
   margin: 0 0 1rem;
   font-family: var(--font-serif);
@@ -1390,21 +1467,73 @@ footer .footer-bottom { font-size: 0.7rem; font-weight: 400; color: rgba(255,255
   color: #1a1917;
   line-height: 1.7;
 }
+.lp-box-media {
+  margin-top: 0.9rem;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.lp-box-media img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+.lp-stats {
+  margin-top: 0.9rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+.lp-stat-card {
+  background: #fff;
+  border: 1px solid rgba(217,212,199,0.85);
+  border-radius: 2px;
+  padding: 0.8rem 0.5rem;
+  text-align: center;
+}
+.lp-stat-card strong {
+  display: block;
+  color: #8c710f;
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+.lp-stat-card span {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #7b766d;
+  font-size: 0.5rem;
+  font-weight: 700;
+}
 .lp-box strong {
   color: #8c710f;
 }
-.lp-footer {
+/* In-page footer (not site footer): global `footer {}` is dark — override for partner strip */
+footer.lp-footer {
   margin-top: 3rem;
   padding-top: 2rem;
   border-top: 1px solid rgba(217,212,199,0.8);
   text-align: left;
+  background: var(--cream);
+  color: var(--near-black);
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+}
+footer.lp-footer p.lp-footer-kicker {
+  color: #8f8a80;
+}
+footer.lp-footer p.partner-credits {
+  color: var(--dark-gray);
 }
 .lp-footer-kicker {
   margin: 0 0 1rem;
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.25em;
-  color: #59544b;
+  color: #8f8a80;
 }
 
 @media (max-width: 900px) {
