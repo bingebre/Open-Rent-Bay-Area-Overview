@@ -428,7 +428,7 @@
   <div class="section-inner section-inner--light" style="background: #F9F5F0;">
     <div class="reveal">
       <h2 class="section-title" style="color: var(--near-black); margin-bottom: 1.1rem; text-align: left; font-style: italic; font-weight: 500; max-width: 760px;">1. Data Aggregation</h2>
-      <p class="section-body" style="margin-top: 0; text-align: left; max-width: 760px; font-size: clamp(1.15rem, 2.2vw, 1.9rem); line-height: 1.38; color: #6f7074;">Multiple sources are knit together to get a full picture of rental housing. Connecting disparate data at the parcel level allows for precise affordability analysis.</p>
+      <p class="section-body" style="margin-top: 0; text-align: left; max-width: 760px; font-size: clamp(1.15rem, 2.2vw, 1.9rem); line-height: 1.38; color: #6f7074;">Multiple sources are knit together to get a full picture of rental housing. Connecting disparate data at the parcel level allows for precise analysis.</p>
     </div>
     <div class="reveal" style="display: flex; flex-direction: column; align-items: center; gap: 2rem;">
       <div class="data-aggregation-row">
@@ -472,72 +472,131 @@
 <section class="impact-section" id="impact">
   <div class="section-inner">
     <div class="reveal">
-      <h2 class="section-title" style="color: var(--near-black); text-align: center; margin-bottom: 2.5rem;">3. Local Partnerships and Engagement</h2>
+      <h2 class="section-title" style="color: var(--near-black); margin-bottom: 1.1rem; text-align: left; font-style: italic; font-weight: 500; max-width: 760px;">3. Local Partnerships and Engagement</h2>
     </div>
-    <div class="reveal impact-partner-layout" style="display: grid; grid-template-columns: minmax(0, 560px) minmax(0, 360px); gap: 0.5rem; justify-content: center; align-items: center;">
-      <div style="text-align: left;">
-        <p class="section-body" style="text-align: center; font-size: 0.97rem; line-height: 1.75;">The power of Open Rent lies in what it enables for the organizations using it. We are creating the platform using a participatory design approach, working alongside local governments and organizations to ensure the platform addresses real operational needs rather than assumed ones.</p>
-        <p class="section-body" style="margin-top: 1rem; text-align: center; font-size: 0.97rem; line-height: 1.75;">In the Bay Area, we are engaged with the Mountain View Housing Department as a founding design partner. Their rent registry is robust, but covers only a portion of the local market, making cross-analysis difficult. Open Rent is working to combine that registry with market-rate and affordable housing data across the city, giving city leaders a fuller picture of rental conditions and enabling more targeted policy decisions.</p>
-      </div>
-      <div>
-        <img src="/Mountain-view.png" alt="City of Mountain View map" style="width: 56%; border-radius: 8px; display: block; margin: 0 auto;" />
+    <div class="reveal" style="text-align: left;">
+      <p class="section-body" style="text-align: left; margin: 0 0 1.5rem; max-width: 760px;">
+        Partnering with local organizations like the City of Mountain View is central to ensuring Open Rent meets the needs of local leaders.
+      </p>
+      <img src="/Mountain-view.png" alt="City of Mountain View map" style="width: 56%; border-radius: 8px; display: block; margin: 0 0 1.8rem;" />
+      <div style="text-align: left; display: grid; gap: 1.1rem; max-width: 760px;">
+        <div style="background: #ecebe8; border-radius: 2px; padding: 1.35rem 1.25rem;">
+          <h4 style="margin: 0 0 0.3rem; font-family: var(--font-serif); font-size: 2rem; font-size: clamp(1.55rem, 2.6vw, 2.05rem); line-height: 1.15; font-weight: 600; color: #444449;">Participatory Design</h4>
+          <p style="margin: 0; font-family: var(--font-sans); font-size: clamp(1.05rem, 1.8vw, 1.35rem); line-height: 1.42; color: #77787b;">Working alongside local governments and organizations to address real operational needs through collaborative workshops and design sprints.</p>
+        </div>
+        <div style="background: #ecebe8; border-radius: 2px; padding: 1.35rem 1.25rem;">
+          <h4 style="margin: 0 0 0.3rem; font-family: var(--font-serif); font-size: 2rem; font-size: clamp(1.55rem, 2.6vw, 2.05rem); line-height: 1.15; font-weight: 600; color: #444449;">Robust Integration</h4>
+          <p style="margin: 0; font-family: var(--font-sans); font-size: clamp(1.05rem, 1.8vw, 1.35rem); line-height: 1.42; color: #77787b;">Combining existing rent registries with market-rate and affordable housing data to create a singular, authoritative source of truth.</p>
+        </div>
+        <div style="background: #ecebe8; border-radius: 2px; padding: 1.35rem 1.25rem;">
+          <h4 style="margin: 0 0 0.3rem; font-family: var(--font-serif); font-size: 2rem; font-size: clamp(1.55rem, 2.6vw, 2.05rem); line-height: 1.15; font-weight: 600; color: #444449;">Targeted Policy</h4>
+          <p style="margin: 0; font-family: var(--font-sans); font-size: clamp(1.05rem, 1.8vw, 1.35rem); line-height: 1.42; color: #77787b;">Empowering city leaders with comprehensive data for informed decision-making, moving beyond speculation to strategic governance.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section style="background: #F9F5F0; border-bottom: 1px solid var(--border); padding: 5rem 0;">
-  <div class="section-inner">
-    <div class="reveal">
-      <h2 class="section-title" style="color: var(--near-black); text-align: center; margin-bottom: 1.5rem;">3. Local Partnerships and Engagement</h2>
-      <p class="section-body" style="text-align: center; margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">Discussions with many local organizations in the Bay Area have and will continue to inform numerous use cases that drive how Open Rent is built, including the following.</p>
+<section class="lp-section">
+  <div class="section-inner lp-inner">
+    <div class="reveal lp-header">
+      <h2 class="section-title" style="color: var(--near-black); margin-bottom: 1.1rem; text-align: left; font-style: italic; font-weight: 500; max-width: 760px;">3. Local Partnerships and Engagement</h2>
     </div>
 
-    <div class="reveal use-cases-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
-      <!-- Use Case 1 -->
-      <div style="background: var(--white); border-radius: 8px; padding: 1.8rem; border: 1px solid var(--border);">
-        <h4 style="font-family: var(--font-sans); font-size: 0.82rem; font-weight: 700; color: var(--near-black); margin-bottom: 1rem;">Use Case 1: Proactive Eviction Prevention and Targeted Resource Allocation</h4>
-        <p style="font-size: 0.72rem; color: var(--dark-gray); margin-bottom: 0.8rem; line-height: 1.7;"><strong style="color: var(--near-black);">The User:</strong> Direct Service Providers and Housing Navigators</p>
-        <p style="font-size: 0.72rem; color: var(--dark-gray); margin-bottom: 0.8rem; line-height: 1.7;"><strong style="color: var(--near-black);">The Issue:</strong> Lack real-time, neighborhood-level rent data, forcing them to react to imminent evictions rather than proactively distributing emergency assistance.</p>
-        <p style="font-size: 0.72rem; color: var(--dark-gray); line-height: 1.7;"><strong style="color: var(--near-black);">Using Open Rent:</strong> Use interactive maps and predictive models to identify eviction risk and target outreach/emergency assistance.</p>
-      </div>
+    <div class="lp-cards">
+      <article class="reveal lp-card">
+        <div class="lp-card-grid">
+          <div class="lp-card-left">
+            <span class="lp-card-kicker">Use case 1</span>
+            <h3>Direct Service Providers</h3>
+            <p>Front-line specialists focused on housing stability and community resilience.</p>
+          </div>
+          <div class="lp-card-right">
+            <h4>The Critical Issue</h4>
+            <p class="lp-big">Providers suffer from a <em>lack of real-time neighborhood data</em>, leading to reactive instead of proactive measures.</p>
+            <div class="lp-box">
+              <h4>Open Rent</h4>
+              <p>Leverage <strong>interactive maps</strong> and <strong>predictive models</strong> to identify high-risk zones before evictions occur.</p>
+            </div>
+          </div>
+        </div>
+      </article>
 
-      <!-- Use Case 2 -->
-      <div style="background: var(--white); border-radius: 8px; padding: 1.8rem; border: 1px solid var(--border);">
-        <h4 style="font-family: var(--font-sans); font-size: 0.82rem; font-weight: 700; color: var(--near-black); margin-bottom: 1rem;">Use Case 2: Strategic Investment and Affordable Housing Preservation</h4>
-        <p style="font-size: 0.72rem; color: var(--dark-gray); margin-bottom: 0.8rem; line-height: 1.7;"><strong style="color: var(--near-black);">The User:</strong> Philanthropic Program Officers, Housing Agency Program Officers, and Affordable Housing Developers.</p>
-        <p style="font-size: 0.72rem; color: var(--dark-gray); margin-bottom: 0.8rem; line-height: 1.7;"><strong style="color: var(--near-black);">The Issue:</strong> Struggle to evaluate affordable housing projects strategically because the necessary market and community data is expensive, fragmented, and proprietary.</p>
-        <p style="font-size: 0.72rem; color: var(--dark-gray); line-height: 1.7;"><strong style="color: var(--near-black);">Using Open Rent:</strong> Overlay real-time rent and neighborhood data to identify affordable housing at risk of conversion, allowing them to prioritize capital investments for preservation.</p>
-      </div>
+      <article class="reveal lp-card">
+        <div class="lp-card-grid">
+          <div class="lp-card-left">
+            <span class="lp-card-kicker">Use case 2</span>
+            <h3>Program Officers</h3>
+            <p>Decision makers at housing agencies, affrodable housing developers, and strategic investment funds.</p>
+          </div>
+          <div class="lp-card-right">
+            <h4>The Critical Issue</h4>
+            <p class="lp-big">Program officers struggle to <em>evauate market rent price dynamics</em> without holistic data and proper benchmarks.</p>
+            <div class="lp-box">
+              <h4>Open Rent</h4>
+              <p><strong>Compare rent prices</strong> across different types of rental housing within and across geographic units and against income data to provide insight into affordability.</p>
+            </div>
+          </div>
+        </div>
+      </article>
 
-      <!-- Use Case 3 -->
-      <div style="background: var(--white); border-radius: 8px; padding: 1.8rem; border: 1px solid var(--border);">
-        <h4 style="font-family: var(--font-sans); font-size: 0.82rem; font-weight: 700; color: var(--near-black); margin-bottom: 1rem;">Use Case 3: Data-Driven Policy Advocacy and Civic Engagement</h4>
-        <p style="font-size: 0.72rem; color: var(--dark-gray); margin-bottom: 0.8rem; line-height: 1.7;"><strong style="color: var(--near-black);">The User:</strong> Housing Policy Advocates, Community Organizers, and Civic Leaders.</p>
-        <p style="font-size: 0.72rem; color: var(--dark-gray); margin-bottom: 0.8rem; line-height: 1.7;"><strong style="color: var(--near-black);">The Issue:</strong> Rely on outdated or anecdotal information, lacking the current, standardized rental data needed to effectively drive systemic policy change.</p>
-        <p style="font-size: 0.72rem; color: var(--dark-gray); line-height: 1.7;"><strong style="color: var(--near-black);">Using Open Rent:</strong> Use the integrated dataset to create localized visualizations and reports on affordability of rents at a neighborhood level and for specific occupations to inform policy changes.</p>
-      </div>
+      <article class="reveal lp-card">
+        <div class="lp-card-grid">
+          <div class="lp-card-left">
+            <span class="lp-card-kicker">Use case 3</span>
+            <h3>Policy Advocates</h3>
+            <p>Community organizers and activists building data-driven civic campaigns.</p>
+          </div>
+          <div class="lp-card-right">
+            <h4>The Critical Issue</h4>
+            <p class="lp-big">Advocates often <em>rely on outdated and fragmented information</em>, making it difficult to have clarity and make a case for issues of concern.</p>
+            <div class="lp-box">
+              <h4>Open Rent</h4>
+              <p>Use an <strong>integrated dataset</strong> to create hyper-localized visualizations that transform complex policy issues into compelling, evidence-based narratives.</p>
+            </div>
+          </div>
+        </div>
+      </article>
     </div>
 
-    <div class="reveal" style="margin-top: 3rem; text-align: center;">
-      <p style="font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 1.2rem;">Based on learnings and inspiration shared by</p>
-      <p class="partner-credits">
-        Bay Area Metro · Palo Alto Forward · Mercy Housing · Terner Center · Federal Reserve Bank of San Francisco · Housing Authority of Santa Clara County · City of Palo Alto · Partnership for the Bay’s Future · Urban Habitat
-      </p>
-    </div>
+    <footer class="reveal lp-footer">
+      <p class="lp-footer-kicker">Based on learnings and inspiration shared by...</p>
+      <p class="partner-credits">Bay Area Metro · Palo Alto Forward · Mercy Housing · Terner Center · Federal Reserve Bank of San Francisco · Housing Authority of Santa Clara County · City of Palo Alto · Partnership for the Bay’s Future · Urban Habitat</p>
+    </footer>
   </div>
 </section>
 
 <section class="roadmap-section" id="roadmap">
-  <div class="section-inner">
+  <div class="section-inner roadmap-inner">
     <div class="reveal">
-      <div class="section-label">Roadmap</div>
-      <h2 class="section-title">18-month plan to expand across <em style="color: #1a1a1a; background: #FFD700; padding: 0.05em 0.15em; font-style: italic;">the Bay Area</em>.</h2>
+      <div class="section-label roadmap-label">Roadmap</div>
+      <h2 class="section-title roadmap-title">18-month plan to expand across <em class="roadmap-highlight">the Bay Area</em>.</h2>
     </div>
     <div class="timeline">
-      <div class="timeline-item reveal" style="--i:0"><div class="timeline-dot" style="background: var(--near-black);">P1</div><div class="timeline-content"><div class="time-range">Oct 2025 – June 2026</div><h4>Foundation &amp; Bay Area Pilot</h4><p>Design and build data infrastructure, integrate metro-area-wide foundational data sets, integrate deep-dive data from Santa Clara, and build core user features. Launch the Bay Area pilot in June 2026.</p></div></div>
-      <div class="timeline-item reveal" style="--i:1"><div class="timeline-dot" style="background: var(--accent);">P2</div><div class="timeline-content"><div class="time-range">Summer 2026 – Winter 2026/27</div><h4>Broaden &amp; Deepen</h4><p>Broaden and deepen data pipelines to cover the entire Bay Area, build estimation models (e.g., rent prices, vacancy), and expand user features (e.g., real time displacement risk heatmap) to tackle more use cases and support broader groups of stakeholders.</p></div></div>
-      <div class="timeline-item reveal" style="--i:2"><div class="timeline-dot" style="background: var(--warm-accent);">P3</div><div class="timeline-content"><div class="time-range">2027 and Beyond</div><h4>Scale &amp; Expand</h4><p>Continue to expand data sets and additional user features. Explore replication in other metro areas beyond the Bay Area.</p></div></div>
+      <div class="timeline-item reveal" style="--i:0">
+        <div class="timeline-dot">P1</div>
+        <div class="timeline-content">
+          <div class="time-range">Oct 2025 – June 2026</div>
+          <h4>Foundation &amp; Bay Area Pilot</h4>
+          <p>Design and build data infrastructure, integrate metro-area-wide foundational data sets, integrate deep-dive data from Santa Clara, and build core user features. Launch the Bay Area pilot in June 2026.</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal" style="--i:1">
+        <div class="timeline-dot">P2</div>
+        <div class="timeline-content">
+          <div class="time-range">Summer 2026 – Winter 2026/27</div>
+          <h4>Broaden &amp; Deepen</h4>
+          <p>Broaden and deepen data pipelines to cover the entire Bay Area, build estimation models (e.g., rent prices, vacancy), and expand user features (e.g., real time displacement risk heatmap) to tackle more use cases and support broader groups of stakeholders.</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal" style="--i:2">
+        <div class="timeline-dot">P3</div>
+        <div class="timeline-content">
+          <div class="time-range">2027 and Beyond</div>
+          <h4>Scale &amp; Expand</h4>
+          <p>Continue to expand data sets and additional user features. Explore replication in other metro areas beyond the Bay Area.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
