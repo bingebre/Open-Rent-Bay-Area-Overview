@@ -270,37 +270,65 @@
     <img src="/embedded/img-002.png" alt="Collecting Data From Multiple Sources To Create A Comprehensive Picture" style="width: 100%; border-radius: 4px;" />
   </div>
 
-  <div class="section-inner" style="position: relative; z-index: 2;">
+  <div class="section-inner context-inner" style="position: relative; z-index: 2;">
     <div class="reveal">
-      <div class="section-label" style="color: var(--mid-gray);">The Context</div>
+      <div class="section-label context-label">The Context</div>
     </div>
     <div class="context-para reveal" data-speed="0.03">
-      <p class="context-body">Across the Bay Area, a wide range of organizations are working to preserve and build affordable housing, protect tenants from displacement, and shape smarter housing policy.</p>
+      <h2 class="context-title">
+        The challenge of
+        <span>fragmented rent data.</span>
+      </h2>
     </div>
     <div class="context-para reveal" data-speed="0.05">
-      <div class="context-highlight-box">
-        <p>These organizations – government agencies, community organizations, service providers, researchers, policy advocates – share a common need:<br><span class="gold-bold">timely, granular, and trustworthy data</span> on the rental market.</p>
-      </div>
+      <p class="context-body">
+        Across the Bay Area, organizations working to preserve and build affordable housing, protect tenants from displacement and shape smarter housing policy share a common need: timely, granular, and trustworthy insights on rental markets...
+      </p>
     </div>
     <div class="context-para reveal" data-speed="0.07">
-      <p class="context-bold-line" style="margin-top: 2.5rem; max-width: 580px; margin-left: auto; margin-right: auto;">Unfortunately, none of these organizations are getting the data they need to inform sound decisions.</p>
+      <p class="context-quote">
+        "Unfortunately, none of these organizations are getting the
+        <span>data they need</span> to inform sound decisions."
+      </p>
     </div>
   </div>
 </section>
 
 <section class="the-problem-section">
-  <div class="section-inner">
+  <div class="section-inner problem-inner">
     <div class="reveal">
-      <div class="section-label" style="color: var(--near-black); font-weight: 700; font-family: var(--font-sans); letter-spacing: 0.15em;">THE PROBLEM</div>
+      <div class="section-label problem-label">The Problem</div>
+      <h3 class="problem-heading">An Example</h3>
     </div>
-    <div class="reveal" style="transition-delay: 0.15s;">
-      <p class="section-body" style="margin-top: 2.5rem; padding-bottom: 2rem;">To illustrate, consider the most widely used data sources: the American Community Survey (ACS) and the Zillow Observed Rent Index (ORI).</p>
+
+    <div class="reveal" style="transition-delay: 0.1s;">
+      <p class="problem-intro">
+        To illustrate, consider the most widely used data sources: the
+        <em>American Community Survey (ACS)</em> and the
+        <em>Zillow Observed Rent Index (ORI)</em>. These sources have numerous limitations.
+      </p>
     </div>
-    <div class="reveal" style="transition-delay: 0.35s;">
-      <p class="section-body" style="padding-top: 2rem; padding-bottom: 2rem;">Both sources provide only aggregate data which obscure neighborhood level details, ORI only covers markets within Zillow's footprint, and ACS is based on historical, lagging data.</p>
+
+    <div class="problem-cards reveal" style="transition-delay: 0.2s;">
+      <article class="problem-example-card">
+        <h4>Aggregate Obscurity</h4>
+        <p>Both sources provide only aggregate data which obscure neighborhood-level details, preventing precise local intervention.</p>
+      </article>
+      <article class="problem-example-card">
+        <h4>Spatial Gaps</h4>
+        <p>ORI only covers markets within Zillow's footprint, leaving many communities without timely rental visibility.</p>
+      </article>
+      <article class="problem-example-card">
+        <h4>Temporal Lag</h4>
+        <p>ACS is based on historical, lagging data - describing the past, not the present.</p>
+      </article>
     </div>
-    <div class="reveal" style="transition-delay: 0.55s;">
-      <p class="section-body" style="padding-top: 2rem; font-weight: 700;">As a result, the most widely used public data sources for research and policymaking become quickly <em>unreliable</em> at the granular, timely level needed for decisions.</p>
+
+    <div class="reveal" style="transition-delay: 0.3s;">
+      <p class="problem-conclusion">
+        As a result, the most widely used public data sources for research and policymaking become
+        <span>quickly unreliable</span> at the granular, timely level needed for decisions.
+      </p>
     </div>
   </div>
 </section>
@@ -311,44 +339,86 @@
   </div>
 </section>
 
-<section style="background: var(--cream); padding: 5rem 0;">
-  <div class="section-inner">
+<section class="impact-problem-section">
+  <div class="section-inner impact-problem-inner">
     <div class="reveal">
-      <div class="section-label" style="color: var(--near-black); font-weight: 700; font-family: var(--font-sans); letter-spacing: 0.15em;">THE PROBLEM</div>
+      <div class="section-label impact-problem-label">The Problem</div>
+      <h3 class="impact-problem-title">Impact of Data Deficiencies</h3>
     </div>
-    <div class="reveal" style="transition-delay: 0.15s;">
-      <p class="section-body" style="margin-top: 2rem; margin-bottom: 2rem;">These deficiencies cause several major challenges for addressing affordable housing.</p>
+    <div class="reveal" style="transition-delay: 0.1s;">
+      <p class="impact-problem-intro">
+        Widely used sources like ACS and Zillow provide aggregate data that obscure neighborhood-level details, resulting in unreliable insights.
+      </p>
     </div>
-    <div class="problem-grid">
-      <div class="problem-card reveal" style="--i:0"><h4>Undercounting Affordable Stock.</h4><p>Single-family rentals and Naturally Occurring Affordable Housing (NOAH) are often invisible, hindering the state's ability to identify preservation risks.</p></div>
-      <div class="problem-card reveal" style="--i:1"><h4>Reactive Posture.</h4><p>Without real-time tracking of rent hikes, vacancy rates, or neighborhood-level trends, advocates and service providers are forced to react to displacement only after it has occurred rather than deploying early interventions.</p></div>
-      <div class="problem-card reveal" style="--i:2"><h4>Information Asymmetry.</h4><p>Well-resourced organizations have access to sophisticated market analytics, while renters, advocates, and policymakers are left operating with poor data, worsening housing inequities.</p></div>
-      <div class="problem-card reveal" style="--i:3"><h4>Operational Friction.</h4><p>Manually aggregating disparate data sources is a high-cost process that few organizations can afford. If done poorly, it is both a cost of resources that many organizations can't spare and/or can result in poor decision making.</p></div>
+    <div class="impact-problem-grid">
+      <article class="impact-problem-card reveal" style="--i:0">
+        <h4>Undercounting Stock</h4>
+        <p>Single-family rentals and Naturally Occurring Affordable Housing (NOAH) are often invisible, hindering preservation risks identification.</p>
+      </article>
+      <article class="impact-problem-card reveal" style="--i:1">
+        <h4>Reactive Posture</h4>
+        <p>Without real-time tracking, advocates react to displacement only after it occurs rather than deploying early interventions.</p>
+      </article>
+      <article class="impact-problem-card reveal" style="--i:2">
+        <h4>Information Asymmetry</h4>
+        <p>Well-resourced orgs have sophisticated analytics, while renters and policymakers operate with poor data, worsening inequities.</p>
+      </article>
+      <article class="impact-problem-card reveal" style="--i:3">
+        <h4>Operational Friction</h4>
+        <p>Manually aggregating disparate data sources is a high-cost process that few organizations can afford. If done poorly, it is both a cost of resources that many organizations can't spare and/or can result in poor decision making.</p>
+      </article>
     </div>
-    <p class="section-body" style="margin-top: 2rem; font-weight: 700; text-align: center;">Ultimately, this information gap means that policies and interventions are often implemented without strong empirical grounding.</p>
+    <div class="reveal" style="transition-delay: 0.2s;">
+      <p class="impact-problem-conclusion">
+        Ultimately, this information gap means policies are implemented
+        <span>without strong empirical grounding.</span>
+      </p>
+    </div>
   </div>
 </section>
 
 <section class="solution-section" id="solution">
   <div class="section-inner">
     <div class="reveal">
-      <div class="section-label">The Solution</div>
+      <div class="solution-title-block">
+        <div class="section-label solution-title-label">The Solution</div>
+        <h2 class="solution-title-main">The Open Rent<br />Initiative</h2>
+      </div>
     </div>
     <div class="solution-layout">
       <div class="solution-text">
-        <div class="reveal" style="margin-top: 2rem;">
-          <p class="section-body" style="font-size: 1.375rem; color: rgba(255,255,255,0.85); max-width: 640px;">The Open Rent Initiative is building comprehensive public data infrastructure to solve these challenges, starting with the State of California.</p>
+        <div class="reveal" style="margin-top: 1.2rem;">
+          <p class="solution-intro-copy">
+            Building comprehensive public data infrastructure starting with the State of California. We aggregate and harmonize fragmented sources into a single, open platform.
+          </p>
         </div>
-        <div class="reveal" style="margin-top: 2rem;">
-          <p class="section-body" style="font-size: 1.375rem; color: rgba(255,255,255,0.85); max-width: 640px;">Open Rent aggregates and harmonizes fragmented data from multiple sources into a single, open platform for the researchers, advocates and policymakers who need it most.</p>
-        </div>
-        <div class="reveal" style="margin-top: 2rem;">
-          <p class="section-body" style="font-size: 1.375rem; color: var(--accent); max-width: 640px;">The initiative focuses on three core elements: Data Aggregation, Interactive Tools, Local Partnerships.</p>
+        <div class="reveal solution-pillars-list" style="transition-delay: 0.1s;">
+          <div class="solution-pillar-item">
+            <div class="solution-pillar-num">01.</div>
+            <div>
+              <h4>Data Aggregation</h4>
+              <p>Property-level parcel mapping.</p>
+            </div>
+          </div>
+          <div class="solution-pillar-item">
+            <div class="solution-pillar-num">02.</div>
+            <div>
+              <h4>Interactive Tools</h4>
+              <p>Visual interfaces for non-technical users.</p>
+            </div>
+          </div>
+          <div class="solution-pillar-item">
+            <div class="solution-pillar-num">03.</div>
+            <div>
+              <h4>Local Partnerships</h4>
+              <p>Participatory design with city leaders.</p>
+            </div>
+          </div>
         </div>
       </div>
       <div class="reveal solution-map">
         <img
-          src="/california-rent-registry-map.png"
+          src="/california-rent-registry-map-new.png"
           alt="California rent registry map"
           class="solution-map-img"
         />
@@ -357,8 +427,8 @@
   </div>
   <div class="section-inner section-inner--light" style="background: #F9F5F0;">
     <div class="reveal">
-      <h2 class="section-title" style="color: var(--near-black); margin-bottom: 2rem;">1. Data Aggregation</h2>
-      <p class="section-body" style="margin-top: 1.5rem;">Multiple sources of data are knit together to get a full picture of rental housing. Connecting this disparate data at the parcel and property level allows us to answer questions like: where in this area can a nurse making $65,000 per year afford rent?</p>
+      <h2 class="section-title" style="color: var(--near-black); margin-bottom: 1.1rem; text-align: left; font-style: italic; font-weight: 500; max-width: 760px;">1. Data Aggregation</h2>
+      <p class="section-body" style="margin-top: 0; text-align: left; max-width: 760px; font-size: clamp(1.15rem, 2.2vw, 1.9rem); line-height: 1.38; color: #6f7074;">Multiple sources are knit together to get a full picture of rental housing. Connecting disparate data at the parcel level allows for precise affordability analysis.</p>
     </div>
     <div class="reveal" style="display: flex; flex-direction: column; align-items: center; gap: 2rem;">
       <div class="data-aggregation-row">
@@ -384,12 +454,12 @@
 <section class="case-study-section" id="features">
   <div class="section-inner">
     <div class="reveal">
-      <h2 class="section-title" style="color: var(--near-black);">2. Interactive Tools</h2>
-      <p class="section-body" style="margin-top: 1.5rem;">The platform’s interactive tools are designed for non-technical users such as program officers who need to work with complex data without requiring specialized expertise. Researchers are also able to download datasets.</p>
+      <h2 class="section-title" style="color: var(--near-black); margin-bottom: 1.1rem; text-align: left; font-style: italic; font-weight: 500; max-width: 760px;">2. Interactive Tools</h2>
+      <p class="section-body" style="margin-top: 0; text-align: left; max-width: 760px; font-size: clamp(1.15rem, 2.2vw, 1.9rem); line-height: 1.38; color: #6f7074;">Designed for non-technical users such as program officers who need to work with complex data without specialized expertise.</p>
 
     </div>
     <div class="reveal" style="margin-top: 2.5rem; display: flex; justify-content: center;">
-      <div style="max-width: 675px; width: 100%; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.1);">
+      <div style="max-width: 675px; width: 100%; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 2px solid #d8d5ce; background: #f3f1ec; padding: 8px;">
         <video autoplay loop muted playsinline style="width: 100%; display: block;">
           <source src="/Rent%20Tool%20Video.mov" type="video/quicktime" />
           <source src="/Rent%20Tool%20Video.mov" type="video/mp4" />

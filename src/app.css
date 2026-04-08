@@ -249,43 +249,58 @@ section { position: relative; }
 .context-para {
   will-change: transform;
 }
+.context-inner {
+  text-align: left;
+  max-width: 700px;
+  padding-top: 6.5rem;
+  padding-bottom: 6.5rem;
+}
+.context-label {
+  color: var(--accent);
+  letter-spacing: 0.3em;
+  margin-bottom: 1rem;
+}
+.context-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.3rem, 5vw, 3.6rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  max-width: 620px;
+  margin: 0;
+}
+.context-title span {
+  display: block;
+  color: var(--accent);
+  font-style: italic;
+  font-weight: 500;
+}
 .context-body {
   font-family: var(--font-sans);
-  font-size: 1.05rem;
+  font-size: 2rem;
+  font-size: clamp(1.65rem, 3.3vw, 2.1rem);
   font-weight: 300;
-  line-height: 1.85;
-  color: rgba(255,255,255,0.7);
-  max-width: 580px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.context-highlight-box {
+  line-height: 1.4;
+  color: rgba(255,255,255,0.9);
+  max-width: 680px;
   margin-top: 2rem;
-  padding: 2rem 2.5rem;
-  border-top: 1px solid rgba(255,255,255,0.1);
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 0;
+  margin-right: 0;
 }
-.context-highlight-box p {
-  font-family: var(--font-sans);
-  font-size: 1rem;
-  font-weight: 300;
-  line-height: 1.8;
-  color: rgba(255,255,255,0.65);
-}
-.gold-bold {
-  color: var(--accent);
-  font-weight: 700;
-}
-.context-bold-line {
+.context-quote {
   font-family: var(--font-serif);
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: clamp(1.8rem, 3.7vw, 2.45rem);
+  font-style: italic;
+  font-weight: 500;
+  color: var(--white);
+  margin-top: 3.2rem;
+  line-height: 1.32;
+  max-width: 700px;
+}
+.context-quote span {
   color: var(--accent);
-  margin-top: 0.5rem;
-  line-height: 1.5;
+  font-weight: 600;
 }
 
 .parallax-divider {
@@ -328,7 +343,166 @@ section { position: relative; }
 
 /* ── THE PROBLEM SECTION ── */
 .the-problem-section {
-  background: #F9F5F0;
+  background: #11161e;
+  color: var(--white);
+}
+.problem-inner {
+  max-width: 760px;
+  text-align: left;
+  padding-top: 5.5rem;
+  padding-bottom: 5.5rem;
+}
+.problem-label {
+  color: #f2f2f2;
+  letter-spacing: 0.22em;
+  margin-bottom: 0.45rem;
+}
+.problem-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2.1rem, 4.6vw, 3.1rem);
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.1;
+  color: #f2f2f2;
+  margin: 0;
+}
+.problem-intro {
+  margin-top: 1.7rem;
+  margin-bottom: 0;
+  max-width: 620px;
+  font-size: clamp(1.05rem, 2.1vw, 1.26rem);
+  line-height: 1.65;
+  color: rgba(255,255,255,0.88);
+}
+.problem-intro em {
+  font-style: italic;
+  font-weight: 700;
+  color: #ffffff;
+}
+.problem-cards {
+  margin-top: 2rem;
+  display: grid;
+  gap: 0.8rem;
+}
+.problem-example-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+  padding: 1rem 1.05rem;
+}
+.problem-example-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.48);
+  margin-bottom: 0.45rem;
+}
+.problem-example-card h4 {
+  margin: 0 0 0.35rem;
+  font-size: 1.15rem;
+  font-family: var(--font-serif);
+  font-weight: 500;
+  color: #f4f4f4;
+}
+.problem-example-card p {
+  margin: 0;
+  font-size: 0.86rem;
+  line-height: 1.55;
+  color: rgba(255,255,255,0.75);
+}
+.problem-conclusion {
+  margin-top: 2rem;
+  margin-bottom: 0;
+  background: rgba(0,0,0,0.36);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  padding: 1.25rem 1.2rem;
+  max-width: 640px;
+  font-family: var(--font-serif);
+  font-size: clamp(1.35rem, 3vw, 2rem);
+  line-height: 1.25;
+  color: #f5f5f5;
+}
+.problem-conclusion span {
+  color: var(--accent);
+  font-style: italic;
+  font-weight: 700;
+}
+
+.impact-problem-section {
+  background: #121923;
+  color: var(--white);
+}
+.impact-problem-inner {
+  max-width: 760px;
+  text-align: left;
+  padding-top: 5.5rem;
+  padding-bottom: 5.5rem;
+}
+.impact-problem-label {
+  color: var(--accent);
+  letter-spacing: 0.28em;
+  margin-bottom: 0.7rem;
+}
+.impact-problem-title {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4.4vw, 3.1rem);
+  line-height: 1.1;
+  color: #f3f3f3;
+  max-width: 470px;
+}
+.impact-problem-intro {
+  margin-top: 1.3rem;
+  margin-bottom: 0;
+  max-width: 620px;
+  font-size: clamp(1rem, 2vw, 1.18rem);
+  line-height: 1.55;
+  color: rgba(255,255,255,0.76);
+}
+.impact-problem-grid {
+  margin-top: 1.9rem;
+  display: grid;
+  gap: 0.75rem;
+}
+.impact-problem-card {
+  background: rgba(0,0,0,0.22);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 2px;
+  padding: 1.05rem 1.05rem 1rem;
+}
+.impact-problem-card h4 {
+  margin: 0 0 0.55rem;
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 1.72rem;
+  font-size: clamp(1.15rem, 2.2vw, 1.7rem);
+  color: var(--accent);
+  line-height: 1.2;
+}
+.impact-problem-card p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.73);
+}
+.impact-problem-conclusion {
+  margin-top: 1.8rem;
+  margin-bottom: 0;
+  max-width: 670px;
+  background: linear-gradient(90deg, rgba(255,200,71,0.10), rgba(255,200,71,0.03));
+  border-left: 2px solid var(--accent);
+  padding: 1.25rem 1.2rem;
+  font-family: var(--font-serif);
+  font-size: clamp(1.3rem, 2.8vw, 2rem);
+  line-height: 1.28;
+  color: #f2f2f2;
+  font-style: italic;
+}
+.impact-problem-conclusion span {
+  color: var(--accent);
+  font-weight: 700;
 }
 
 .disparity-section {
@@ -462,11 +636,30 @@ section { position: relative; }
 .tag-mid { background: #FFF3CD; color: #856404; }
 .tag-bad { background: #FDDEDE; color: var(--red); }
 
-.solution-section { background: var(--solution-bg); color: var(--white); }
+.solution-section { background: var(--cream); color: var(--near-black); }
 .solution-section .section-label { color: var(--mid-gray); }
-.solution-section .section-title { color: var(--white); }
+.solution-section .section-title { color: var(--near-black); }
 .solution-section .section-title em { color: var(--accent-muted); }
-.solution-section .section-body { color: rgba(255,255,255,0.5); }
+.solution-section .section-body { color: var(--dark-gray); }
+.solution-title-block {
+  text-align: center;
+  margin-bottom: 1.2rem;
+}
+.solution-title-label {
+  color: var(--accent) !important;
+  letter-spacing: 0.28em;
+  margin-bottom: 1rem;
+}
+.solution-title-main {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: var(--near-black);
+}
 /* Cream sub-panel: same body text as .case-study-section / default .section-body */
 .solution-section .section-inner--light .section-body { color: var(--dark-gray); }
 
@@ -491,6 +684,7 @@ section { position: relative; }
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
 }
 .data-aggregation-frame--shadow {
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
@@ -913,25 +1107,61 @@ footer .footer-bottom { font-size: 0.7rem; font-weight: 400; color: rgba(255,255
   margin-right: auto;
   width: 100%;
   max-width: 1000px;
-  /* Same plate as california-rent-registry-map.png (--solution-bg) */
-  background-color: var(--solution-bg);
+  background-color: var(--cream);
 }
 .solution-text {
   flex: 1 1 360px;
   min-width: 0;
   max-width: 560px;
-  text-align: center;
+  text-align: left;
 }
-.solution-text .section-body {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
+.solution-intro-copy {
+  margin: 0;
+  max-width: 620px;
+  font-family: var(--font-sans);
+  font-size: clamp(1.2rem, 2.35vw, 2.02rem);
+  line-height: 1.42;
+  font-weight: 400;
+  color: var(--dark-gray);
+}
+.solution-pillars-list {
+  margin-top: 2.4rem;
+  display: grid;
+  gap: 1.75rem;
+}
+.solution-pillar-item {
+  display: grid;
+  grid-template-columns: 58px 1fr;
+  gap: 0.55rem;
+  align-items: start;
+}
+.solution-pillar-num {
+  font-family: var(--font-serif);
+  font-size: clamp(1.85rem, 3vw, 2.6rem);
+  font-weight: 400;
+  line-height: 1;
+  color: var(--accent);
+}
+.solution-pillar-item h4 {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: clamp(1.45rem, 2.8vw, 2.05rem);
+  line-height: 1.18;
+  font-weight: 700;
+  color: var(--near-black);
+}
+.solution-pillar-item p {
+  margin: 0.35rem 0 0;
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 1.9vw, 1.45rem);
+  line-height: 1.35;
+  color: var(--mid-gray);
 }
 .solution-map {
   flex: 0 0 min(308px, 34vw);
   padding-top: 2rem;
   align-self: center;
-  background-color: var(--solution-bg);
+  background-color: var(--cream);
 }
 /* PNG has a ~28px-wide slightly lighter baked edge on the right (export/AA);
    flat bg there — clip so --solution-bg shows instead of mismatched pixels. */
@@ -939,7 +1169,7 @@ footer .footer-bottom { font-size: 0.7rem; font-weight: 400; color: rgba(255,255
   width: 100%;
   height: auto;
   display: block;
-  background-color: var(--solution-bg);
+  background-color: var(--cream);
   /* 28px / 750px — scales with responsive width */
   -webkit-clip-path: inset(0 3.73% 0 0 round 12px);
   clip-path: inset(0 3.73% 0 0 round 12px);
@@ -952,6 +1182,9 @@ footer .footer-bottom { font-size: 0.7rem; font-weight: 400; color: rgba(255,255
   }
   .solution-text {
     max-width: 640px;
+  }
+  .solution-pillar-item {
+    grid-template-columns: 48px 1fr;
   }
   .solution-map {
     flex: none;
