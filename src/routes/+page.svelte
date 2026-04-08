@@ -429,7 +429,7 @@
         <h4 style="font-family: var(--font-sans); font-size: 0.82rem; font-weight: 700; color: var(--near-black); margin-bottom: 1rem;">Use Case 1: Proactive Eviction Prevention and Targeted Resource Allocation</h4>
         <p style="font-size: 0.72rem; color: var(--dark-gray); margin-bottom: 0.8rem; line-height: 1.7;"><strong style="color: var(--near-black);">The User:</strong> Direct Service Providers and Housing Navigators</p>
         <p style="font-size: 0.72rem; color: var(--dark-gray); margin-bottom: 0.8rem; line-height: 1.7;"><strong style="color: var(--near-black);">The Issue:</strong> Lack real-time, neighborhood-level rent data, forcing them to react to imminent evictions rather than proactively distributing emergency assistance.</p>
-        <p style="font-size: 0.72rem; color: var(--dark-gray); line-height: 1.7;"><strong style="color: var(--near-black);">How They Could Use Open Rent:</strong> Use interactive maps to spot steep rent hikes early, enabling them to proactively target outreach and emergency assistance before families are displaced.</p>
+        <p style="font-size: 0.72rem; color: var(--dark-gray); line-height: 1.7;"><strong style="color: var(--near-black);">Using Open Rent:</strong> Use interactive maps and predictive models to identify eviction risk and target outreach/emergency assistance.</p>
       </div>
 
       <!-- Use Case 2 -->
@@ -437,7 +437,7 @@
         <h4 style="font-family: var(--font-sans); font-size: 0.82rem; font-weight: 700; color: var(--near-black); margin-bottom: 1rem;">Use Case 2: Strategic Investment and Affordable Housing Preservation</h4>
         <p style="font-size: 0.72rem; color: var(--dark-gray); margin-bottom: 0.8rem; line-height: 1.7;"><strong style="color: var(--near-black);">The User:</strong> Philanthropic Program Officers, Housing Agency Program Officers, and Affordable Housing Developers.</p>
         <p style="font-size: 0.72rem; color: var(--dark-gray); margin-bottom: 0.8rem; line-height: 1.7;"><strong style="color: var(--near-black);">The Issue:</strong> Struggle to evaluate affordable housing projects strategically because the necessary market and community data is expensive, fragmented, and proprietary.</p>
-        <p style="font-size: 0.72rem; color: var(--dark-gray); line-height: 1.7;"><strong style="color: var(--near-black);">How They Could Use Open Rent:</strong> Overlay real-time rent and neighborhood data to identify affordable housing at risk of conversion, allowing them to prioritize capital investments for preservation.</p>
+        <p style="font-size: 0.72rem; color: var(--dark-gray); line-height: 1.7;"><strong style="color: var(--near-black);">Using Open Rent:</strong> Overlay real-time rent and neighborhood data to identify affordable housing at risk of conversion, allowing them to prioritize capital investments for preservation.</p>
       </div>
 
       <!-- Use Case 3 -->
@@ -445,14 +445,14 @@
         <h4 style="font-family: var(--font-sans); font-size: 0.82rem; font-weight: 700; color: var(--near-black); margin-bottom: 1rem;">Use Case 3: Data-Driven Policy Advocacy and Civic Engagement</h4>
         <p style="font-size: 0.72rem; color: var(--dark-gray); margin-bottom: 0.8rem; line-height: 1.7;"><strong style="color: var(--near-black);">The User:</strong> Housing Policy Advocates, Community Organizers, and Civic Leaders.</p>
         <p style="font-size: 0.72rem; color: var(--dark-gray); margin-bottom: 0.8rem; line-height: 1.7;"><strong style="color: var(--near-black);">The Issue:</strong> Rely on outdated or anecdotal information, lacking the current, standardized rental data needed to effectively drive systemic policy change.</p>
-        <p style="font-size: 0.72rem; color: var(--dark-gray); line-height: 1.7;"><strong style="color: var(--near-black);">How They Could Use Open Rent:</strong> Leverage public datasets and visualization tools to build compelling, localized reports on rent versus wage growth, using hard data to justify policy changes and secure funding.</p>
+        <p style="font-size: 0.72rem; color: var(--dark-gray); line-height: 1.7;"><strong style="color: var(--near-black);">Using Open Rent:</strong> Use the integrated dataset to create localized visualizations and reports on affordability of rents at a neighborhood level and for specific occupations to inform policy changes.</p>
       </div>
     </div>
 
     <div class="reveal" style="margin-top: 3rem; text-align: center;">
       <p style="font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 1.2rem;">Based on learnings and inspiration shared by</p>
       <p class="partner-credits">
-        Bay Area Metro · Palo Alto Forward · Mercy Housing · Terner Center · Federal Reserve Bank of San Francisco · Housing Authority of Santa Clara County · City of Palo Alto · Partnership for the Bay’s Future · Urban Habitat · Anti-Eviction Mapping Project
+        Bay Area Metro · Palo Alto Forward · Mercy Housing · Terner Center · Federal Reserve Bank of San Francisco · Housing Authority of Santa Clara County · City of Palo Alto · Partnership for the Bay’s Future · Urban Habitat
       </p>
     </div>
   </div>
