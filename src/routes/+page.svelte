@@ -151,8 +151,8 @@
   <div class="hero-content">
     <h1 class="hero-headline">
       <span class="hero-line hero-line--sans">The Open Rent Initiative –</span>
-      <span class="hero-line hero-line--serif">enabling organizations supporting</span>
-      <span class="hero-line hero-line--sans hero-line--regular"><em class="hero-highlight">low and moderate income families</em>.</span>
+      <span class="hero-line hero-line--sans hero-line--regular">enabling organizations supporting</span>
+      <span class="hero-line hero-line--sans hero-line--regular">low and moderate income families.</span>
     </h1>
     <p class="hero-sub">
       Housing instability is a neighborhood-level issue that lacks visibility. Current challenges— inability to
