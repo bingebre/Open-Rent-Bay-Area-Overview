@@ -126,15 +126,19 @@ nav .nav-links a:hover { opacity: 1; }
   font-family: var(--font-sans);
   font-weight: 700;
   font-size: clamp(1.65rem, 3.8vw, 2.65rem);
-  line-height: 1.12;
+  line-height: 1.2;
 }
 .hero-line--serif {
   font-family: var(--font-serif);
-  font-style: italic;
   font-weight: 400;
   font-size: clamp(1.85rem, 4.5vw, 3.05rem);
-  line-height: 1.08;
-  margin: 0.2rem 0 0.15rem;
+  line-height: 1.15;
+  margin: 0.25rem 0 0.3rem;
+}
+.hero-line--regular {
+  font-weight: 400;
+  line-height: 1.35;
+  margin-top: 0.45rem;
 }
 .hero-meta-grid {
   margin: 0 0 1.75rem;
@@ -193,6 +197,22 @@ nav .nav-links a:hover { opacity: 1; }
   color: var(--near-black);
   background-color: #F5CE3A;
   padding: 0.05em 0.3em;
+  margin: 0 -0.05em;
+  border-radius: 1px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.hero-sub--emphasis {
+  font-weight: 600;
+  color: var(--near-black);
+  margin-top: -0.25rem;
+}
+.hero-headline .hero-highlight {
+  font-style: italic;
+  font-weight: 700;
+  color: var(--near-black);
+  background-color: #F5CE3A;
+  padding: 0.08em 0.22em 0.1em;
   margin: 0 -0.05em;
   border-radius: 1px;
   -webkit-box-decoration-break: clone;

@@ -150,15 +150,17 @@
   <div class="hero-bg" aria-hidden="true"></div>
   <div class="hero-content">
     <h1 class="hero-headline">
-      <span class="hero-line hero-line--sans">The Open Rent Initiative —</span>
-      <span class="hero-line hero-line--serif">parcel-level, timely rental data</span>
-      <span class="hero-line hero-line--sans">for the public-interest sector.</span>
+      <span class="hero-line hero-line--sans">The Open Rent Initiative –</span>
+      <span class="hero-line hero-line--serif">enabling organizations supporting</span>
+      <span class="hero-line hero-line--sans hero-line--regular"><em class="hero-highlight">low and moderate income families</em>.</span>
     </h1>
     <p class="hero-sub">
-      Granular and timely rental housing data — so cities, affordable housing funders, and providers of housing
-      stability programs can direct capital, target services, and shape policy in service of
-      <strong>low and moderate income (LMI) families</strong>.
+      Housing instability is a neighborhood-level issue that lacks visibility. Current challenges— inability to
+      identify which parcels are most at risk, CRA investment decisions made using imperfect data, relying on
+      5 year old data to set voucher rates, inability to see full rental stock in a city—all stem from a lack of
+      current, parcel-level rent data.
     </p>
+    <p class="hero-sub hero-sub--emphasis">We're building the platform to solve this, free and open.</p>
     <dl class="hero-meta-grid">
       <div class="hero-meta-row">
         <dt>License</dt>
@@ -181,8 +183,8 @@
       </div>
     </dl>
     <div class="hero-ctas">
-      <a class="hero-btn-primary" href="mailto:?subject=Request%3A%2030%2Dminute%20Open%20Rent%20briefing">Request a 30-min briefing →</a>
-      <a class="hero-link-secondary" href="/map">See the Prototype →</a>
+      <a class="hero-btn-primary" href="mailto:rent@citizencodex.com?subject=Request%3A%2030%2Dminute%20Open%20Rent%20briefing">Request a 30-min briefing →</a>
+      <a class="hero-link-secondary" href="https://open-rent-initiative.vercel.app/" target="_blank" rel="noopener noreferrer">See the Prototype →</a>
     </div>
     <div class="hero-sponsors">
       <p class="hero-sponsors-label">Made possible by:</p>
@@ -1128,7 +1130,7 @@
     </p>
     <p class="funding-lead">We'd love your support and to hear from you!</p>
     <div class="funding-actions">
-      <a class="funding-btn" href="mailto:?subject=Open%20Rent%20—%20Funding%20conversation">Book a briefing →</a>
+      <a class="funding-btn" href="mailto:rent@citizencodex.com?subject=Open%20Rent%20—%20Funding%20conversation">Book a briefing →</a>
       <a class="funding-btn-ghost" href="/funder-brief.pdf">Download the 2-page funder brief (PDF) →</a>
     </div>
   </div>
