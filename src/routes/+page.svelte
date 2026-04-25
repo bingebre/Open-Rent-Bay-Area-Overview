@@ -169,7 +169,7 @@
       </div>
     </div>
     <div class="hero-ctas">
-      <a class="hero-btn-primary" href="mailto:rent@citizencodex.com?subject=Request%3A%2030%2Dminute%20Open%20Rent%20briefing">Request a 30-min briefing →</a>
+      <a class="hero-btn-primary" href="mailto:rent@citizencodex.com?subject=Let%27s%20schedule%20a%2030%2Dminute%20Open%20Rent%20briefing">Let's schedule a 30-min briefing →</a>
       <a class="hero-link-secondary" href="https://open-rent-initiative.vercel.app/" target="_blank" rel="noopener noreferrer">See the Prototype →</a>
     </div>
     <div class="hero-scroll-cue">
@@ -649,14 +649,17 @@
     <h2 class="funding-title">Funding the <em>next phase.</em></h2>
     <p class="funding-lead">
       Open Rent is welcoming new funders to support its expansion across the Bay Area and the launch of a
-      Los&nbsp;Angeles pilot. We are also open to partnerships focused on a specific jurisdiction — Oakland,
-      L.A.&nbsp;City, or another market — or on a specific question, such as estimating housing-stability risk or
-      building tools for local government housing staff.
+      Los&nbsp;Angeles pilot.
+    </p>
+    <p class="funding-lead">
+      We are also open to partnerships focused on a specific jurisdiction — Oakland, L.A.&nbsp;City, or another market — or
+      on a specific question, such as estimating housing-stability risk or building tools for local government housing
+      staff.
     </p>
     <p class="funding-closing">We would value the conversation.</p>
     <div class="funding-actions">
-      <a class="funding-link funding-link--primary" href="mailto:rent@citizencodex.com?subject=Open%20Rent%20—%20Funding%20conversation">
-        <span class="funding-link-label">Book a briefing</span>
+      <a class="funding-link funding-link--primary" href="mailto:rent@citizencodex.com?subject=Let%27s%20schedule%20%E2%80%94%20Open%20Rent%20funding%20conversation">
+        <span class="funding-link-label">Let's schedule a briefing</span>
         <span class="funding-link-arrow">→</span>
       </a>
       <a class="funding-link funding-link--secondary" href="/funder-brief.pdf">

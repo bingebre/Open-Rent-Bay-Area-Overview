@@ -3152,11 +3152,14 @@ footer .footer-bottom { font-size: 0.7rem; font-weight: 400; color: rgba(255,255
 
 .funding-v2 .funding-lead {
   max-width: 760px;
-  margin: 0 auto 1.375rem;
+  margin: 0 auto 1rem;
   font-family: var(--font-sans);
   font-size: 1.125rem;
   line-height: 1.6;
   color: var(--f-charcoal);
+}
+.funding-v2 .funding-lead + .funding-lead {
+  margin-bottom: 1.375rem;
 }
 .funding-v2 .funding-closing {
   margin: 0 0 3.5rem;
