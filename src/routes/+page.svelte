@@ -153,7 +153,7 @@
       <span class="hero-line hero-line--sans">The Open Rent Initiative</span>
     </h1>
     <p class="hero-sub">
-      Today, critical decisions — from how community banks should invest critical community resources, to where rental
+      Today, critical decisions — from how banks should invest community reinvestment resources, to where rental
       assistance is targeted, to which neighborhoods are experiencing housing instability — are made with data that
       is <em>years old, imprecise, and often incomplete.</em>
     </p>
@@ -184,7 +184,7 @@
     <div class="problem-v3__rule" aria-hidden="true"></div>
     <div class="problem-v3__eyebrow">The Problem</div>
     <h2 id="problem-headline" class="problem-v3__headline">
-      Housing policy and investment decisions are being made <strong class="problem-v3__headline-accent">blind</strong> to the actual situation on the ground.
+      Housing policy and investment decisions are made <strong class="problem-v3__headline-accent">blind</strong> to the facts on the ground.
     </h2>
 
     <div class="problem-v3-chart-block">
@@ -195,107 +195,49 @@
       </header>
 
       <div class="problem-v3-chart">
-        <div class="problem-v3-chart__viz">
-          <svg viewBox="110 15 530 400" width="100%" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Stacked bar chart of rental stock by property type across San Francisco, San Jose, and Oakland">
-            <g font-family="Work Sans, sans-serif" fill="#F5F5F5" text-anchor="end">
-              <text x="215" y="51" font-size="14" font-weight="500">Townhomes</text>
-              <text x="215" y="88" font-size="14" font-weight="500">Single family</text>
-              <text x="215" y="106" font-size="14" font-weight="500">rentals</text>
-              <text x="215" y="170" font-size="14" font-weight="500">Small</text>
-              <text x="215" y="188" font-size="14" font-weight="500">multifamily</text>
-              <text x="215" y="205" font-size="11" opacity="0.6">(5-20 units)</text>
-              <text x="215" y="305" font-size="14" font-weight="500">Large</text>
-              <text x="215" y="323" font-size="14" font-weight="500">multifamily</text>
-              <text x="215" y="340" font-size="11" opacity="0.6">(20+ units)</text>
-            </g>
-
-            <rect x="240" y="32" width="110" height="29.9" fill="#D2694B" opacity="0.55" stroke="#1f2122" stroke-width="1.5"/>
-            <rect x="240" y="64.9" width="110" height="54.3" fill="#D2694B" opacity="0.55" stroke="#1f2122" stroke-width="1.5"/>
-            <rect x="240" y="122.2" width="110" height="109.3" fill="#D2694B" opacity="0.55" stroke="#1f2122" stroke-width="1.5"/>
-            <rect x="240" y="234.5" width="110" height="154.9" fill="#F5C529"/>
-            <g font-family="Roboto Mono, monospace" font-size="13" font-weight="500" fill="#F5F5F5" text-anchor="middle">
-              <text x="295" y="51">8.6</text>
-              <text x="295" y="96">15.6</text>
-              <text x="295" y="181">31.4</text>
-              <text x="295" y="316" fill="#303334">44.5</text>
-            </g>
-
-            <rect x="380" y="32" width="110" height="41.4" fill="#D2694B" opacity="0.55" stroke="#1f2122" stroke-width="1.5"/>
-            <rect x="380" y="76.4" width="110" height="83.5" fill="#D2694B" opacity="0.55" stroke="#1f2122" stroke-width="1.5"/>
-            <rect x="380" y="162.9" width="110" height="71" fill="#D2694B" opacity="0.55" stroke="#1f2122" stroke-width="1.5"/>
-            <rect x="380" y="237.2" width="110" height="152.1" fill="#F5C529"/>
-            <g font-family="Roboto Mono, monospace" font-size="13" font-weight="500" fill="#F5F5F5" text-anchor="middle">
-              <text x="435" y="56">11.9</text>
-              <text x="435" y="121">24</text>
-              <text x="435" y="201">20.4</text>
-              <text x="435" y="317" fill="#303334">43.7</text>
-            </g>
-
-            <rect x="520" y="32" width="110" height="34.8" fill="#D2694B" opacity="0.55" stroke="#1f2122" stroke-width="1.5"/>
-            <rect x="520" y="69.8" width="110" height="100.2" fill="#D2694B" opacity="0.55" stroke="#1f2122" stroke-width="1.5"/>
-            <rect x="520" y="172.9" width="110" height="79.3" fill="#D2694B" opacity="0.55" stroke="#1f2122" stroke-width="1.5"/>
-            <rect x="520" y="255.7" width="110" height="133.6" fill="#F5C529"/>
-            <g font-family="Roboto Mono, monospace" font-size="13" font-weight="500" fill="#F5F5F5" text-anchor="middle">
-              <text x="575" y="52">10</text>
-              <text x="575" y="125">28.8</text>
-              <text x="575" y="217">22.8</text>
-              <text x="575" y="328" fill="#303334">38.4</text>
-            </g>
-
-            <line x1="232" y1="395" x2="640" y2="395" stroke="#F5F5F5" stroke-width="1" opacity="0.32"/>
-            <g font-family="Work Sans, sans-serif" font-size="14" font-weight="500" fill="#F5F5F5" text-anchor="middle">
-              <text x="295" y="415">San Francisco</text>
-              <text x="435" y="415">San Jose</text>
-              <text x="575" y="415">Oakland</text>
-            </g>
-          </svg>
-        </div>
-
-        <div class="problem-v3-chart__notes">
-          <div class="problem-v3-note">
-            <div class="problem-v3-note__label">Poor visibility</div>
-            <p class="problem-v3-note__body">Most organizations rely on ACS, Zillow, and fragmented data sources when and if they can get it.</p>
-          </div>
-          <div class="problem-v3-note problem-v3-note--ok">
-            <div class="problem-v3-note__label">Okay visibility</div>
-            <p class="problem-v3-note__body">Rely on ACS and Zillow; those that can afford it purchase data from CoStar and similar providers — and even then, the purchased data is only market-rate.</p>
-          </div>
-        </div>
-
-        <div class="problem-v3-chart__source">
-          Source: U.S. Census · <a href="https://www.redfin.com/news/rental-housing-multifamily-vs-single-family/" target="_blank" rel="noopener noreferrer">Redfin</a>
-        </div>
-      </div>
+      <svg
+        class="problem-v3-chart-embed"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 0 1505 812"
+        preserveAspectRatio="xMidYMid meet"
+        role="img"
+        aria-label="Rental stock composition chart for San Francisco, San Jose, and Oakland with poor and okay visibility callouts"
+      >
+        <image
+          href="/problem-chart-overview-v3.svg"
+          xlink:href="/problem-chart-overview-v3.svg"
+          width="1505"
+          height="812"
+          preserveAspectRatio="xMidYMid meet"
+        />
+      </svg>
     </div>
 
     <div class="problem-v3-shortfall">
-      <h2 class="problem-v3-shortfall__title">Why current data sources fall short.</h2>
+      <h2 class="problem-v3-shortfall__title">Problems with current rent data.</h2>
 
       <div class="problem-v3-shortfall__grid">
         <article class="problem-v3-reason">
-          <div class="problem-v3-reason__label">01 · Resolution</div>
           <h3 class="problem-v3-reason__title">Too Coarse</h3>
           <p class="problem-v3-reason__body">The American Community Survey reports at the census tract or county level. Property-level variation — the site at which displacement actually happens — is invisible.</p>
         </article>
 
         <article class="problem-v3-reason">
-          <div class="problem-v3-reason__label">02 · Coverage</div>
           <h3 class="problem-v3-reason__title">Missing Communities</h3>
           <p class="problem-v3-reason__body">Zillow's Observed Rent Index, another widely used public data set, only covers markets within Zillow's footprint.</p>
         </article>
 
         <article class="problem-v3-reason">
-          <div class="problem-v3-reason__label">03 · Latency</div>
           <h3 class="problem-v3-reason__title">Years Behind</h3>
           <p class="problem-v3-reason__body">The ACS — the U.S. Census's most precise measurement of rent — uses 5-year rolling averages, released one to two years after collection. By the time it's published, the rents it describes are gone.</p>
         </article>
 
         <article class="problem-v3-reason">
-          <div class="problem-v3-reason__label">04 · Access</div>
           <h3 class="problem-v3-reason__title">Highly Fragmented</h3>
           <p class="problem-v3-reason__body">Other data sources sit behind expensive paywalls (e.g., CoStar costing over $10K per user on average), in multiple listing sites (e.g., Craigslist), or in siloed databases (e.g., rent registries).</p>
         </article>
       </div>
+    </div>
     </div>
   </div>
 </section>
@@ -312,13 +254,13 @@
       <div class="impact-problem-rule" aria-hidden="true"></div>
       <div class="impact-problem-eyebrow">Impact of Data Deficiencies</div>
       <h3 id="impact-problem-headline" class="impact-problem-headline">
-        What <strong class="impact-problem-headline__accent">breaks</strong> when the data is <em>too coarse, too old,</em> and <em>fragmented</em>.
+        Unable to target early interventions, limited resources are misallocated, and housing stability is poorly
+        managed.
       </h3>
     </header>
 
     <div class="impact-problem-grid reveal" style="transition-delay: 0.1s;">
       <article class="impact-problem-card">
-        <div class="impact-problem-card-index">01 · Visibility</div>
         <div class="impact-problem-card-glyph" aria-hidden="true">
           <svg viewBox="0 0 70 48" width="70" height="48">
             <rect x="0"  y="0"  width="13" height="13" rx="1.5" fill="#F5F5F5" opacity="0.85"/>
@@ -341,7 +283,6 @@
       </article>
 
       <article class="impact-problem-card">
-        <div class="impact-problem-card-index">02 · Precision</div>
         <div class="impact-problem-card-glyph" aria-hidden="true">
           <svg viewBox="0 0 70 70" width="70" height="70">
             <circle cx="26" cy="44" r="24" fill="none" stroke="#F5F5F5" stroke-width="0.8" opacity="0.28"/>
@@ -358,7 +299,6 @@
       </article>
 
       <article class="impact-problem-card">
-        <div class="impact-problem-card-index">03 · Asymmetry</div>
         <div class="impact-problem-card-glyph" aria-hidden="true">
           <svg viewBox="0 0 72 60" width="72" height="60">
             <line x1="0" y1="59.5" x2="72" y2="59.5" stroke="#F5F5F5" stroke-width="0.6" opacity="0.35"/>
@@ -374,7 +314,6 @@
       </article>
 
       <article class="impact-problem-card impact-problem-card--accent">
-        <div class="impact-problem-card-index">04 · Consequence</div>
         <div class="impact-problem-card-glyph" aria-hidden="true">
           <svg viewBox="0 0 96 48" width="96" height="48">
             <line x1="0" y1="24" x2="96" y2="24" stroke="#303334" stroke-width="0.6" opacity="0.32"/>

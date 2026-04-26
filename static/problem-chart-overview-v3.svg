@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1505 812" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1505" height="812" fill="#202123"/>
+
+  <text x="195" y="76" fill="#ffffff" font-size="24" text-anchor="end">Townhomes</text>
+
+  <text x="195" y="150" fill="#ffffff" font-size="24" text-anchor="end">Single family</text>
+  <text x="195" y="180" fill="#ffffff" font-size="24" text-anchor="end">rentals</text>
+
+  <text x="195" y="305" fill="#ffffff" font-size="24" text-anchor="end">Small</text>
+  <text x="195" y="335" fill="#ffffff" font-size="24" text-anchor="end">multifamily</text>
+  <text x="195" y="362" fill="#9b9c9e" font-size="20" text-anchor="end">(5-20 units)</text>
+
+  <text x="195" y="565" fill="#ffffff" font-size="24" text-anchor="end">Large</text>
+  <text x="195" y="595" fill="#ffffff" font-size="24" text-anchor="end">multifamily</text>
+  <text x="195" y="622" fill="#9b9c9e" font-size="20" text-anchor="end">(20+ units)</text>
+
+  <rect x="215" y="40" width="213" height="57" fill="#864c3e"/>
+  <text x="321.5" y="76" fill="#ffffff" font-size="26" font-family="'Courier New', Courier, monospace" text-anchor="middle">8.6</text>
+
+  <rect x="215" y="105" width="213" height="104" fill="#864c3e"/>
+  <text x="321.5" y="165" fill="#ffffff" font-size="26" font-family="'Courier New', Courier, monospace" text-anchor="middle">15.6</text>
+
+  <rect x="215" y="217" width="213" height="209" fill="#864c3e"/>
+  <text x="321.5" y="330" fill="#ffffff" font-size="26" font-family="'Courier New', Courier, monospace" text-anchor="middle">31.4</text>
+
+  <rect x="215" y="434" width="213" height="296" fill="#f2c429"/>
+  <text x="321.5" y="591" fill="#111418" font-size="26" font-family="'Courier New', Courier, monospace" text-anchor="middle">44.5</text>
+
+  <rect x="486" y="40" width="213" height="79" fill="#864c3e"/>
+  <text x="592.5" y="86" fill="#ffffff" font-size="26" font-family="'Courier New', Courier, monospace" text-anchor="middle">11.9</text>
+
+  <rect x="486" y="127" width="213" height="160" fill="#864c3e"/>
+  <text x="592.5" y="214" fill="#ffffff" font-size="26" font-family="'Courier New', Courier, monospace" text-anchor="middle">24</text>
+
+  <rect x="486" y="295" width="213" height="136" fill="#864c3e"/>
+  <text x="592.5" y="370" fill="#ffffff" font-size="26" font-family="'Courier New', Courier, monospace" text-anchor="middle">20.4</text>
+
+  <rect x="486" y="439" width="213" height="291" fill="#f2c429"/>
+  <text x="592.5" y="593" fill="#111418" font-size="26" font-family="'Courier New', Courier, monospace" text-anchor="middle">43.7</text>
+
+  <rect x="758" y="40" width="213" height="67" fill="#864c3e"/>
+  <text x="864.5" y="80" fill="#ffffff" font-size="26" font-family="'Courier New', Courier, monospace" text-anchor="middle">10</text>
+
+  <rect x="758" y="115" width="213" height="192" fill="#864c3e"/>
+  <text x="864.5" y="218" fill="#ffffff" font-size="26" font-family="'Courier New', Courier, monospace" text-anchor="middle">28.8</text>
+
+  <rect x="758" y="315" width="213" height="152" fill="#864c3e"/>
+  <text x="864.5" y="397" fill="#ffffff" font-size="26" font-family="'Courier New', Courier, monospace" text-anchor="middle">22.8</text>
+
+  <rect x="758" y="475" width="213" height="255" fill="#f2c429"/>
+  <text x="864.5" y="611" fill="#111418" font-size="26" font-family="'Courier New', Courier, monospace" text-anchor="middle">38.4</text>
+
+  <line x1="205" y1="734" x2="981" y2="734" stroke="#ffffff" stroke-width="1.5"/>
+
+  <text x="321.5" y="775" fill="#ffffff" font-size="28" text-anchor="middle">San Francisco</text>
+  <text x="592.5" y="775" fill="#ffffff" font-size="28" text-anchor="middle">San Jose</text>
+  <text x="864.5" y="775" fill="#ffffff" font-size="28" text-anchor="middle">Oakland</text>
+
+  <path d="M 978 40 L 992 40 L 992 467 L 978 467"
+        stroke="#e26a47" stroke-width="2.5" fill="none" stroke-linejoin="miter"/>
+
+  <text x="1015" y="160" fill="#e26a47" font-size="22" font-weight="700" letter-spacing="1">POOR  VISIBILITY:</text>
+  <text x="1015" y="200" fill="#ffffff" font-size="22">Most organizations rely</text>
+  <text x="1015" y="230" fill="#ffffff" font-size="22">on ACS, Zillow, and</text>
+  <text x="1015" y="260" fill="#ffffff" font-size="22">fragmented data sources</text>
+  <text x="1015" y="290" fill="#ffffff" font-size="22">when and if they can get</text>
+  <text x="1015" y="320" fill="#ffffff" font-size="22">it.</text>
+
+  <path d="M 978 475 L 992 475 L 992 730 L 978 730"
+        stroke="#f2c429" stroke-width="2.5" fill="none" stroke-linejoin="miter"/>
+
+  <text x="1015" y="508" fill="#f2c429" font-size="22" font-weight="700" letter-spacing="1">OKAY  VISIBILITY:</text>
+  <text x="1015" y="546" fill="#ffffff" font-size="22">Rely on ACS and Zillow;</text>
+  <text x="1015" y="576" fill="#ffffff" font-size="22">those that can afford it</text>
+  <text x="1015" y="606" fill="#ffffff" font-size="22">purchase data from</text>
+  <text x="1015" y="636" fill="#ffffff" font-size="22">CoStar and similar</text>
+  <text x="1015" y="666" fill="#ffffff" font-size="22">providers — and even</text>
+  <text x="1015" y="696" fill="#ffffff" font-size="22">then, the purchased</text>
+  <text x="1015" y="724" fill="#ffffff" font-size="22">data is only market-rate.</text>
+</svg>
