@@ -260,6 +260,12 @@
         <div class="sol3-card-tag">City of Mountain View and Open Rent</div>
         <h3 class="sol3-card-title">Unified Canvas and Dataset.</h3>
 
+        <ul class="sol3-bullets">
+          <li>Consolidated data offering a full view of rental stock across all market types (affordable, market-rate, stabilized, SFR, etc.) to better calibrate local rent stabilization ordinance and city service provision.</li>
+          <li>Visualization tools that let staff explore rental stock at multiple levels of geographic granularity, from individual unit to citywide to inform key decisionmakers in real time.</li>
+          <li>Analytical tools for longitudinal and comparative market analysis so that limited local resources can shift to where they are most needed.</li>
+        </ul>
+
         <div class="sol3-screenshot-frame">
           <img
             src="/open-rent-mountain-view-case-study.jpg"
@@ -270,12 +276,6 @@
             decoding="async"
           />
         </div>
-
-        <ul class="sol3-bullets">
-          <li>Consolidated data offering a full view of rental stock across all market types (affordable, market-rate, stabilized, SFR, etc.) to better calibrate local rent stabilization ordinance and city service provision.</li>
-          <li>Visualization tools that let staff explore rental stock at multiple levels of geographic granularity, from individual unit to citywide to inform key decisionmakers in real time.</li>
-          <li>Analytical tools for longitudinal and comparative market analysis so that limited local resources can shift to where they are most needed.</li>
-        </ul>
       </article>
     </div>
   </div>
@@ -287,8 +287,7 @@
       <div class="impact-problem-rule" aria-hidden="true"></div>
       <div class="impact-problem-eyebrow">Impact of Data Deficiencies</div>
       <h3 id="impact-problem-headline" class="impact-problem-headline">
-        Unable to target early interventions, limited resources are misallocated, and housing stability is poorly
-        managed.
+        Open Rent aims to address numerous challenges created by the current data landscape
       </h3>
     </header>
 
