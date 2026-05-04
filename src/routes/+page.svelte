@@ -253,15 +253,6 @@
       <span class="sol3-yellow-bar" aria-hidden="true"></span>
       <span class="sol3-tag">The Solution - City of Mountain View Case Study</span>
       <h2 id="solution-headline" class="sol3-headline">How Open Rent solves this problem.</h2>
-      <img
-        class="sol3-subtitle-logo"
-        src="/city-of-mountain-view-logo.png"
-        alt="City of Mountain View"
-        width="1024"
-        height="333"
-        loading="lazy"
-        decoding="async"
-      />
     </header>
 
     <div class="sol3-comparison reveal" style="transition-delay: 0.1s;">
