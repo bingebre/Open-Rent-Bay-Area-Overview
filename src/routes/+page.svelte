@@ -183,7 +183,7 @@
     <div class="problem-v3__rule" aria-hidden="true"></div>
     <div class="problem-v3__eyebrow">The Problem</div>
     <h2 id="problem-headline" class="problem-v3__headline">
-      Housing policy and investment decisions addressing affordability are being made with <strong class="problem-v3__headline-accent">poor information</strong>.
+      Housing policy and investment decisions addressing affordability are made with <strong class="problem-v3__headline-accent">poor information</strong>.
     </h2>
 
     <div class="problem-v3-chart-block">
