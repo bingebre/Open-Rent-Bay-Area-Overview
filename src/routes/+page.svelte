@@ -388,7 +388,7 @@
         <span class="feat-principle-num">02 / How</span>
         <h3 class="feat-principle-title">How we're building it</h3>
         <p class="feat-principle-body">
-          Comprehensive and granular: integrating data from diverse channels at the property level, or at the
+          Integrating granular data from diverse channels at the property level, or at the
           finest geographic resolution available within each market.
         </p>
       </article>
@@ -433,7 +433,7 @@
     <header class="uc3-header reveal">
       <span class="uc3-yellow-bar" aria-hidden="true"></span>
       <span class="uc3-tag">Use Cases</span>
-      <h2 class="uc3-title">Where Open Rent could add value <em>for stakeholders.</em></h2>
+      <h2 class="uc3-title">Where Open Rent could add value <em>for low- and moderate-income families.</em></h2>
     </header>
 
     <div class="uc3-grid reveal" style="transition-delay: 0.08s;">
