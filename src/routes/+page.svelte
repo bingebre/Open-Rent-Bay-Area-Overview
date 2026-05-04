@@ -265,38 +265,6 @@
     </header>
 
     <div class="sol3-comparison reveal" style="transition-delay: 0.1s;">
-      <article class="sol3-card sol3-card--light">
-        <div class="sol3-card-tag">Current State</div>
-        <h3 class="sol3-card-title">A patchwork of sources.</h3>
-
-        <div class="sol3-files-canvas" aria-hidden="true">
-          <svg viewBox="0 0 600 180" preserveAspectRatio="none">
-            <g stroke="rgba(48,51,52,0.25)" stroke-width="1" stroke-dasharray="3 4" fill="none">
-              <path d="M 110 28 L 220 62" />
-              <path d="M 220 62 L 130 100" />
-              <path d="M 130 100 L 200 138" />
-              <path d="M 220 62 L 470 40" />
-              <path d="M 470 40 L 510 90" />
-              <path d="M 510 90 L 480 135" />
-              <path d="M 200 138 L 480 135" />
-            </g>
-          </svg>
-          <span class="sol3-file-chip sol3-file-chip--f1">rent_registry.xlsx</span>
-          <span class="sol3-file-chip sol3-file-chip--f2">section8.pdf</span>
-          <span class="sol3-file-chip sol3-file-chip--f3">zillow_zori.csv</span>
-          <span class="sol3-file-chip sol3-file-chip--f4">assessor.csv</span>
-          <span class="sol3-file-chip sol3-file-chip--f5">LIHTC_2024.csv</span>
-          <span class="sol3-file-chip sol3-file-chip--f6">parcels.geojson</span>
-          <span class="sol3-file-chip sol3-file-chip--f7">acs_2023.xlsx</span>
-        </div>
-
-        <ul class="sol3-bullets">
-          <li>Fragmented rental data across disconnected systems requires time-intensive manual consolidation.</li>
-          <li>Critical segments are missing, including single-family rentals, duplexes, BMR units, and fully affordable housing (LIHTC, Section&nbsp;8).</li>
-          <li>Lacking unit-level tracking, stakeholders cannot compare actual vs. market rents or see a holistic housing view.</li>
-        </ul>
-      </article>
-
       <article class="sol3-card sol3-card--dark">
         <div class="sol3-card-tag">City of Mountain View and Open Rent</div>
         <h3 class="sol3-card-title">Unified Canvas and Dataset.</h3>

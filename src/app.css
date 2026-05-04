@@ -2028,7 +2028,7 @@ footer .footer-bottom { font-size: 0.7rem; font-weight: 400; color: rgba(255,255
 
 .solution-section .sol3-comparison {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: 1.75rem;
   align-items: stretch;
 }
@@ -2040,10 +2040,6 @@ footer .footer-bottom { font-size: 0.7rem; font-weight: 400; color: rgba(255,255
   height: 100%;
   padding: 2.25rem 2.25rem 2.5rem;
   border-radius: 0;
-}
-.solution-section .sol3-card--light {
-  background: var(--sol-card-light);
-  color: var(--sol-charcoal);
 }
 .solution-section .sol3-card--dark {
   background: var(--sol-card-dark);
@@ -2057,7 +2053,6 @@ footer .footer-bottom { font-size: 0.7rem; font-weight: 400; color: rgba(255,255
   text-transform: uppercase;
   margin-bottom: 1rem;
 }
-.solution-section .sol3-card--light .sol3-card-tag { color: var(--sol-slate); }
 .solution-section .sol3-card--dark .sol3-card-tag { color: var(--sol-yellow); }
 .solution-section .sol3-card-title {
   margin: 0 0 1.75rem;
@@ -2068,40 +2063,6 @@ footer .footer-bottom { font-size: 0.7rem; font-weight: 400; color: rgba(255,255
   letter-spacing: -0.005em;
 }
 .solution-section .sol3-card--dark .sol3-card-title { color: var(--sol-off-white); }
-
-.solution-section .sol3-files-canvas {
-  position: relative;
-  height: 180px;
-  margin-bottom: 2rem;
-  overflow: hidden;
-  background: rgba(48, 51, 52, 0.04);
-  border: 1px dashed var(--sol-rule);
-}
-.solution-section .sol3-files-canvas svg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
-.solution-section .sol3-file-chip {
-  position: absolute;
-  padding: 0.4375rem 0.75rem;
-  font-family: var(--font-mono);
-  font-size: 0.6875rem;
-  letter-spacing: 0.02em;
-  color: var(--sol-charcoal);
-  white-space: nowrap;
-  background: var(--sol-off-white);
-  border: 1px solid var(--sol-rule);
-  box-shadow: 0 2px 6px rgba(48, 51, 52, 0.06);
-}
-.solution-section .sol3-file-chip--f1 { top: 14px; left: 22px; }
-.solution-section .sol3-file-chip--f2 { top: 50px; left: 90px; }
-.solution-section .sol3-file-chip--f3 { top: 84px; left: 30px; }
-.solution-section .sol3-file-chip--f4 { top: 122px; left: 70px; }
-.solution-section .sol3-file-chip--f5 { top: 22px; right: 24px; }
-.solution-section .sol3-file-chip--f6 { top: 72px; right: 40px; }
-.solution-section .sol3-file-chip--f7 { top: 120px; right: 28px; }
 
 .solution-section .sol3-screenshot-frame {
   align-self: stretch;
@@ -2142,9 +2103,7 @@ footer .footer-bottom { font-size: 0.7rem; font-weight: 400; color: rgba(255,255
   margin-top: 0.5rem;
   border-radius: 50%;
 }
-.solution-section .sol3-card--light .sol3-bullets li { color: var(--sol-charcoal); }
 .solution-section .sol3-card--dark .sol3-bullets li { color: rgba(245, 237, 226, 0.92); }
-.solution-section .sol3-card--light .sol3-bullets li::before { background: var(--sol-yellow-dark); }
 .solution-section .sol3-card--dark .sol3-bullets li::before { background: var(--sol-yellow); }
 
 @media (max-width: 900px) {
