@@ -153,9 +153,8 @@
       <span class="hero-line hero-line--sans">The Open Rent Initiative</span>
     </h1>
     <p class="hero-sub">
-      Today, critical decisions — from how banks should invest community reinvestment resources, to where rental
-      assistance is targeted, to which neighborhoods are experiencing housing instability — are made with data that
-      is <em>years old, imprecise, and often incomplete.</em>
+      Today, critical decisions — like where and how rental assistance is targeted or which neighborhoods are
+      experiencing housing instability — are made with data that is years old, imprecise, and often incomplete.
     </p>
     <p class="hero-sub hero-sub--emphasis">We’re building the platform to solve this, free and open.</p>
     <div class="hero-sponsors">
@@ -184,7 +183,7 @@
     <div class="problem-v3__rule" aria-hidden="true"></div>
     <div class="problem-v3__eyebrow">The Problem</div>
     <h2 id="problem-headline" class="problem-v3__headline">
-      Housing policy and investment decisions are made <strong class="problem-v3__headline-accent">blind</strong> to the facts on the ground.
+      Housing policy and investment decisions addressing affordability are being made with <strong class="problem-v3__headline-accent">poor information</strong>.
     </h2>
 
     <div class="problem-v3-chart-block">
@@ -234,7 +233,7 @@
 
         <article class="problem-v3-reason">
           <h3 class="problem-v3-reason__title">Highly Fragmented</h3>
-          <p class="problem-v3-reason__body">Other data sources sit behind expensive paywalls (e.g., CoStar costing over $10K per user on average), in multiple listing sites (e.g., Craigslist), or in siloed databases (e.g., rent registries).</p>
+          <p class="problem-v3-reason__body">Other data sources sit behind expensive paywalls (e.g., costing over $10K per user), in multiple listing sites (e.g., Craigslist), or in siloed databases (e.g., rent registries).</p>
         </article>
       </div>
     </div>
@@ -245,6 +244,81 @@
 <section class="disparity-section" style="padding: 0;">
   <div style="width: 100%; height: 80vh; min-height: 600px;">
     <iframe id="mapEmbed" src="/map" title="Bay Area rent data map" style="width: 100%; height: 100%; border: none;" loading="lazy"></iframe>
+  </div>
+</section>
+
+<section class="solution-section" id="solution" aria-labelledby="solution-headline">
+  <div class="section-inner sol-v2">
+    <header class="sol3-header reveal">
+      <span class="sol3-yellow-bar" aria-hidden="true"></span>
+      <span class="sol3-tag">The Solution - City of Mountain View Case Study</span>
+      <h2 id="solution-headline" class="sol3-headline">How Open Rent solves this problem.</h2>
+      <img
+        class="sol3-subtitle-logo"
+        src="/city-of-mountain-view-logo.png"
+        alt="City of Mountain View"
+        width="1024"
+        height="333"
+        loading="lazy"
+        decoding="async"
+      />
+    </header>
+
+    <div class="sol3-comparison reveal" style="transition-delay: 0.1s;">
+      <article class="sol3-card sol3-card--light">
+        <div class="sol3-card-tag">Current State</div>
+        <h3 class="sol3-card-title">A patchwork of sources.</h3>
+
+        <div class="sol3-files-canvas" aria-hidden="true">
+          <svg viewBox="0 0 600 180" preserveAspectRatio="none">
+            <g stroke="rgba(48,51,52,0.25)" stroke-width="1" stroke-dasharray="3 4" fill="none">
+              <path d="M 110 28 L 220 62" />
+              <path d="M 220 62 L 130 100" />
+              <path d="M 130 100 L 200 138" />
+              <path d="M 220 62 L 470 40" />
+              <path d="M 470 40 L 510 90" />
+              <path d="M 510 90 L 480 135" />
+              <path d="M 200 138 L 480 135" />
+            </g>
+          </svg>
+          <span class="sol3-file-chip sol3-file-chip--f1">rent_registry.xlsx</span>
+          <span class="sol3-file-chip sol3-file-chip--f2">section8.pdf</span>
+          <span class="sol3-file-chip sol3-file-chip--f3">zillow_zori.csv</span>
+          <span class="sol3-file-chip sol3-file-chip--f4">assessor.csv</span>
+          <span class="sol3-file-chip sol3-file-chip--f5">LIHTC_2024.csv</span>
+          <span class="sol3-file-chip sol3-file-chip--f6">parcels.geojson</span>
+          <span class="sol3-file-chip sol3-file-chip--f7">acs_2023.xlsx</span>
+        </div>
+
+        <ul class="sol3-bullets">
+          <li>Fragmented rental data across disconnected systems requires time-intensive manual consolidation.</li>
+          <li>Critical segments are missing, including single-family rentals, duplexes, BMR units, and fully affordable housing (LIHTC, Section&nbsp;8).</li>
+          <li>Lacking unit-level tracking, stakeholders cannot compare actual vs. market rents or see a holistic housing view.</li>
+        </ul>
+      </article>
+
+      <article class="sol3-card sol3-card--dark">
+        <div class="sol3-card-tag">City of Mountain View and Open Rent</div>
+        <h3 class="sol3-card-title">Unified Canvas and Dataset.</h3>
+
+        <div class="sol3-screenshot-frame">
+          <img
+            src="/open-rent-mountain-view-case-study.jpg"
+            alt="Open Rent Mountain View case study: data tools and platform showing property-level map with selected property and rent benchmarks."
+            width="1024"
+            height="720"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+
+        <ul class="sol3-bullets">
+          <li>Consolidated data offering a full view of rental stock across all market types (affordable, market-rate, stabilized, SFR, etc.) to better calibrate local rent stabilization ordinance and city service provision.</li>
+          <li>Visualization tools that let staff explore rental stock at multiple levels of geographic granularity, from individual unit to citywide to inform key decisionmakers in real time.</li>
+          <li>Analytical tools for longitudinal and comparative market analysis so that limited local resources can shift to where they are most needed.</li>
+        </ul>
+      </article>
+    </div>
   </div>
 </section>
 
@@ -293,7 +367,7 @@
             <circle cx="58" cy="12" r="4.5" fill="#F5C529"/>
           </svg>
         </div>
-        <h4 class="impact-problem-card-title">Imprecise Policy Tools</h4>
+        <h4 class="impact-problem-card-title">Inefficient Policy Tools</h4>
         <p class="impact-problem-card-lead">Rules built on coarse data miss their mark — and the failure is hard to diagnose.</p>
         <p class="impact-problem-card-body">Rent stabilization, subsidy rates, and analogous instruments are calibrated against outdated inputs, producing over- and under-correction the underlying data cannot explain.</p>
       </article>
@@ -310,7 +384,7 @@
         </div>
         <h4 class="impact-problem-card-title">An Unfair Playing Field</h4>
         <p class="impact-problem-card-lead">The data gap is a power gap.</p>
-        <p class="impact-problem-card-body">Corporate owners purchase property-level intelligence from CoStar and RealPage and convert it into acquisition strategy. Tenants, city housing departments, legal-aid clinics, and community lenders have no equivalent.</p>
+        <p class="impact-problem-card-body">Corporate owners purchase property-level intelligence and convert it into acquisition strategy. Tenants, city housing departments, legal-aid clinics, and community lenders have no equivalent.</p>
       </article>
 
       <article class="impact-problem-card impact-problem-card--accent">
@@ -326,75 +400,7 @@
         </div>
         <h4 class="impact-problem-card-title">Reactive, Not Proactive</h4>
         <p class="impact-problem-card-lead">Without property-level signals, intervention arrives only after harm.</p>
-        <p class="impact-problem-card-body">Agencies and service providers can respond, but only downstream — long after emergency rental assistance or targeted policy could have shifted the outcome.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="solution-section" id="solution" aria-labelledby="solution-headline">
-  <div class="section-inner sol-v2">
-    <header class="sol3-header reveal">
-      <span class="sol3-yellow-bar" aria-hidden="true"></span>
-      <span class="sol3-tag">The Solution</span>
-      <h2 id="solution-headline" class="sol3-headline">How Open Rent solves this problem.</h2>
-      <p class="sol3-subtitle">A City of Mountain View case study.</p>
-    </header>
-
-    <div class="sol3-comparison reveal" style="transition-delay: 0.1s;">
-      <article class="sol3-card sol3-card--light">
-        <div class="sol3-card-tag">Current State</div>
-        <h3 class="sol3-card-title">A patchwork of sources.</h3>
-
-        <div class="sol3-files-canvas" aria-hidden="true">
-          <svg viewBox="0 0 600 180" preserveAspectRatio="none">
-            <g stroke="rgba(48,51,52,0.25)" stroke-width="1" stroke-dasharray="3 4" fill="none">
-              <path d="M 110 28 L 220 62" />
-              <path d="M 220 62 L 130 100" />
-              <path d="M 130 100 L 200 138" />
-              <path d="M 220 62 L 470 40" />
-              <path d="M 470 40 L 510 90" />
-              <path d="M 510 90 L 480 135" />
-              <path d="M 200 138 L 480 135" />
-            </g>
-          </svg>
-          <span class="sol3-file-chip sol3-file-chip--f1">rent_registry.xlsx</span>
-          <span class="sol3-file-chip sol3-file-chip--f2">section8.pdf</span>
-          <span class="sol3-file-chip sol3-file-chip--f3">zillow_zori.csv</span>
-          <span class="sol3-file-chip sol3-file-chip--f4">assessor.csv</span>
-          <span class="sol3-file-chip sol3-file-chip--f5">LIHTC_2024.csv</span>
-          <span class="sol3-file-chip sol3-file-chip--f6">parcels.geojson</span>
-          <span class="sol3-file-chip sol3-file-chip--f7">acs_2023.xlsx</span>
-        </div>
-
-        <ul class="sol3-bullets">
-          <li>Rental data is fragmented across disconnected systems, requiring teams to manually download and reconcile files.</li>
-          <li>Key rental categories are missing — single-family rentals, duplexes, BMR units, and fully affordable housing (LIHTC, Section&nbsp;8).</li>
-          <li>Reporting is heavily manual; spreadsheet updates and infographics consume staff capacity each cycle.</li>
-          <li>Unit-level rent changes cannot be tracked over time, nor can actual rents be compared against market rates.</li>
-        </ul>
-      </article>
-
-      <article class="sol3-card sol3-card--dark">
-        <div class="sol3-card-tag">City of Mountain View and Open Rent</div>
-        <h3 class="sol3-card-title">Unified Canvas and Dataset.</h3>
-
-        <div class="sol3-screenshot-frame">
-          <img
-            src="/open-rent-mountain-view-case-study.jpg"
-            alt="Open Rent Mountain View case study: data tools and platform showing property-level map with selected property and rent benchmarks."
-            width="1024"
-            height="720"
-            loading="lazy"
-            decoding="async"
-          />
-        </div>
-
-        <ul class="sol3-bullets">
-          <li>Consolidated data offering a full view of rental stock across all market types — affordable, market-rate, stabilized, single-family rentals.</li>
-          <li>Visualization tools that allow staff to explore rental stock at every level of geographic granularity, from individual unit to citywide.</li>
-          <li>Analytical tools for longitudinal and comparative market analysis, with full audit history for every data point.</li>
-        </ul>
+        <p class="impact-problem-card-body">Agencies and service providers can respond, but only downstream — long after emergency rental assistance or targeted policy could have kept families housed.</p>
       </article>
     </div>
   </div>
@@ -413,7 +419,7 @@
     <div class="feat-principles reveal" style="transition-delay: 0.08s;">
       <article class="feat-principle">
         <span class="feat-principle-num">01 / What</span>
-        <h3 class="feat-principle-title">What we are building</h3>
+        <h3 class="feat-principle-title">What we're building</h3>
         <p class="feat-principle-body">
           A comprehensive open-data platform with engagement tools and products that make rental data and
           insight readily accessible to policymakers, researchers, and the public.
@@ -422,7 +428,7 @@
 
       <article class="feat-principle">
         <span class="feat-principle-num">02 / How</span>
-        <h3 class="feat-principle-title">How we are building it</h3>
+        <h3 class="feat-principle-title">How we're building it</h3>
         <p class="feat-principle-body">
           Comprehensive and granular: integrating data from diverse channels at the property level, or at the
           finest geographic resolution available within each market.
@@ -433,7 +439,7 @@
         <span class="feat-principle-num">03 / Principle</span>
         <h3 class="feat-principle-title">Our guiding principle</h3>
         <p class="feat-principle-body">
-          Partner <em>locally</em> with those who know the regional market and its data well — leaning on
+          Partner <em>locally</em> with those who know the community and its data well — leaning on
           creative sourcing and model estimation where direct data is unavailable.
         </p>
       </article>
@@ -442,7 +448,7 @@
     <div class="feat-demo reveal" style="transition-delay: 0.16s;">
       <div class="feat-demo-caption">
         <span class="feat-demo-caption-lhs"><em>See the platform in motion.</em></span>
-        <span class="feat-demo-caption-rhs">Platform Preview · v0.1</span>
+        <span class="feat-demo-caption-rhs">Prototype · v0.1</span>
       </div>
 
       <figure class="feat-frame">
@@ -517,7 +523,7 @@
           <span class="uc3-case-meta-lhs">Use Case 03</span>
           <span class="uc3-case-meta-rhs">Community Finance</span>
         </div>
-        <h3 class="uc3-case-title">CRA teams at community banks and lenders.</h3>
+        <h3 class="uc3-case-title">Community Reinvestment Act (CRA) teams at community banks and lenders.</h3>
         <p class="uc3-problem">
           CRA investment decisions rely on HUD assessment-area data that is both too coarse to locate specific LMI
           investment opportunities and too stale to reflect current market conditions. By the time a CRA team has
