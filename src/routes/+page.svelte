@@ -257,7 +257,7 @@
 
     <div class="sol3-comparison reveal" style="transition-delay: 0.1s;">
       <article class="sol3-card sol3-card--dark">
-        <div class="sol3-card-tag">City of Mountain View and Open Rent</div>
+        <div class="sol3-card-tag">building open rent for the city of mountain view</div>
         <h3 class="sol3-card-title">Unified Canvas and Dataset.</h3>
 
         <ul class="sol3-bullets">
