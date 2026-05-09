@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 1350" width="2400" height="1350">
+  <defs>
+    <style>
+      .bg { fill: #111418; }
+      .brown { fill: #8E523D; }
+      .gold { fill: #F2C230; }
+      .white { fill: #F4F4F4; }
+      .muted { fill: #A8AFB8; }
+      .dark { fill: #15181D; }
+      .axis { stroke: #6F747B; stroke-width: 2; }
+      .bracketBad { stroke: #F07B55; stroke-width: 5; fill: none; stroke-linecap: square; }
+      .bracketOk { stroke: #F2C230; stroke-width: 5; fill: none; stroke-linecap: square; }
+
+      .label { font-family: Arial, Helvetica, sans-serif; font-size: 34px; fill: #F4F4F4; }
+      .sub { font-family: Arial, Helvetica, sans-serif; font-size: 24px; fill: #A8AFB8; }
+      .city { font-family: Arial, Helvetica, sans-serif; font-size: 34px; fill: #F4F4F4; }
+      .numLight { font-family: Arial, Helvetica, sans-serif; font-size: 34px; fill: #F4F4F4; font-weight: 500; }
+      .numDark { font-family: Arial, Helvetica, sans-serif; font-size: 34px; fill: #111418; font-weight: 500; }
+
+      .legendBad { font-family: Arial, Helvetica, sans-serif; font-size: 34px; font-weight: 700; fill: #F07B55; }
+      .legendOk { font-family: Arial, Helvetica, sans-serif; font-size: 34px; font-weight: 700; fill: #F2C230; }
+      .legendText { font-family: Arial, Helvetica, sans-serif; font-size: 28px; fill: #F4F4F4; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="2400" height="1350"/>
+
+  <text x="210" y="140" class="label" text-anchor="middle">Townhomes</text>
+
+  <text x="210" y="275" class="label" text-anchor="middle">Single family</text>
+  <text x="210" y="325" class="label" text-anchor="middle">rentals</text>
+
+  <text x="210" y="560" class="label" text-anchor="middle">Small</text>
+  <text x="210" y="610" class="label" text-anchor="middle">multifamily</text>
+  <text x="210" y="660" class="sub" text-anchor="middle">(5-20 units)</text>
+
+  <text x="210" y="980" class="label" text-anchor="middle">Large</text>
+  <text x="210" y="1030" class="label" text-anchor="middle">multifamily</text>
+  <text x="210" y="1080" class="sub" text-anchor="middle">(20+ units)</text>
+
+  <rect x="400" y="80" width="350" height="105" class="brown"/>
+  <text x="575" y="145" class="numLight" text-anchor="middle">8.6</text>
+
+  <rect x="400" y="200" width="350" height="170" class="brown"/>
+  <text x="575" y="290" class="numLight" text-anchor="middle">15.6</text>
+
+  <rect x="400" y="385" width="350" height="340" class="brown"/>
+  <text x="575" y="560" class="numLight" text-anchor="middle">31.4</text>
+
+  <rect x="400" y="740" width="350" height="430" class="gold"/>
+  <text x="575" y="955" class="numDark" text-anchor="middle">44.5</text>
+
+  <rect x="825" y="80" width="350" height="105" class="brown"/>
+  <text x="1000" y="145" class="numLight" text-anchor="middle">11.9</text>
+
+  <rect x="825" y="200" width="350" height="260" class="brown"/>
+  <text x="1000" y="330" class="numLight" text-anchor="middle">24</text>
+
+  <rect x="825" y="495" width="350" height="230" class="brown"/>
+  <text x="1000" y="610" class="numLight" text-anchor="middle">20.4</text>
+
+  <rect x="825" y="740" width="350" height="430" class="gold"/>
+  <text x="1000" y="955" class="numDark" text-anchor="middle">43.7</text>
+
+  <rect x="1250" y="80" width="350" height="105" class="brown"/>
+  <text x="1425" y="145" class="numLight" text-anchor="middle">10</text>
+
+  <rect x="1250" y="200" width="350" height="280" class="brown"/>
+  <text x="1425" y="360" class="numLight" text-anchor="middle">28.8</text>
+
+  <rect x="1250" y="475" width="350" height="250" class="brown"/>
+  <text x="1425" y="600" class="numLight" text-anchor="middle">22.8</text>
+
+  <rect x="1250" y="790" width="350" height="380" class="gold"/>
+  <text x="1425" y="980" class="numDark" text-anchor="middle">38.4</text>
+
+  <text x="575" y="1240" class="city" text-anchor="middle">San Francisco</text>
+  <text x="1000" y="1240" class="city" text-anchor="middle">San Jose</text>
+  <text x="1425" y="1240" class="city" text-anchor="middle">Oakland</text>
+
+  <path d="M 1675 95 L 1725 95 L 1725 720 L 1675 720" class="bracketBad"/>
+  <line x1="1725" y1="408" x2="1785" y2="408" class="bracketBad"/>
+
+  <path d="M 1675 760 L 1725 760 L 1725 1150 L 1675 1150" class="bracketOk"/>
+  <line x1="1725" y1="955" x2="1785" y2="955" class="bracketOk"/>
+
+  <text x="1845" y="305" class="legendBad">POOR VISIBILITY:</text>
+  <text x="1845" y="365" class="legendText">
+    <tspan x="1845" dy="0">Most organizations rely</tspan>
+    <tspan x="1845" dy="50">on ACS, Zillow, and</tspan>
+    <tspan x="1845" dy="50">fragmented data sources</tspan>
+    <tspan x="1845" dy="50">when and if they can get</tspan>
+    <tspan x="1845" dy="50">it.</tspan>
+  </text>
+
+  <text x="1845" y="835" class="legendOk">OKAY VISIBILITY:</text>
+  <text x="1845" y="895" class="legendText">
+    <tspan x="1845" dy="0">Rely on ACS and Zillow;</tspan>
+    <tspan x="1845" dy="50">those that can afford it</tspan>
+    <tspan x="1845" dy="50">purchase data from</tspan>
+    <tspan x="1845" dy="50">CoStar and similar</tspan>
+    <tspan x="1845" dy="50">providers — and even</tspan>
+    <tspan x="1845" dy="50">then, the purchased</tspan>
+    <tspan x="1845" dy="50">data is only market-rate.</tspan>
+  </text>
+</svg>

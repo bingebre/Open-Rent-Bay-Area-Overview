@@ -461,7 +461,7 @@
 				<p class="step-body">
 					In San Francisco's Bayview neighborhood, the disparity between data sources is among the
 					<strong>largest in the city</strong>. Colored in <span class="highlight highlight-extreme">deep brown</span>,
-					this historically Black community faces ongoing gentrification pressures — and the data used to set housing
+					this historically Black community faces ongoing housing instability — and the data used to set housing
 					assistance levels may not reflect what renters actually experience on the ground.
 				</p>
 			</div>

@@ -153,8 +153,9 @@
       <span class="hero-line hero-line--sans">The Open Rent Initiative</span>
     </h1>
     <p class="hero-sub">
-      Today, critical decisions — like where and how rental assistance is targeted or which neighborhoods are
-      experiencing housing instability — are made with data that is years old, imprecise, and often incomplete.
+      Today, critical decisions — like where and how rental assistance is targeted and how to intervene in
+      neighborhoods experiencing housing instability — are made with data that is years old, imprecise, and often
+      incomplete.
     </p>
     <p class="hero-sub hero-sub--emphasis">We’re building the platform to solve this, free and open.</p>
     <div class="hero-sponsors">
@@ -183,67 +184,71 @@
     <div class="problem-v3__rule" aria-hidden="true"></div>
     <div class="problem-v3__eyebrow">The Problem</div>
     <h2 id="problem-headline" class="problem-v3__headline">
-      Housing policy and investment decisions addressing affordability are made with <strong class="problem-v3__headline-accent">poor information</strong>.
+      Housing policy and investment decisions are made with <strong class="problem-v3__headline-accent">poor information</strong>.
     </h2>
 
     <div class="problem-v3-chart-block">
-      <header class="problem-v3-chart-block__hdr">
-        <p class="problem-v3-chart-block__finding">More than 50% of the rental stock in the Bay Area is invisible.</p>
-        <p class="problem-v3-chart-block__title">Share of rental stock by property type, 2024</p>
-        <p class="problem-v3-chart-block__subtitle">Bay Area Markets · Composition + Data Quality</p>
-      </header>
-
-      <div class="problem-v3-chart">
-      <svg
-        class="problem-v3-chart-embed"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-        viewBox="0 0 1505 812"
-        preserveAspectRatio="xMidYMid meet"
-        role="img"
-        aria-label="Rental stock composition chart for San Francisco, San Jose, and Oakland with poor and okay visibility callouts"
-      >
-        <image
-          href="/problem-chart-overview-v3.svg"
-          xlink:href="/problem-chart-overview-v3.svg"
-          width="1505"
-          height="812"
-          preserveAspectRatio="xMidYMid meet"
-        />
-      </svg>
-    </div>
-
-    <div class="problem-v3-shortfall">
-      <h2 class="problem-v3-shortfall__title">Problems with current rent data.</h2>
-
-      <div class="problem-v3-shortfall__grid">
-        <article class="problem-v3-reason">
-          <h3 class="problem-v3-reason__title">Too Coarse</h3>
-          <p class="problem-v3-reason__body">The American Community Survey reports at the census tract or county level. Property-level variation — the site at which displacement actually happens — is invisible.</p>
-        </article>
-
-        <article class="problem-v3-reason">
-          <h3 class="problem-v3-reason__title">Missing Communities</h3>
-          <p class="problem-v3-reason__body">Zillow's Observed Rent Index, another widely used public data set, only covers markets within Zillow's footprint.</p>
-        </article>
-
-        <article class="problem-v3-reason">
-          <h3 class="problem-v3-reason__title">Years Behind</h3>
-          <p class="problem-v3-reason__body">The ACS — the U.S. Census's most precise measurement of rent — uses 5-year rolling averages, released one to two years after collection. By the time it's published, the rents it describes are gone.</p>
-        </article>
-
-        <article class="problem-v3-reason">
-          <h3 class="problem-v3-reason__title">Highly Fragmented</h3>
-          <p class="problem-v3-reason__body">Other data sources sit behind expensive paywalls (e.g., costing over $10K per user), in multiple listing sites (e.g., Craigslist), or in siloed databases (e.g., rent registries).</p>
-        </article>
+      <div class="problem-v3-map-wrap">
+        <iframe
+          id="mapEmbed"
+          src="/map"
+          title="Bay Area rent data map"
+          style="width: 100%; height: 100%; border: none;"
+          loading="lazy"
+        ></iframe>
       </div>
-    </div>
     </div>
   </div>
 </section>
 
-<section class="disparity-section" style="padding: 0;">
-  <div style="width: 100%; height: 80vh; min-height: 600px;">
-    <iframe id="mapEmbed" src="/map" title="Bay Area rent data map" style="width: 100%; height: 100%; border: none;" loading="lazy"></iframe>
+<section class="the-problem-section" id="problem-b" aria-labelledby="problem-headline-b">
+  <div class="section-inner problem-v3">
+    <div class="problem-v3__rule" aria-hidden="true"></div>
+    <div class="problem-v3__eyebrow">The Problem</div>
+    <h2 id="problem-headline-b" class="problem-v3__headline">
+      Highly Fragmented Rent Data Creates Big Blind Spots
+    </h2>
+    <p class="problem-v3__subheadline">
+      Beyond the gaps in ACS and Zillow, other sources are paywalled (e.g., CoStar), scattered across listing sites (e.g., Craigslist), or siloed in rent registries and other government databases. All of them miss single-family rentals and small buildings entirely.
+    </p>
+
+    <div class="problem-v3-chart-block">
+      <header class="problem-v3-chart-block__hdr">
+        <p class="problem-v3-chart-block__title">More than 50% of rental stock in the Bay Area is invisible.</p>
+        <p class="problem-v3-chart-block__subtitle">Share of rental stock by property type, 2024</p>
+      </header>
+
+      <div class="problem-v3-chart">
+        <svg
+          class="problem-v3-chart-embed"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 0 1505 812"
+          preserveAspectRatio="xMidYMid meet"
+          role="img"
+          aria-label="Rental stock composition chart for San Francisco, San Jose, and Oakland with poor and okay visibility callouts"
+        >
+          <image
+            href="/problem-chart-overview-v3.svg"
+            xlink:href="/problem-chart-overview-v3.svg"
+            width="1505"
+            height="812"
+            preserveAspectRatio="xMidYMid meet"
+          />
+        </svg>
+      </div>
+
+      <figure class="problem-v3-chart-after">
+        <h3 class="problem-v3-chart-after__title">High data fragmentation across types of properties</h3>
+        <img
+          src="/rent-data-fragmentation.jpg"
+          alt="Data fragmentation: isometric neighborhood map showing housing types and the many separate data sources needed to describe rental stock, including listings, paywalled sources, rent registry, and public assessor data."
+          width="1024"
+          height="551"
+          loading="lazy"
+          decoding="async"
+        />
+      </figure>
+    </div>
   </div>
 </section>
 
@@ -252,113 +257,44 @@
     <header class="sol3-header reveal">
       <span class="sol3-yellow-bar" aria-hidden="true"></span>
       <span class="sol3-tag">The Solution - City of Mountain View Case Study</span>
-      <h2 id="solution-headline" class="sol3-headline">How Open Rent solves this problem.</h2>
+      <h2 id="solution-headline" class="sol3-headline">How Open Rent solves this problem</h2>
+      <p class="sol3-subheadline">
+        The Open Rent Initiative is building the nation's first open, public rent data infrastructure, connecting and standardizing building-level rent information across regions so governments and nonprofits can act quickly to help families find homes and stay housed.
+      </p>
     </header>
 
     <div class="sol3-comparison reveal" style="transition-delay: 0.1s;">
       <article class="sol3-card sol3-card--dark">
-        <div class="sol3-card-tag">building open rent for the city of mountain view</div>
-        <h3 class="sol3-card-title">Unified Canvas and Dataset.</h3>
+        <h3 class="sol3-card-title">How we are working with the City of Mountain View</h3>
 
         <ul class="sol3-bullets">
-          <li>Consolidated data offering a full view of rental stock across all market types (affordable, market-rate, stabilized, SFR, etc.) to better calibrate local rent stabilization ordinance and city service provision.</li>
-          <li>Visualization tools that let staff explore rental stock at multiple levels of geographic granularity, from individual unit to citywide to inform key decisionmakers in real time.</li>
-          <li>Analytical tools for longitudinal and comparative market analysis so that limited local resources can shift to where they are most needed.</li>
+          <li>Compiling a holistic view of their rental housing stock - Consolidated data offering a full view of rental stock across all market types (affordable, market-rate, stabilized, single family rentals, etc.) to inform policymaking and addressing housing affordability.</li>
+          <li>Visualization tools that let staff explore rental stock at multiple levels of geographic granularity, from individual unit to citywide to inform key decisionmakers.</li>
+          <li>Analytical tools for longitudinal and comparative market analysis so that limited local resources can be focused to where they are most needed.</li>
         </ul>
 
-        <div class="sol3-screenshot-frame">
-          <img
-            src="/open-rent-mountain-view-case-study.jpg"
-            alt="Open Rent Mountain View case study: data tools and platform showing property-level map with selected property and rent benchmarks."
-            width="1024"
-            height="720"
-            loading="lazy"
-            decoding="async"
-          />
+        <div class="sol3-dashboard-pair">
+          <figure class="sol3-dashboard-pair__fig">
+            <img
+              src="/solution-mv-rental-overview.png"
+              alt="Open Rent dashboard: Mountain View rental stock overview with key metrics, rent comparison, and distribution by program type."
+              width="721"
+              height="664"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+          <figure class="sol3-dashboard-pair__fig">
+            <img
+              src="/solution-mv-rental-composition.png"
+              alt="Open Rent dashboard: Mountain View rental stock composition by program type across ZIP codes."
+              width="718"
+              height="637"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
         </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="impact-problem-section" aria-labelledby="impact-problem-headline">
-  <div class="section-inner impact-problem-inner">
-    <header class="reveal">
-      <div class="impact-problem-rule" aria-hidden="true"></div>
-      <div class="impact-problem-eyebrow">Impact of Data Deficiencies</div>
-      <h3 id="impact-problem-headline" class="impact-problem-headline">
-        Open Rent aims to address numerous challenges created by the current data landscape
-      </h3>
-    </header>
-
-    <div class="impact-problem-grid reveal" style="transition-delay: 0.1s;">
-      <article class="impact-problem-card">
-        <div class="impact-problem-card-glyph" aria-hidden="true">
-          <svg viewBox="0 0 70 48" width="70" height="48">
-            <rect x="0"  y="0"  width="13" height="13" rx="1.5" fill="#F5F5F5" opacity="0.85"/>
-            <rect x="19" y="0"  width="13" height="13" rx="1.5" fill="none" stroke="#F5F5F5" stroke-width="0.8" opacity="0.28"/>
-            <rect x="38" y="0"  width="13" height="13" rx="1.5" fill="#F5F5F5" opacity="0.85"/>
-            <rect x="57" y="0"  width="13" height="13" rx="1.5" fill="#F5C529"/>
-            <rect x="0"  y="18" width="13" height="13" rx="1.5" fill="none" stroke="#F5F5F5" stroke-width="0.8" opacity="0.28"/>
-            <rect x="19" y="18" width="13" height="13" rx="1.5" fill="#F5F5F5" opacity="0.85"/>
-            <rect x="38" y="18" width="13" height="13" rx="1.5" fill="none" stroke="#F5F5F5" stroke-width="0.8" opacity="0.28"/>
-            <rect x="57" y="18" width="13" height="13" rx="1.5" fill="#F5F5F5" opacity="0.85"/>
-            <rect x="0"  y="36" width="13" height="13" rx="1.5" fill="#F5F5F5" opacity="0.85"/>
-            <rect x="19" y="36" width="13" height="13" rx="1.5" fill="none" stroke="#F5F5F5" stroke-width="0.8" opacity="0.28"/>
-            <rect x="38" y="36" width="13" height="13" rx="1.5" fill="#F5F5F5" opacity="0.85"/>
-            <rect x="57" y="36" width="13" height="13" rx="1.5" fill="none" stroke="#F5F5F5" stroke-width="0.8" opacity="0.28"/>
-          </svg>
-        </div>
-        <h4 class="impact-problem-card-title">Invisible Housing Stock</h4>
-        <p class="impact-problem-card-lead">Preservation funders cannot protect what they cannot see.</p>
-        <p class="impact-problem-card-body">Tenants in unsubsidized affordable units — often those most at risk of displacement — remain invisible to the agencies working to keep them housed.</p>
-      </article>
-
-      <article class="impact-problem-card">
-        <div class="impact-problem-card-glyph" aria-hidden="true">
-          <svg viewBox="0 0 70 70" width="70" height="70">
-            <circle cx="26" cy="44" r="24" fill="none" stroke="#F5F5F5" stroke-width="0.8" opacity="0.28"/>
-            <circle cx="26" cy="44" r="17" fill="none" stroke="#F5F5F5" stroke-width="0.8" opacity="0.42"/>
-            <circle cx="26" cy="44" r="10" fill="none" stroke="#F5F5F5" stroke-width="0.8" opacity="0.58"/>
-            <circle cx="26" cy="44" r="3"  fill="#F5F5F5" opacity="0.85"/>
-            <line x1="26" y1="44" x2="58" y2="12" stroke="#F5F5F5" stroke-width="0.6" stroke-dasharray="2,2.5" opacity="0.4"/>
-            <circle cx="58" cy="12" r="4.5" fill="#F5C529"/>
-          </svg>
-        </div>
-        <h4 class="impact-problem-card-title">Inefficient Policy Tools</h4>
-        <p class="impact-problem-card-lead">Rules built on coarse data miss their mark — and the failure is hard to diagnose.</p>
-        <p class="impact-problem-card-body">Rent stabilization, subsidy rates, and analogous instruments are calibrated against outdated inputs, producing over- and under-correction the underlying data cannot explain.</p>
-      </article>
-
-      <article class="impact-problem-card">
-        <div class="impact-problem-card-glyph" aria-hidden="true">
-          <svg viewBox="0 0 72 60" width="72" height="60">
-            <line x1="0" y1="59.5" x2="72" y2="59.5" stroke="#F5F5F5" stroke-width="0.6" opacity="0.35"/>
-            <rect x="0"  y="0"  width="14" height="60" rx="1" fill="#F5C529"/>
-            <rect x="20" y="44" width="14" height="16" rx="1" fill="#F5F5F5" opacity="0.32"/>
-            <rect x="40" y="48" width="14" height="12" rx="1" fill="#F5F5F5" opacity="0.32"/>
-            <rect x="58" y="46" width="14" height="14" rx="1" fill="#F5F5F5" opacity="0.32"/>
-          </svg>
-        </div>
-        <h4 class="impact-problem-card-title">An Unfair Playing Field</h4>
-        <p class="impact-problem-card-lead">The data gap is a power gap.</p>
-        <p class="impact-problem-card-body">Corporate owners purchase property-level intelligence and convert it into acquisition strategy. Tenants, city housing departments, legal-aid clinics, and community lenders have no equivalent.</p>
-      </article>
-
-      <article class="impact-problem-card impact-problem-card--accent">
-        <div class="impact-problem-card-glyph" aria-hidden="true">
-          <svg viewBox="0 0 96 48" width="96" height="48">
-            <line x1="0" y1="24" x2="96" y2="24" stroke="#303334" stroke-width="0.6" opacity="0.32"/>
-            <path d="M 22 24 Q 48 6, 74 24" fill="none" stroke="#303334" stroke-width="0.6" stroke-dasharray="2.5,2.5" opacity="0.45"/>
-            <circle cx="17" cy="24" r="6" fill="#F5C529"/>
-            <circle cx="78" cy="24" r="6" fill="none" stroke="#303334" stroke-width="1.2" opacity="0.7"/>
-            <text x="17" y="44" text-anchor="middle" font-size="7" fill="#858585" font-family="Roboto Mono, monospace" letter-spacing="1">HARM</text>
-            <text x="78" y="44" text-anchor="middle" font-size="7" fill="#858585" font-family="Roboto Mono, monospace" letter-spacing="1">RESPONSE</text>
-          </svg>
-        </div>
-        <h4 class="impact-problem-card-title">Reactive, Not Proactive</h4>
-        <p class="impact-problem-card-lead">Without property-level signals, intervention arrives only after harm.</p>
-        <p class="impact-problem-card-body">Agencies and service providers can respond, but only downstream — long after emergency rental assistance or targeted policy could have kept families housed.</p>
       </article>
     </div>
   </div>
@@ -370,7 +306,7 @@
       <span class="feat-rule" aria-hidden="true"></span>
       <span class="feat-eyebrow">The Solution</span>
       <h2 id="feat-headline" class="feat-headline">
-        Overview of the<br><em>Open Rent Initiative.</em>
+        Overview of the Open Rent Initiative
       </h2>
     </header>
 
@@ -402,38 +338,18 @@
         </p>
       </article>
     </div>
-
-    <div class="feat-demo reveal" style="transition-delay: 0.16s;">
-      <div class="feat-demo-caption">
-        <span class="feat-demo-caption-lhs"><em>See the platform in motion.</em></span>
-        <span class="feat-demo-caption-rhs">Prototype · v0.1</span>
-      </div>
-
-      <figure class="feat-frame">
-        <div class="feat-frame-topbar">
-          <span class="feat-frame-brand">Open Rent</span>
-          <span class="feat-frame-lang">English ⌄</span>
-        </div>
-        <video autoplay loop muted playsinline class="feat-frame-media">
-          <source src="/Rent%20Tool%20Video.mov" type="video/quicktime" />
-          <source src="/Rent%20Tool%20Video.mov" type="video/mp4" />
-        </video>
-
-        <figcaption class="feat-demo-footer">
-          <span>Fig. 01 · Interactive property-level rental canvas</span>
-          <span class="feat-demo-footer-src">Source: Open Rent prototype, 2026</span>
-        </figcaption>
-      </figure>
-    </div>
   </div>
 </section>
 
-<section class="uc-section" id="usecases">
+<section class="uc-section" id="usecases" aria-labelledby="usecases-headline">
   <div class="section-inner uc-v2">
     <header class="uc3-header reveal">
       <span class="uc3-yellow-bar" aria-hidden="true"></span>
       <span class="uc3-tag">Use Cases</span>
-      <h2 class="uc3-title">Where Open Rent could add value <em>for low- and moderate-income families.</em></h2>
+      <h2 id="usecases-headline" class="uc3-headline">What Open Rent Offers</h2>
+      <p class="uc3-subheadline">
+        Open Rent closes the information gap for organizations supporting low- and moderate-income families
+      </p>
     </header>
 
     <div class="uc3-grid reveal" style="transition-delay: 0.08s;">
@@ -534,7 +450,7 @@
       <div class="rm-phase">
         <div class="rm-when">Summer 2026 → Winter 2026/27</div>
         <h3 class="rm-phase-title">Broaden &amp; deepen</h3>
-        <p>Extend data pipelines to cover the entire Bay Area, including building estimation models where relevant (rent prices, vacancy, displacement risk). Launch Los Angeles Metro and Twin Cities Metro expansions and pilots.</p>
+        <p>Extend data pipelines to cover the entire Bay Area, including building estimation models where relevant (rent prices, vacancy, displacement risk). Launch Los Angeles Metro and deepen and expand existing collaboration with HousingLink in Minnesota.</p>
       </div>
       <div class="rm-phase">
         <div class="rm-when">2027 and beyond</div>
