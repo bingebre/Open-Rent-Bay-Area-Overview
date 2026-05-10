@@ -157,7 +157,7 @@
       neighborhoods experiencing housing instability — are made with data that is years old, imprecise, and often
       incomplete.
     </p>
-    <p class="hero-sub hero-sub--emphasis">We’re building the platform to solve this, free and open.</p>
+    <p class="hero-sub hero-sub--emphasis">We’re building the platform to solve this. Free and open.</p>
     <div class="hero-sponsors">
       <p class="hero-sponsors-label">Made possible by:</p>
       <div class="hero-sponsors-logos">
@@ -209,7 +209,7 @@
       Highly Fragmented Rent Data Creates Big Blind Spots
     </h2>
     <p class="problem-v3__subheadline">
-      Beyond the gaps in ACS and Zillow, other sources are paywalled (e.g., CoStar), scattered across listing sites (e.g., Craigslist), or siloed in rent registries and other government databases. All of them miss single-family rentals and small buildings entirely.
+      Beyond the gaps in ACS and Zillow, other sources are paywalled (e.g., CoStar), scattered across listing sites (e.g., Craigslist), or siloed in rent registries and other government databases.
     </p>
 
     <div class="problem-v3-chart-block">
@@ -240,10 +240,10 @@
       <figure class="problem-v3-chart-after">
         <h3 class="problem-v3-chart-after__title">High data fragmentation across types of properties</h3>
         <img
-          src="/rent-data-fragmentation.jpg"
-          alt="Data fragmentation: isometric neighborhood map showing housing types and the many separate data sources needed to describe rental stock, including listings, paywalled sources, rent registry, and public assessor data."
-          width="1024"
-          height="551"
+          src="/rent-data-fragmentation.png"
+          alt="Isometric neighborhood map labeling housing types—from mobile homes and ADUs to large apartments—with color-coded data sources: local listings, MLS, rent listings, paywalled sources, rent registries, and public or LIHTC-based affordable housing data."
+          width="854"
+          height="482"
           loading="lazy"
           decoding="async"
         />
