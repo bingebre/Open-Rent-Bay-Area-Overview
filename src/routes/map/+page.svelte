@@ -269,7 +269,6 @@
 			});
 
 			const steps = document.querySelectorAll('.scroll-step');
-			const legend = document.getElementById('mapLegend');
 
 			const observer = new IntersectionObserver(
 				(entries) => {
@@ -302,10 +301,6 @@
 									duration: 2000,
 									easing: (t) => (t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t)
 								});
-							}
-							if (legend) {
-								if (stepIndex > 0) legend.classList.add('visible');
-								else legend.classList.remove('visible');
 							}
 							if (stepIndex === 5) enableInteractive();
 							else disableInteractive();
@@ -353,13 +348,6 @@
 			popup.remove();
 		}
 
-		const legendToggle = document.getElementById('legendToggle');
-		const legendItems = document.getElementById('legendItems');
-		legendToggle?.addEventListener('click', function (this: HTMLElement) {
-			this.classList.toggle('open');
-			legendItems?.classList.toggle('expanded');
-		});
-
 		return () => {
 			detachIframeWheel?.();
 			map.remove();
@@ -368,7 +356,7 @@
 </script>
 
 <svelte:head>
-	<title>Bay Area Rent Data Map — Scrollytelling Section</title>
+	<title>Bay Area Rent Data Map: Scrollytelling Section</title>
 </svelte:head>
 
 {#if !mapboxToken}
@@ -386,19 +374,9 @@
 		</div>
 	</div>
 
-	<div class="map-legend" id="mapLegend">
-		<button type="button" class="legend-toggle" id="legendToggle">
-			Similarity of price data
-			<svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-				><path
-					d="M3 4.5L6 7.5L9 4.5"
-					stroke="currentColor"
-					stroke-width="1.5"
-					stroke-linecap="round"
-				/></svg
-			>
-		</button>
-		<ul class="legend-items" id="legendItems">
+	<div class="map-legend visible" id="mapLegend">
+		<div class="legend-toggle">Gap between Zillow and ACS rent estimates</div>
+		<ul class="legend-items expanded" id="legendItems">
 			<li class="legend-item legend-similar">
 				<span class="label">Similar</span><span class="detail"
 					>Data sources are within ±30% of each other.</span
@@ -434,8 +412,8 @@
 				<div class="step-eyebrow">Rent Data Explorer</div>
 				<h2 class="step-title">Mapping the Bay Area's Rent Data Gaps</h2>
 				<p class="step-body">
-					Using the two most widely available public data sources — the <strong>Zillow Observed Rent Index</strong>
-					and the <strong>American Community Survey</strong> — we can visualize where rent estimates agree, diverge,
+					Using the two most widely available public data sources, the <strong>Zillow Observed Rent Index</strong>
+					and the <strong>American Community Survey</strong>, we can visualize where rent estimates agree, diverge,
 					or are missing entirely across the Bay Area.
 				</p>
 				<div class="step-scroll-cue"><div class="scroll-arrow"></div>Scroll to explore</div>
@@ -447,7 +425,7 @@
 				<div class="step-eyebrow">The Bay Area</div>
 				<h2 class="step-title">Zooming into a region of critical need</h2>
 				<p class="step-body">
-					The Bay Area is one of the most expensive rental markets in the country — and one where data quality matters
+					The Bay Area is one of the most expensive rental markets in the country, and one where data quality matters
 					most. Across the nine-county region, rent estimates from different sources often paint
 					<strong>strikingly different pictures</strong> of what tenants actually pay.
 				</p>
@@ -461,7 +439,7 @@
 				<p class="step-body">
 					In San Francisco's Bayview neighborhood, the disparity between data sources is among the
 					<strong>largest in the city</strong>. Colored in <span class="highlight highlight-extreme">deep brown</span>,
-					this historically Black community faces ongoing housing instability — and the data used to set housing
+					this historically Black community faces ongoing housing instability, and the data used to set housing
 					assistance levels may not reflect what renters actually experience on the ground.
 				</p>
 			</div>
@@ -486,7 +464,7 @@
 				<h2 class="step-title">Oakland &amp; the East Bay: a pattern of disparity</h2>
 				<p class="step-body">
 					Across the bay in <strong>Oakland</strong> and surrounding communities, rent data disparities follow familiar
-					patterns — with the largest gaps concentrated in neighborhoods experiencing the most rapid change. The
+					patterns, with the largest gaps concentrated in neighborhoods experiencing the most rapid change. The
 					<span class="highlight highlight-dissim">dark yellow</span> zip codes often overlap with areas where displacement
 					risk is highest.
 				</p>

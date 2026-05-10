@@ -12,10 +12,54 @@
 		document.querySelectorAll('.reveal, .reveal-scale').forEach((el) => observer.observe(el));
 
 		const nav = document.getElementById('nav');
+		const navSectionLinks = Array.from(document.querySelectorAll<HTMLAnchorElement>('nav .nav-links a'));
+		const sectionToNavHref = new Map<string, string>([
+			['problem', '#problem'],
+			['problem-b', '#problem'],
+			['solution', '#solution'],
+			['features', '#solution'],
+			['usecases', '#solution'],
+			['roadmap', '#roadmap'],
+			['funding', '#funding']
+		]);
+		const navActiveObserverTargets = Array.from(sectionToNavHref.keys())
+			.map((id) => document.getElementById(id))
+			.filter((el): el is HTMLElement => !!el);
 		const onScrollNav = () => {
 			if (nav) nav.classList.toggle('scrolled', window.scrollY > 60);
 		};
 		window.addEventListener('scroll', onScrollNav, { passive: true });
+
+		const visibleSections = new Map<string, number>();
+		let lastActiveHref: string | null = navSectionLinks[0]?.getAttribute('href') ?? null;
+		const setActiveNavLink = () => {
+			if (!navSectionLinks.length) return;
+			const activeId = Array.from(visibleSections.entries()).sort((a, b) => b[1] - a[1])[0]?.[0];
+			const mappedHref = activeId ? sectionToNavHref.get(activeId) ?? null : null;
+			if (mappedHref) lastActiveHref = mappedHref;
+			navSectionLinks.forEach((link) => {
+				const isActive = !!lastActiveHref && link.getAttribute('href') === lastActiveHref;
+				link.classList.toggle('active', isActive);
+			});
+		};
+		const navSectionObserver = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					const id = (entry.target as HTMLElement).id;
+					if (!id) return;
+					if (entry.isIntersecting) visibleSections.set(id, entry.intersectionRatio);
+					else visibleSections.delete(id);
+				});
+				setActiveNavLink();
+			},
+			{
+				root: null,
+				rootMargin: '-35% 0px -45% 0px',
+				threshold: [0, 0.2, 0.4, 0.6, 0.8, 1]
+			}
+		);
+		navActiveObserverTargets.forEach((section) => navSectionObserver.observe(section));
+		setActiveNavLink();
 
 		const contextMap = document.getElementById('contextMap');
 		const contextParas = document.querySelectorAll('.context-para');
@@ -129,6 +173,7 @@
 			window.visualViewport?.removeEventListener('scroll', syncMapEmbedScrollActivation);
 			mapEmbed?.removeEventListener('load', syncMapEmbedScrollActivation);
 			mapEmbedIo?.disconnect();
+			navSectionObserver.disconnect();
 		};
 	});
 </script>
@@ -138,43 +183,45 @@
 </svelte:head>
 
 <nav id="nav">
+  <a class="nav-wordmark" href="#hero">Open Rent Initiative</a>
   <div class="nav-links">
     <a href="#problem">Problem</a>
     <a href="#solution">Solution</a>
     <a href="#roadmap">Roadmap</a>
     <a href="#funding">Funding</a>
   </div>
+  <a
+    class="nav-cta"
+    href="https://docs.google.com/forms/d/e/1FAIpQLScOxVCxg2nMlBTkMpQd9kiRl0nExF_lixhfg-0AKWUL8S0wiw/viewform?usp=dialog"
+    target="_blank"
+    rel="noopener noreferrer">Schedule briefing →</a>
 </nav>
 
-<section class="hero">
+<section class="hero" id="hero">
   <div class="hero-bg" aria-hidden="true"></div>
   <div class="hero-content">
     <h1 class="hero-headline">
       <span class="hero-line hero-line--sans">The Open Rent Initiative</span>
     </h1>
     <p class="hero-sub">
-      Today, critical decisions — like where and how rental assistance is targeted and how to intervene in
-      neighborhoods experiencing housing instability — are made with data that is years old, imprecise, and often
+      Today, critical decisions, like where and how rental assistance is targeted and how to intervene in
+      neighborhoods experiencing housing instability, are made with data that is years old, imprecise, and often
       incomplete.
     </p>
-    <p class="hero-sub hero-sub--emphasis">We’re building the platform to solve this. Free and open.</p>
+    <p class="hero-sub hero-sub--emphasis">We’re building a free, open platform to solve this.</p>
     <div class="hero-sponsors">
       <p class="hero-sponsors-label">Made possible by:</p>
       <div class="hero-sponsors-logos">
-        <img src="/logos/SFF.png" alt="San Francisco Foundation" />
+        <img class="hero-sponsor-sff" src="/logos/SFF.png" alt="San Francisco Foundation" />
         <img src="/logos/CZI.png" alt="Chan Zuckerberg Initiative" />
         <img src="/logos/PSL.png" alt="Policy Simulation Library" />
         <img src="/logos/citizen codex.png" alt="Citizen Codex" />
         <img src="/logos/SVCF.png" alt="Silicon Valley Community Foundation" />
       </div>
     </div>
-    <div class="hero-ctas">
-      <a class="hero-btn-primary" href="mailto:rent@citizencodex.com?subject=Let%27s%20schedule%20a%2030%2Dminute%20Open%20Rent%20briefing">Let's schedule a 30-min briefing →</a>
-      <a class="hero-link-secondary" href="https://open-rent-initiative.vercel.app/" target="_blank" rel="noopener noreferrer">See the Prototype →</a>
-    </div>
     <div class="hero-scroll-cue">
       <span>Scroll to explore</span>
-      <div class="scroll-line"></div>
+      <div class="scroll-chevron" aria-hidden="true"></div>
     </div>
   </div>
 </section>
@@ -238,10 +285,10 @@
       </div>
 
       <figure class="problem-v3-chart-after">
-        <h3 class="problem-v3-chart-after__title">High data fragmentation across types of properties</h3>
+        <h3 class="problem-v3-chart-after__title">Data is fragmented across property types</h3>
         <img
           src="/rent-data-fragmentation.png"
-          alt="Isometric neighborhood map labeling housing types—from mobile homes and ADUs to large apartments—with color-coded data sources: local listings, MLS, rent listings, paywalled sources, rent registries, and public or LIHTC-based affordable housing data."
+          alt="Isometric neighborhood map labeling housing types: from mobile homes and ADUs to large apartments, with color-coded data sources: local listings, MLS, rent listings, paywalled sources, rent registries, and public or LIHTC-based affordable housing data."
           width="854"
           height="482"
           loading="lazy"
@@ -268,9 +315,9 @@
         <h3 class="sol3-card-title">How we are working with the City of Mountain View</h3>
 
         <ul class="sol3-bullets">
-          <li>Compiling a holistic view of their rental housing stock - Consolidated data offering a full view of rental stock across all market types (affordable, market-rate, stabilized, single family rentals, etc.) to inform policymaking and addressing housing affordability.</li>
-          <li>Visualization tools that let staff explore rental stock at multiple levels of geographic granularity, from individual unit to citywide to inform key decisionmakers.</li>
-          <li>Analytical tools for longitudinal and comparative market analysis so that limited local resources can be focused to where they are most needed.</li>
+          <li>A complete picture of Mountain View's rental stock across every market type, so the city can target policy where it matters.</li>
+          <li>Visualization tools that let staff explore rental stock at every level, from a single unit to the whole city.</li>
+          <li>Analytical tools for longitudinal and comparative market analysis, so limited local resources go where they are needed most.</li>
         </ul>
 
         <div class="sol3-dashboard-pair">
@@ -333,7 +380,7 @@
         <span class="feat-principle-num">03 / Principle</span>
         <h3 class="feat-principle-title">Our guiding principle</h3>
         <p class="feat-principle-body">
-          Partner <em>locally</em> with those who know the community and its data well — leaning on
+          Partner <em>locally</em> with those who know the community and its data well, leaning on
           creative sourcing and model estimation where direct data is unavailable.
         </p>
       </article>
@@ -366,7 +413,7 @@
         <div class="uc3-callout">
           <div class="uc3-callout-tag">With Open Rent</div>
           <p>
-            Property-level signals from rent spikes, ownership changes, and eviction-filing patterns — so frontline
+            Property-level signals from rent spikes, ownership changes, and eviction-filing patterns, so frontline
             teams can deploy outreach, emergency rental assistance, and right-to-counsel services to the specific
             parcels where tenants are at risk.
           </p>
@@ -386,7 +433,7 @@
         <div class="uc3-callout">
           <div class="uc3-callout-tag">With Open Rent</div>
           <p>
-            A live, property-level view of rental stock and rental data — so cities can move from reactive enforcement
+            A live, property-level view of rental stock and rental data, so cities can move from reactive enforcement
             to proactive, property-level compliance monitoring and targeted housing-stability policy.
           </p>
         </div>
@@ -406,7 +453,7 @@
         <div class="uc3-callout">
           <div class="uc3-callout-tag">With Open Rent</div>
           <p>
-            Real-time LMI rental stock and rent data at the property level within each assessment area — so CRA
+            Real-time LMI rental stock and rent data at the property level within each assessment area, so CRA
             teams can target capital to specific parcels and neighborhoods where it qualifies, and document impact
             their examiners and boards can defend.
           </p>
@@ -448,12 +495,12 @@
         <p>Build the core data infrastructure. Integrate Bay Area foundational datasets. Launch the Mountain View pilot in June 2026.</p>
       </div>
       <div class="rm-phase">
-        <div class="rm-when">Summer 2026 → Winter 2026/27</div>
+        <div class="rm-when">Jul 2026 → Dec 2026</div>
         <h3 class="rm-phase-title">Broaden &amp; deepen</h3>
         <p>Extend data pipelines to cover the entire Bay Area, including building estimation models where relevant (rent prices, vacancy, displacement risk). Launch Los Angeles Metro and deepen and expand existing collaboration with HousingLink in Minnesota.</p>
       </div>
       <div class="rm-phase">
-        <div class="rm-when">2027 and beyond</div>
+        <div class="rm-when">Jan 2027 and beyond</div>
         <h3 class="rm-phase-title">Scale &amp; expand</h3>
         <p>Expand data sets and user features. Expand across California and Minnesota. Begin expansion to other states.</p>
       </div>
@@ -476,7 +523,11 @@
     </p>
     <p class="funding-closing">If any of this fits your portfolio, we'd like to talk.</p>
     <div class="funding-actions">
-      <a class="funding-link funding-link--primary" href="mailto:rent@citizencodex.com?subject=Let%27s%20schedule%20%E2%80%94%20Open%20Rent%20funding%20conversation">
+      <a
+        class="funding-link funding-link--primary"
+        href="https://docs.google.com/forms/d/e/1FAIpQLScOxVCxg2nMlBTkMpQd9kiRl0nExF_lixhfg-0AKWUL8S0wiw/viewform?usp=dialog"
+        target="_blank"
+        rel="noopener noreferrer">
         <span class="funding-link-label">Let's schedule a briefing</span>
         <span class="funding-link-arrow">→</span>
       </a>
@@ -485,6 +536,21 @@
 </section>
 
 <footer>
+  <div class="footer-main">
+    <div class="footer-col footer-col--brand">
+      <div class="footer-wordmark">Open Rent Initiative</div>
+      <p class="footer-tagline">Our goal is simple: make rent data open, accessible, and actionable for everyone who works to build a more affordable housing system and a stronger economy.</p>
+    </div>
+    <div class="footer-col">
+      <p class="footer-col-head">Learn more</p>
+      <div class="footer-links">
+        <a href="https://rentmadness.citizencodex.com/" target="_blank" rel="noopener noreferrer">Rent Madness</a>
+        <a href="https://open-rent-initiative.vercel.app/" target="_blank" rel="noopener noreferrer">Prototype V0.1.1</a>
+        <a href="#solution">City of Mountain View, CA Case Study</a>
+        <a href="https://www.citizencodex.com/tools-and-methods/how-we-used-geospatial-analysis-to-understand-st-pauls-rental-market" target="_blank" rel="noopener noreferrer">St. Paul, MN Case Study</a>
+      </div>
+    </div>
+  </div>
   <div class="footer-bottom">
     The Open Rent Initiative &middot; A 501(c)(3) fiscally-sponsored project of the Policy Simulation Library Foundation
     &middot; 2026
