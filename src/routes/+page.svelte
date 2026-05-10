@@ -467,22 +467,17 @@
     <span class="funding-eyebrow">Funding</span>
     <h2 class="funding-title">Funding the <em>next phase.</em></h2>
     <p class="funding-lead">
-      Open Rent is welcoming new funders to support its expansion across the Bay Area and the launch of a
-      Los&nbsp;Angeles pilot.
+      We're raising multi-year support to expand from the Mountain View pilot to the full Bay Area through 2026,
+      launch a Los Angeles Metro pilot in fall 2026, and stand up the first Twin Cities deployment with local partners.
     </p>
     <p class="funding-lead">
-      We are also open to partnerships focused on a specific jurisdiction — Oakland, L.A.&nbsp;City, or another market — or
-      on a specific question, such as estimating housing-stability risk or building tools for local government housing
-      staff.
+      Lead and co-funder roles are open. We can also scope a partnership around a single jurisdiction or a single question,
+      such as displacement risk estimation, tools for city housing staff, or NOAH preservation analytics.
     </p>
-    <p class="funding-closing">We would value the conversation.</p>
+    <p class="funding-closing">If any of this fits your portfolio, we'd like to talk.</p>
     <div class="funding-actions">
       <a class="funding-link funding-link--primary" href="mailto:rent@citizencodex.com?subject=Let%27s%20schedule%20%E2%80%94%20Open%20Rent%20funding%20conversation">
         <span class="funding-link-label">Let's schedule a briefing</span>
-        <span class="funding-link-arrow">→</span>
-      </a>
-      <a class="funding-link funding-link--secondary" href="/funder-brief.pdf">
-        <span class="funding-link-label">Download the funder brief</span>
         <span class="funding-link-arrow">→</span>
       </a>
     </div>
