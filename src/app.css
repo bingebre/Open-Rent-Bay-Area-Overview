@@ -2139,29 +2139,15 @@ footer .footer-bottom {
 .solution-section .sol3-card--dark .sol3-bullets li { color: rgba(245, 237, 226, 0.92); }
 .solution-section .sol3-card--dark .sol3-bullets li::before { background: var(--sol-yellow); }
 
-.solution-section .sol3-dashboard-pair {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(0.75rem, 2vw, 1.25rem);
-  margin: 0;
+.solution-section .sol3-prototype-fig {
+  margin: clamp(1.25rem, 3vw, 1.75rem) 0 0;
   padding: 0;
   min-width: 0;
 }
-.solution-section .sol3-dashboard-pair__fig {
-  margin: 0;
-  padding: 0;
-  min-width: 0;
-}
-.solution-section .sol3-dashboard-pair__fig img {
+.solution-section .sol3-prototype-fig img {
   display: block;
   width: 100%;
   height: auto;
-}
-
-@media (max-width: 720px) {
-  .solution-section .sol3-dashboard-pair {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (max-width: 900px) {

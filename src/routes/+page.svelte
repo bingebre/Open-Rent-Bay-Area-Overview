@@ -320,28 +320,17 @@
           <li>Analytical tools for longitudinal and comparative market analysis, so limited local resources go where they are needed most.</li>
         </ul>
 
-        <div class="sol3-dashboard-pair">
-          <figure class="sol3-dashboard-pair__fig">
-            <img
-              src="/solution-mv-rental-overview.png"
-              alt="Open Rent dashboard: Mountain View rental stock overview with key metrics, rent comparison, and distribution by program type."
-              width="721"
-              height="664"
-              loading="lazy"
-              decoding="async"
-            />
-          </figure>
-          <figure class="sol3-dashboard-pair__fig">
-            <img
-              src="/solution-mv-rental-composition.png"
-              alt="Open Rent dashboard: Mountain View rental stock composition by program type across ZIP codes."
-              width="718"
-              height="637"
-              loading="lazy"
-              decoding="async"
-            />
-          </figure>
-        </div>
+        <figure class="sol3-prototype-fig">
+          <img
+            src="/solution-mv-analytical-tools.jpg"
+            alt="Open Rent dashboards showing Mountain View rental stock overview and side-by-side market comparison tools."
+            width="1024"
+            height="311"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+
       </article>
     </div>
   </div>
