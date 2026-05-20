@@ -322,10 +322,10 @@
 
         <figure class="sol3-prototype-fig">
           <img
-            src="/solution-mv-analytical-tools.jpg"
-            alt="Open Rent dashboards showing Mountain View rental stock overview and side-by-side market comparison tools."
-            width="1024"
-            height="311"
+            src="/solution-mv-rental-stock-overview.svg"
+            alt="Open Rent rental stock overview dashboard showing market rent, stabilized rent, units, properties, rent distribution, and rental composition."
+            width="1440"
+            height="740"
             loading="lazy"
             decoding="async"
           />
