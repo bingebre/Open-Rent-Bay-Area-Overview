@@ -1,3 +1,15 @@
+<!--
+403s observed in DevTools Network for /map (access_token redacted):
+- https://api.mapbox.com/v4/arjunkakkar8.ae5zhrzi.json?secure&access_token=<redacted>
+- https://api.mapbox.com/v4/mapbox.mapbox-bathymetry-v2,mapbox.mapbox-streets-v8-lite,mapbox.mapbox-terrain-v3,mapbox.mapbox-models-v1.json?secure&access_token=<redacted>
+- https://api.mapbox.com/v4/mapbox.mapbox-3dbuildings-v1.json?secure&access_token=<redacted>
+- https://api.mapbox.com/v4/mapbox.indoor-v3.json?secure&access_token=<redacted>
+- https://api.mapbox.com/v4/mapbox.mapbox-3d-events.json?secure&access_token=<redacted>
+- https://api.mapbox.com/v4/mapbox.mapbox-terrain-dem-v1.json?secure&access_token=<redacted>
+- https://api.mapbox.com/v4/mapbox.mapbox-landmark-icons-v1.json?secure&access_token=<redacted>
+- https://api.mapbox.com/v4/mapbox.procedural-buildings-v1.json?secure&access_token=<redacted>
+- https://api.mapbox.com/v4/mapbox.mapbox-landmark-pois-v1.json?secure&access_token=<redacted>
+-->
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import mapboxgl from 'mapbox-gl';
@@ -18,6 +30,14 @@
 		{ center: [-122.22, 37.8] as [number, number], zoom: 11.2 },
 		{ center: [-122.15, 37.65] as [number, number], zoom: 9.2 }
 	];
+
+	const stepIntersectionRatios = new Map<Element, number>();
+
+	type FlyTarget = {
+		stepIndex: number;
+		center: [number, number];
+		zoom: number;
+	};
 
 	let mapEl = $state<HTMLDivElement | undefined>(undefined);
 
@@ -123,6 +143,55 @@
 		let hoveredId: string | undefined;
 		let mapInteractive = false;
 		let currentStep = -1;
+		let stepObserver: IntersectionObserver | undefined;
+		let flyInFlight = false;
+		let currentFlyTarget: FlyTarget | undefined;
+		let pendingFlyTarget: FlyTarget | undefined;
+
+		function getFlyTarget(stepIndex: number): FlyTarget | undefined {
+			const view = VIEWS[stepIndex];
+			if (!view) return;
+			return { stepIndex, center: view.center, zoom: view.zoom };
+		}
+
+		function sameFlyTarget(a: FlyTarget, b: FlyTarget) {
+			return a.stepIndex === b.stepIndex;
+		}
+
+		function startFlyTo(target: FlyTarget) {
+			flyInFlight = true;
+			currentFlyTarget = target;
+			map.flyTo({
+				center: target.center,
+				zoom: target.zoom,
+				pitch: 0,
+				bearing: 0,
+				essential: true,
+				duration: 800,
+				easing: (t) => (t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t)
+			});
+		}
+
+		function requestFlyTo(stepIndex: number) {
+			const target = getFlyTarget(stepIndex);
+			if (!target) return;
+			if (flyInFlight) {
+				pendingFlyTarget = target;
+				return;
+			}
+			startFlyTo(target);
+		}
+
+		map.on('moveend', () => {
+			if (!flyInFlight || !currentFlyTarget) return;
+			const completedTarget = currentFlyTarget;
+			const pendingTarget = pendingFlyTarget;
+			flyInFlight = false;
+			currentFlyTarget = undefined;
+			pendingFlyTarget = undefined;
+			if (!pendingTarget || sameFlyTarget(pendingTarget, completedTarget)) return;
+			startFlyTo(pendingTarget);
+		});
 
 		map.on('style.load', () => {
 			map.resize();
@@ -268,40 +337,33 @@
 				}
 			});
 
-			const steps = document.querySelectorAll('.scroll-step');
+			const steps = Array.from(document.querySelectorAll('.scroll-step'));
+			stepObserver?.disconnect();
+			stepIntersectionRatios.clear();
 
-			const observer = new IntersectionObserver(
+			stepObserver = new IntersectionObserver(
 				(entries) => {
-					let bestEntry: IntersectionObserverEntry | null = null;
+					for (const entry of entries) {
+						stepIntersectionRatios.set(entry.target, entry.intersectionRatio);
+						const card = entry.target.querySelector('.step-card');
+						if (entry.isIntersecting && card) card.classList.add('visible');
+					}
+
+					let bestStep: Element | undefined;
 					let bestRatio = 0;
 
-					for (const entry of entries) {
-						const card = entry.target.querySelector('.step-card');
-						if (entry.isIntersecting && card) {
-							card.classList.add('visible');
-							if (entry.intersectionRatio > bestRatio) {
-								bestRatio = entry.intersectionRatio;
-								bestEntry = entry;
-							}
+					for (const [step, ratio] of stepIntersectionRatios) {
+						if (ratio > bestRatio) {
+							bestRatio = ratio;
+							bestStep = step;
 						}
 					}
 
-					if (bestEntry) {
-						const stepIndex = parseInt(bestEntry.target.getAttribute('data-step') ?? '0', 10);
+					if (bestStep) {
+						const stepIndex = parseInt(bestStep.getAttribute('data-step') ?? '0', 10);
 						if (stepIndex !== currentStep) {
 							currentStep = stepIndex;
-							const view = VIEWS[stepIndex];
-							if (view) {
-								map.flyTo({
-									center: view.center,
-									zoom: view.zoom,
-									pitch: 0,
-									bearing: 0,
-									essential: true,
-									duration: 2000,
-									easing: (t) => (t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t)
-								});
-							}
+							requestFlyTo(stepIndex);
 							if (stepIndex === 5) enableInteractive();
 							else disableInteractive();
 						}
@@ -313,7 +375,10 @@
 				}
 			);
 
-			steps.forEach((step) => observer.observe(step));
+			steps.forEach((step) => {
+				stepIntersectionRatios.set(step, 0);
+				stepObserver?.observe(step);
+			});
 		});
 
 		map.on('error', (e) => {
@@ -350,6 +415,8 @@
 
 		return () => {
 			detachIframeWheel?.();
+			stepObserver?.disconnect();
+			stepIntersectionRatios.clear();
 			map.remove();
 		};
 	});

@@ -64,6 +64,7 @@
 		const contextMap = document.getElementById('contextMap');
 		const contextParas = document.querySelectorAll('.context-para');
 		const mapEmbed = document.getElementById('mapEmbed') as HTMLIFrameElement | null;
+		let mapEmbedActive = false;
 
 		const syncMapEmbedScrollActivation = () => {
 			if (!mapEmbed?.contentWindow) return;
@@ -94,15 +95,20 @@
 			 */
 			const minWRatio = 0.85;
 			const tallerThanUsable = rect.height > usableH + 24;
-			let active: boolean;
-			if (tallerThanUsable) {
-				active =
-					wRatio >= minWRatio &&
-					rect.top <= viewTop + 20 &&
-					rect.bottom >= viewBottom - 20;
+			const canActivate = tallerThanUsable
+				? wRatio >= minWRatio && rect.top <= viewTop + 20 && rect.bottom >= viewBottom - 20
+				: hRatio >= 0.62 && wRatio >= minWRatio;
+			const shouldDeactivate =
+				hRatio < 0.5 ||
+				wRatio < minWRatio - 0.07 ||
+				(tallerThanUsable && (rect.top > viewTop + 40 || rect.bottom < viewBottom - 40));
+
+			if (mapEmbedActive) {
+				mapEmbedActive = !shouldDeactivate;
 			} else {
-				active = hRatio >= 0.62 && wRatio >= minWRatio;
+				mapEmbedActive = canActivate;
 			}
+			const active = mapEmbedActive;
 
 			try {
 				mapEmbed.contentWindow.postMessage(
