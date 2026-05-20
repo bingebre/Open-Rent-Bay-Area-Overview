@@ -15,40 +15,40 @@
   <text x="195" y="622" fill="#9b9c9e" font-size="20" text-anchor="end">(20+ units)</text>
 
   <rect x="215" y="40" width="213" height="57" fill="#864c3e"/>
-  <text x="321.5" y="76" fill="#ffffff" font-size="26" font-family="'Courier New', Courier, monospace" text-anchor="middle">8.6</text>
+  <text x="321.5" y="76" fill="#ffffff" font-size="26" font-family="'Courier New', Courier, monospace" text-anchor="middle">8.6%</text>
 
   <rect x="215" y="99" width="213" height="104" fill="#864c3e"/>
-  <text x="321.5" y="159" fill="#ffffff" font-size="26" font-family="'Courier New', Courier, monospace" text-anchor="middle">15.6</text>
+  <text x="321.5" y="159" fill="#ffffff" font-size="26" font-family="'Courier New', Courier, monospace" text-anchor="middle">15.6%</text>
 
   <rect x="215" y="205" width="213" height="209" fill="#864c3e"/>
-  <text x="321.5" y="318" fill="#ffffff" font-size="26" font-family="'Courier New', Courier, monospace" text-anchor="middle">31.4</text>
+  <text x="321.5" y="318" fill="#ffffff" font-size="26" font-family="'Courier New', Courier, monospace" text-anchor="middle">31.4%</text>
 
   <rect x="215" y="416" width="213" height="296" fill="#f2c429"/>
-  <text x="321.5" y="573" fill="#111418" font-size="26" font-family="'Courier New', Courier, monospace" text-anchor="middle">44.5</text>
+  <text x="321.5" y="573" fill="#111418" font-size="26" font-family="'Courier New', Courier, monospace" text-anchor="middle">44.5%</text>
 
   <rect x="486" y="40" width="213" height="79" fill="#864c3e"/>
-  <text x="592.5" y="86" fill="#ffffff" font-size="26" font-family="'Courier New', Courier, monospace" text-anchor="middle">11.9</text>
+  <text x="592.5" y="86" fill="#ffffff" font-size="26" font-family="'Courier New', Courier, monospace" text-anchor="middle">11.9%</text>
 
   <rect x="486" y="121" width="213" height="160" fill="#864c3e"/>
-  <text x="592.5" y="208" fill="#ffffff" font-size="26" font-family="'Courier New', Courier, monospace" text-anchor="middle">24</text>
+  <text x="592.5" y="208" fill="#ffffff" font-size="26" font-family="'Courier New', Courier, monospace" text-anchor="middle">24%</text>
 
   <rect x="486" y="283" width="213" height="136" fill="#864c3e"/>
-  <text x="592.5" y="358" fill="#ffffff" font-size="26" font-family="'Courier New', Courier, monospace" text-anchor="middle">20.4</text>
+  <text x="592.5" y="358" fill="#ffffff" font-size="26" font-family="'Courier New', Courier, monospace" text-anchor="middle">20.4%</text>
 
   <rect x="486" y="421" width="213" height="291" fill="#f2c429"/>
-  <text x="592.5" y="575" fill="#111418" font-size="26" font-family="'Courier New', Courier, monospace" text-anchor="middle">43.7</text>
+  <text x="592.5" y="575" fill="#111418" font-size="26" font-family="'Courier New', Courier, monospace" text-anchor="middle">43.7%</text>
 
   <rect x="758" y="40" width="213" height="67" fill="#864c3e"/>
-  <text x="864.5" y="80" fill="#ffffff" font-size="26" font-family="'Courier New', Courier, monospace" text-anchor="middle">10</text>
+  <text x="864.5" y="80" fill="#ffffff" font-size="26" font-family="'Courier New', Courier, monospace" text-anchor="middle">10%</text>
 
   <rect x="758" y="109" width="213" height="192" fill="#864c3e"/>
-  <text x="864.5" y="212" fill="#ffffff" font-size="26" font-family="'Courier New', Courier, monospace" text-anchor="middle">28.8</text>
+  <text x="864.5" y="212" fill="#ffffff" font-size="26" font-family="'Courier New', Courier, monospace" text-anchor="middle">28.8%</text>
 
   <rect x="758" y="303" width="213" height="152" fill="#864c3e"/>
-  <text x="864.5" y="385" fill="#ffffff" font-size="26" font-family="'Courier New', Courier, monospace" text-anchor="middle">22.8</text>
+  <text x="864.5" y="385" fill="#ffffff" font-size="26" font-family="'Courier New', Courier, monospace" text-anchor="middle">22.8%</text>
 
   <rect x="758" y="457" width="213" height="255" fill="#f2c429"/>
-  <text x="864.5" y="593" fill="#111418" font-size="26" font-family="'Courier New', Courier, monospace" text-anchor="middle">38.4</text>
+  <text x="864.5" y="593" fill="#111418" font-size="26" font-family="'Courier New', Courier, monospace" text-anchor="middle">38.4%</text>
 
   <line x1="205" y1="712" x2="981" y2="712" stroke="#ffffff" stroke-width="1.5"/>
 

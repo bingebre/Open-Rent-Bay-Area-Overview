@@ -275,8 +275,8 @@
           aria-label="Rental stock composition chart for San Francisco, San Jose, and Oakland with poor and okay visibility callouts"
         >
           <image
-            href="/problem-chart-overview-v3.svg"
-            xlink:href="/problem-chart-overview-v3.svg"
+            href="/problem-chart-overview-v3.svg?v=percent-labels"
+            xlink:href="/problem-chart-overview-v3.svg?v=percent-labels"
             width="1505"
             height="812"
             preserveAspectRatio="xMidYMid meet"
